@@ -1,0 +1,434 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		37454543404C87B9CF4D5239 /* Pods_Califica_Profesores.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE38EAF0AAB53FC43F7C0A07 /* Pods_Califica_Profesores.framework */; };
+		B4D44A51222A28D50023BA65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D44A50222A28D50023BA65 /* AppDelegate.swift */; };
+		B4D44A56222A28D50023BA65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4D44A54222A28D50023BA65 /* Main.storyboard */; };
+		B4D44A58222A28D70023BA65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4D44A57222A28D70023BA65 /* Assets.xcassets */; };
+		B4D44A5B222A28D70023BA65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4D44A59222A28D70023BA65 /* LaunchScreen.storyboard */; };
+		B4D44A66222A29A50023BA65 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D44A65222A29A50023BA65 /* LoginController.swift */; };
+		B4D44A68222A34290023BA65 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4D44A67222A34290023BA65 /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		63F12D3BC64E930F672D4AA1 /* Pods-Califica Profesores.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Califica Profesores.debug.xcconfig"; path = "Target Support Files/Pods-Califica Profesores/Pods-Califica Profesores.debug.xcconfig"; sourceTree = "<group>"; };
+		B4D44A4D222A28D50023BA65 /* Califica Profesores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Califica Profesores.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4D44A50222A28D50023BA65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B4D44A55222A28D50023BA65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B4D44A57222A28D70023BA65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B4D44A5A222A28D70023BA65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B4D44A5C222A28D70023BA65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4D44A65222A29A50023BA65 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		B4D44A67222A34290023BA65 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DF10E011D9F5149E720D1D5F /* Pods-Califica Profesores.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Califica Profesores.release.xcconfig"; path = "Target Support Files/Pods-Califica Profesores/Pods-Califica Profesores.release.xcconfig"; sourceTree = "<group>"; };
+		FE38EAF0AAB53FC43F7C0A07 /* Pods_Califica_Profesores.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Califica_Profesores.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B4D44A4A222A28D50023BA65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37454543404C87B9CF4D5239 /* Pods_Califica_Profesores.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		33A598AD43D2CE6211892E89 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				63F12D3BC64E930F672D4AA1 /* Pods-Califica Profesores.debug.xcconfig */,
+				DF10E011D9F5149E720D1D5F /* Pods-Califica Profesores.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AC66690973A584D3BD816790 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE38EAF0AAB53FC43F7C0A07 /* Pods_Califica_Profesores.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B4D44A44222A28D50023BA65 = {
+			isa = PBXGroup;
+			children = (
+				B4D44A4F222A28D50023BA65 /* Califica Profesores */,
+				B4D44A4E222A28D50023BA65 /* Products */,
+				33A598AD43D2CE6211892E89 /* Pods */,
+				AC66690973A584D3BD816790 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B4D44A4E222A28D50023BA65 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4D44A4D222A28D50023BA65 /* Califica Profesores.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B4D44A4F222A28D50023BA65 /* Califica Profesores */ = {
+			isa = PBXGroup;
+			children = (
+				B4D44A62222A295E0023BA65 /* Controllers */,
+				B4D44A50222A28D50023BA65 /* AppDelegate.swift */,
+				B4D44A54222A28D50023BA65 /* Main.storyboard */,
+				B4D44A57222A28D70023BA65 /* Assets.xcassets */,
+				B4D44A59222A28D70023BA65 /* LaunchScreen.storyboard */,
+				B4D44A5C222A28D70023BA65 /* Info.plist */,
+				B4D44A67222A34290023BA65 /* GoogleService-Info.plist */,
+			);
+			path = "Califica Profesores";
+			sourceTree = "<group>";
+		};
+		B4D44A62222A295E0023BA65 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B4D44A65222A29A50023BA65 /* LoginController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B4D44A4C222A28D50023BA65 /* Califica Profesores */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4D44A5F222A28D70023BA65 /* Build configuration list for PBXNativeTarget "Califica Profesores" */;
+			buildPhases = (
+				699DC3470BF5922977E31260 /* [CP] Check Pods Manifest.lock */,
+				B4D44A49222A28D50023BA65 /* Sources */,
+				B4D44A4A222A28D50023BA65 /* Frameworks */,
+				B4D44A4B222A28D50023BA65 /* Resources */,
+				798D99E68A85ED7FF63C8240 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Califica Profesores";
+			productName = "Califica Profesores";
+			productReference = B4D44A4D222A28D50023BA65 /* Califica Profesores.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B4D44A45222A28D50023BA65 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Dylan Tasat";
+				TargetAttributes = {
+					B4D44A4C222A28D50023BA65 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = B4D44A48222A28D50023BA65 /* Build configuration list for PBXProject "Califica Profesores" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B4D44A44222A28D50023BA65;
+			productRefGroup = B4D44A4E222A28D50023BA65 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B4D44A4C222A28D50023BA65 /* Califica Profesores */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B4D44A4B222A28D50023BA65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4D44A5B222A28D70023BA65 /* LaunchScreen.storyboard in Resources */,
+				B4D44A68222A34290023BA65 /* GoogleService-Info.plist in Resources */,
+				B4D44A58222A28D70023BA65 /* Assets.xcassets in Resources */,
+				B4D44A56222A28D50023BA65 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		699DC3470BF5922977E31260 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Califica Profesores-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		798D99E68A85ED7FF63C8240 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Califica Profesores/Pods-Califica Profesores-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Califica Profesores/Pods-Califica Profesores-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B4D44A49222A28D50023BA65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4D44A66222A29A50023BA65 /* LoginController.swift in Sources */,
+				B4D44A51222A28D50023BA65 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B4D44A54222A28D50023BA65 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B4D44A55222A28D50023BA65 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B4D44A59222A28D70023BA65 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B4D44A5A222A28D70023BA65 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B4D44A5D222A28D70023BA65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B4D44A5E222A28D70023BA65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B4D44A60222A28D70023BA65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63F12D3BC64E930F672D4AA1 /* Pods-Califica Profesores.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UXRVPY7HHA;
+				INFOPLIST_FILE = "Califica Profesores/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "gnd.Califica-Profesores";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		B4D44A61222A28D70023BA65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF10E011D9F5149E720D1D5F /* Pods-Califica Profesores.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UXRVPY7HHA;
+				INFOPLIST_FILE = "Califica Profesores/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "gnd.Califica-Profesores";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B4D44A48222A28D50023BA65 /* Build configuration list for PBXProject "Califica Profesores" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4D44A5D222A28D70023BA65 /* Debug */,
+				B4D44A5E222A28D70023BA65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B4D44A5F222A28D70023BA65 /* Build configuration list for PBXNativeTarget "Califica Profesores" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4D44A60222A28D70023BA65 /* Debug */,
+				B4D44A61222A28D70023BA65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B4D44A45222A28D50023BA65 /* Project object */;
+}
