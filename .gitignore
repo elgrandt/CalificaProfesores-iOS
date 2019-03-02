@@ -1,5 +1,5 @@
 Pods/*
 Podfile.lock
 Califica Profesores/GoogleService-Info.plist
-*.DS_Store
+.DS_Store
 Califica Profesores.xcworkspace
