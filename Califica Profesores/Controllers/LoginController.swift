@@ -7,21 +7,22 @@
 //
 
 import UIKit
-import GoogleSignIn
+import Firebase
+import FirebaseUI
 
-class LoginController: UIViewController, GIDSignInUIDelegate {
+class LoginController: FUIAuthPickerViewController {
+    @IBOutlet var contentView: UIView!
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, authUI: FUIAuth) {
+        super.init(nibName: "LoginView", bundle: nibBundleOrNil, authUI: authUI)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        GIDSignIn.sharedInstance().uiDelegate = self
-        //GIDSignIn.sharedInstance().signIn()
-    }
-    
-    func jumpView(current : String, next : String) {
-        let storyboard = UIStoryboard(name: current, bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: next)
-        self.present(controller, animated: true, completion: nil)
     }
 
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		37454543404C87B9CF4D5239 /* Pods_Califica_Profesores.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE38EAF0AAB53FC43F7C0A07 /* Pods_Califica_Profesores.framework */; };
 		B4529CF8222B1F2F00D9856B /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4529CF7222B1F2F00D9856B /* NewsController.swift */; };
+		B4981BC3222B6C9100D836B9 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4981BC2222B6C9100D836B9 /* LoginView.xib */; };
 		B4D44A51222A28D50023BA65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D44A50222A28D50023BA65 /* AppDelegate.swift */; };
 		B4D44A56222A28D50023BA65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4D44A54222A28D50023BA65 /* Main.storyboard */; };
 		B4D44A58222A28D70023BA65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4D44A57222A28D70023BA65 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		63F12D3BC64E930F672D4AA1 /* Pods-Califica Profesores.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Califica Profesores.debug.xcconfig"; path = "Target Support Files/Pods-Califica Profesores/Pods-Califica Profesores.debug.xcconfig"; sourceTree = "<group>"; };
 		B4529CF7222B1F2F00D9856B /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
+		B4981BC2222B6C9100D836B9 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		B4D44A4D222A28D50023BA65 /* Califica Profesores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Califica Profesores.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D44A50222A28D50023BA65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4D44A55222A28D50023BA65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -61,6 +63,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B4981BC1222B6C7D00D836B9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B4981BC2222B6C9100D836B9 /* LoginView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B4D44A44222A28D50023BA65 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +92,7 @@
 		B4D44A4F222A28D50023BA65 /* Califica Profesores */ = {
 			isa = PBXGroup;
 			children = (
+				B4981BC1222B6C7D00D836B9 /* Views */,
 				B4D44A62222A295E0023BA65 /* Controllers */,
 				B4D44A50222A28D50023BA65 /* AppDelegate.swift */,
 				B4D44A54222A28D50023BA65 /* Main.storyboard */,
@@ -166,6 +177,7 @@
 				B4D44A5B222A28D70023BA65 /* LaunchScreen.storyboard in Resources */,
 				B4D44A68222A34290023BA65 /* GoogleService-Info.plist in Resources */,
 				B4D44A58222A28D70023BA65 /* Assets.xcassets in Resources */,
+				B4981BC3222B6C9100D836B9 /* LoginView.xib in Resources */,
 				B4D44A56222A28D50023BA65 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,12 +246,18 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Califica Profesores/Pods-Califica Profesores-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseEmailAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseEmailAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

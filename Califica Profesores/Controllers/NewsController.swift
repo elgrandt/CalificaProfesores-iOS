@@ -8,41 +8,62 @@
 
 import UIKit
 import Firebase
-import GoogleSignIn
+import FirebaseUI
 
-class NewsController: UIViewController {
+class NewsController: UIViewController, FUIAuthDelegate {
 
+    var user : User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        configureAuth()
     }
     
-    func jumpView(current : String, next : String) {
-        let storyboard = UIStoryboard(name: current, bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: next)
-        self.present(controller, animated: true, completion: nil)
+    func jumpView(next : String) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: next)
+        self.present(controller!, animated: true, completion: nil)
     }
     
-    @IBAction func logout(_ sender: UIButton) {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-            print("SUCCESSFULLY LOGGED OUT")
-            self.jumpView(current: "Main", next: "Login")
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
+    func configureAuth() {
+        // TODO: configure firebase authentication
+        let provider: [FUIAuthProvider] = [
+            FUIGoogleAuth()
+        ]
+        FUIAuth.defaultAuthUI()?.providers = provider
+        
+        // listen for changes in the authorization state
+        Auth.auth().addStateDidChangeListener { (auth: Auth, user: User?) in
+            
+            // check if there is a current user
+            if let activeUser = user {
+                // check if current app user is the current User
+                if self.user != activeUser {
+                    // sign in
+                }
+            } else {
+                // user must sign in
+                self.loginSession(authUI: FUIAuth(uiWith: auth)!)
+            }
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
+        if error != nil {
+            //Error loging in
+            print("Error logging in")
+            self.loginSession(authUI: authUI)
+            return
+        }
+        print("Sign in successful")
     }
-    */
+    
+    func loginSession(authUI: FUIAuth) {
+        let authViewController = LoginController(nibName: "LoginView", bundle: Bundle.main, authUI: authUI)
+        self.present(authViewController, animated: false, completion: nil)
+    }
 
+    @IBAction func logout(_ sender: UIButton) {
+        try! Auth.auth().signOut()
+    }
 }

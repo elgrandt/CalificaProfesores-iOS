@@ -8,6 +8,6 @@ target 'Califica Profesores' do
   # Pods for Califica Profesores
   pod 'Firebase/Core'
   pod 'Firebase/Database'
-  pod 'Firebase/Auth'
-  pod 'GoogleSignIn'
+  pod 'FirebaseUI/Auth'
+  pod 'FirebaseUI/Google'
 end
