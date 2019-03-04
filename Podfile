@@ -10,4 +10,5 @@ target 'Califica Profesores' do
   pod 'Firebase/Database'
   pod 'FirebaseUI/Auth'
   pod 'FirebaseUI/Google'
+  pod 'SideMenu'
 end

@@ -14,7 +14,7 @@ class LoginController: FUIAuthPickerViewController {
     @IBOutlet var contentView: UIView!
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, authUI: FUIAuth) {
-        super.init(nibName: "LoginView", bundle: nibBundleOrNil, authUI: authUI)
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil, authUI: authUI)
     }
     
     required init?(coder aDecoder: NSCoder) {
