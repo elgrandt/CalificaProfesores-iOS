@@ -30,7 +30,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ABW-eH-aA4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-367" y="21"/>
+            <point key="canvasLocation" x="-354" y="19"/>
         </scene>
         <!--News Controller-->
         <scene sceneID="DxV-n0-oNZ">
@@ -40,9 +40,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NEWS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nqe-oa-Mr2">
-                                <rect key="frame" x="163" y="186" width="49" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEWS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nqe-oa-Mr2">
+                                <rect key="frame" x="163" y="323" width="49" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -58,8 +57,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="h8e-M0-TBa" firstAttribute="leading" secondItem="hav-UP-4cO" secondAttribute="leading" id="VWw-eI-fQb"/>
+                            <constraint firstItem="Nqe-oa-Mr2" firstAttribute="centerY" secondItem="OPb-KR-R3l" secondAttribute="centerY" id="hdF-lZ-Lgf"/>
                             <constraint firstItem="h8e-M0-TBa" firstAttribute="trailing" secondItem="hav-UP-4cO" secondAttribute="trailing" id="hr2-C0-dcx"/>
                             <constraint firstItem="h8e-M0-TBa" firstAttribute="top" secondItem="hav-UP-4cO" secondAttribute="top" id="huz-ZM-8Kp"/>
+                            <constraint firstItem="Nqe-oa-Mr2" firstAttribute="centerX" secondItem="OPb-KR-R3l" secondAttribute="centerX" id="o7z-Tp-vQH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hav-UP-4cO"/>
                     </view>
@@ -76,7 +77,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dylan Tasat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMs-e3-Khr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[username]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMs-e3-Khr">
                                 <rect key="frame" x="143" y="50" width="89" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -92,6 +93,9 @@
                                 <state key="normal" title="NOVEDADES">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="jumpView:" destination="fg5-so-CuX" eventType="touchUpInside" id="hO6-uY-Gbe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oP-hC-FYS">
                                 <rect key="frame" x="40" y="202" width="295" height="40"/>
@@ -103,6 +107,9 @@
                                 <state key="normal" title="BUSCAR MATERIA">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="jumpView:" destination="fg5-so-CuX" eventType="touchUpInside" id="VJP-bZ-wkQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1AS-kR-ySQ">
                                 <rect key="frame" x="40" y="272" width="295" height="40"/>
@@ -114,6 +121,9 @@
                                 <state key="normal" title="BUSCAR PROFESOR">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="jumpView:" destination="fg5-so-CuX" eventType="touchUpInside" id="oFc-j6-3X2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCr-um-jpc">
                                 <rect key="frame" x="40" y="342" width="295" height="40"/>
@@ -125,6 +135,9 @@
                                 <state key="normal" title="CAMBIAR FACULTAD">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="jumpView:" destination="fg5-so-CuX" eventType="touchUpInside" id="oVQ-tN-FvT"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" semanticContentAttribute="spatial" translatesAutoresizingMaskIntoConstraints="NO" id="N3y-o0-6OS">
                                 <rect key="frame" x="20" y="101" width="335" height="1"/>
@@ -191,10 +204,13 @@
                         <viewLayoutGuide key="safeArea" id="KT1-h3-VKi"/>
                     </view>
                     <navigationItem key="navigationItem" id="cag-rs-Ifr"/>
+                    <connections>
+                        <outlet property="userLabel" destination="qMs-e3-Khr" id="zHz-dc-J8y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pvF-gL-IFH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1389.5999999999999" y="828.93553223388312"/>
+            <point key="canvasLocation" x="1271" y="829"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="d89-PF-qGQ">
@@ -217,7 +233,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jpc-uk-ZUj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="534" y="829"/>
+            <point key="canvasLocation" x="481" y="829"/>
         </scene>
     </scenes>
 </document>

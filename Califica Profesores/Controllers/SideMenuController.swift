@@ -11,9 +11,12 @@ import Firebase
 import FirebaseUI
 
 class SideMenuController: UIViewController {
+    
+    @IBOutlet weak var userLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        userLabel.text = currentUser?.displayName
     }
     
     func jumpView(next : String, animated : Bool = true) {
@@ -27,6 +30,24 @@ class SideMenuController: UIViewController {
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "Login")
             UIApplication.shared.keyWindow?.rootViewController = controller
         }
+    }
+    
+    @IBAction func jumpView(_ sender: UIButton) {
+        var nextView : String?
         
+        switch sender.currentTitle {
+        case "NOVEDADES":
+            nextView = "News"
+            break
+        default:
+            break
+        }
+        
+        if nextView != nil {
+            self.dismiss(animated: true) { () -> Void in
+                let controller = self.storyboard?.instantiateViewController(withIdentifier: nextView!)
+                UIApplication.shared.keyWindow?.rootViewController = controller
+            }
+        }
     }
 }

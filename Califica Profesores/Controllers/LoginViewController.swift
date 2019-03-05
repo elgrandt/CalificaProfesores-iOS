@@ -10,9 +10,9 @@ import UIKit
 import Firebase
 import FirebaseUI
 
+var currentUser : User?
+
 class LoginViewController: UIViewController, FUIAuthDelegate {
-    
-    var user : User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +40,7 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
             // check if there is a current user
             if user != nil {
                 // check if current app user is the current User
+                currentUser = user
                 self.jumpView(next: "News", animated: false)
             } else {
                 // user must sign in
@@ -56,6 +57,7 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
             return
         }
         print("Sign in successful")
+        currentUser = authDataResult?.user
         self.jumpView(next: "News", animated: false)
     }
     

@@ -26,9 +26,12 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2Y-O2-pzB">
-                    <rect key="frame" x="15" y="16.5" width="39" height="30"/>
-                    <state key="normal" title="Menu"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2Y-O2-pzB">
+                    <rect key="frame" x="15" y="10" width="43" height="43"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="y2Y-O2-pzB" secondAttribute="height" multiplier="1:1" id="KH2-kc-D79"/>
+                    </constraints>
+                    <state key="normal" image="Menu"/>
                     <connections>
                         <action selector="openMenu:" destination="-1" eventType="touchUpInside" id="rDZ-FM-HHT"/>
                     </connections>
@@ -36,9 +39,11 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="y2Y-O2-pzB" secondAttribute="bottom" constant="10" id="AB3-Dx-gmK"/>
                 <constraint firstItem="yri-6a-1Rg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Jzu-xH-zPQ"/>
                 <constraint firstItem="y2Y-O2-pzB" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="RDj-K2-Emj"/>
                 <constraint firstItem="y2Y-O2-pzB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="Sbc-An-g12"/>
+                <constraint firstItem="y2Y-O2-pzB" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="dbv-DZ-6Ch"/>
                 <constraint firstItem="yri-6a-1Rg" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="uAX-LB-JeK"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -46,4 +51,7 @@
             <point key="canvasLocation" x="132" y="-117.39130434782609"/>
         </view>
     </objects>
+    <resources>
+        <image name="Menu" width="220" height="220"/>
+    </resources>
 </document>
