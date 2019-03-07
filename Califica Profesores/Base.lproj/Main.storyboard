@@ -231,7 +231,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4cq-nW-aln">
                                 <rect key="frame" x="0.0" y="70" width="375" height="56"/>
-                                <color key="backgroundColor" red="1" green="0.08706427624641333" blue="0.04403306745786939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="UPH-fi-igP"/>
                                 </constraints>
@@ -259,8 +259,7 @@
                         <viewLayoutGuide key="safeArea" id="V2e-au-i6m"/>
                     </view>
                     <connections>
-                        <outlet property="searchBarContainer" destination="4cq-nW-aln" id="g9M-i6-Kar"/>
-                        <outlet property="subjectSearchView" destination="CQn-zA-2K0" id="0Cb-O1-c4p"/>
+                        <outlet property="searchBarContainer" destination="4cq-nW-aln" id="kOX-dY-y4Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Owr-Bt-8ds" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -313,11 +312,215 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="541"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="8J6-C3-Djj"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SsR-ca-JSZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1270" y="707"/>
         </scene>
+        <!--OPINIONES RECIENTES-->
+        <scene sceneID="dAf-ll-x4M">
+            <objects>
+                <viewController id="KKJ-PE-oXz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pqw-QO-4f5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tjF-V1-xUS" customClass="HeaderView" customModule="Califica_Profesores" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0MJ-oX-IFn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tjF-V1-xUS" firstAttribute="leading" secondItem="tS9-99-efw" secondAttribute="leading" id="WxZ-M3-Ltz"/>
+                            <constraint firstItem="tjF-V1-xUS" firstAttribute="top" secondItem="tS9-99-efw" secondAttribute="top" id="X8R-Zr-9eM"/>
+                            <constraint firstAttribute="trailing" secondItem="tjF-V1-xUS" secondAttribute="trailing" id="dSy-5E-b8j"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tS9-99-efw"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="OPINIONES RECIENTES" image="Facebook Logo" id="UnM-AC-K2N"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Kj-bS-TID" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3030" y="707"/>
+        </scene>
+        <!--TU OPINION-->
+        <scene sceneID="2jg-Uy-60m">
+            <objects>
+                <viewController id="m7m-VC-C6f" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r2P-aO-tQf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ieh-xz-i5Z" customClass="HeaderView" customModule="Califica_Profesores" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="DOb-2P-1gj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ieh-xz-i5Z" secondAttribute="trailing" id="KPp-ET-Oa8"/>
+                            <constraint firstItem="ieh-xz-i5Z" firstAttribute="leading" secondItem="Nob-Gm-fhU" secondAttribute="leading" id="P9b-dr-DVW"/>
+                            <constraint firstItem="ieh-xz-i5Z" firstAttribute="top" secondItem="Nob-Gm-fhU" secondAttribute="top" id="woR-ek-qqf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Nob-Gm-fhU"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="TU OPINION" image="Facebook Logo" id="3P6-Du-b78"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dw8-D1-zAM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3030" y="1478"/>
+        </scene>
+        <!--VISTA GENERAL-->
+        <scene sceneID="R8x-KA-fXz">
+            <objects>
+                <viewController storyboardIdentifier="Test" id="LHn-cW-dXd" customClass="SubjectSummaryGeneralController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eNf-nT-gnG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W8i-r1-ovh" customClass="HeaderView" customModule="Califica_Profesores" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hjl-Qh-G7X"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UpA-9J-SC9">
+                                <rect key="frame" x="0.0" y="70" width="375" height="548"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CALIFICACIÓN GENERAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytD-xw-apR">
+                                        <rect key="frame" x="72.5" y="20" width="230" height="21"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROFESORES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYf-Hp-p7M">
+                                        <rect key="frame" x="127.5" y="131" width="120" height="21"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H1r-6R-bST" customClass="CosmosView" customModule="Cosmos">
+                                        <rect key="frame" x="50" y="61" width="275" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Kjb-U0-Mh9"/>
+                                            <constraint firstAttribute="width" constant="275" id="uip-1k-FFW"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="updateOnTouch" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="minTouchRating">
+                                                <real key="value" value="-1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                <color key="value" red="1" green="0.26867700271265427" blue="0.57932315365295173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                <color key="value" red="0.79313066710000002" green="0.79313066710000002" blue="0.79313066710000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                <real key="value" value="50"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1g-Ar-Tqh">
+                                        <rect key="frame" x="0.0" y="172" width="375" height="376"/>
+                                        <connections>
+                                            <segue destination="XIV-EQ-iIJ" kind="embed" id="s6q-64-nw9"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="n1g-Ar-Tqh" secondAttribute="trailing" id="3do-Pc-P0L"/>
+                                    <constraint firstItem="H1r-6R-bST" firstAttribute="top" secondItem="ytD-xw-apR" secondAttribute="bottom" constant="20" id="4yv-Ov-zV7"/>
+                                    <constraint firstItem="ytD-xw-apR" firstAttribute="top" secondItem="UpA-9J-SC9" secondAttribute="top" constant="20" id="5BW-hL-KIW"/>
+                                    <constraint firstItem="pYf-Hp-p7M" firstAttribute="top" secondItem="H1r-6R-bST" secondAttribute="bottom" constant="20" id="7LA-1L-lch"/>
+                                    <constraint firstItem="pYf-Hp-p7M" firstAttribute="centerX" secondItem="UpA-9J-SC9" secondAttribute="centerX" id="Amv-vk-Dnj"/>
+                                    <constraint firstAttribute="bottom" secondItem="n1g-Ar-Tqh" secondAttribute="bottom" id="JM7-rj-3XW"/>
+                                    <constraint firstItem="n1g-Ar-Tqh" firstAttribute="top" secondItem="pYf-Hp-p7M" secondAttribute="bottom" constant="20" id="QNo-kJ-NUB"/>
+                                    <constraint firstItem="n1g-Ar-Tqh" firstAttribute="leading" secondItem="UpA-9J-SC9" secondAttribute="leading" id="bHs-Xu-jnA"/>
+                                    <constraint firstItem="ytD-xw-apR" firstAttribute="centerX" secondItem="UpA-9J-SC9" secondAttribute="centerX" id="hcf-c9-KYa"/>
+                                    <constraint firstItem="H1r-6R-bST" firstAttribute="centerX" secondItem="UpA-9J-SC9" secondAttribute="centerX" id="sYs-MN-40d"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UpA-9J-SC9" firstAttribute="leading" secondItem="2RR-aS-VKT" secondAttribute="leading" id="Bw9-nq-m8F"/>
+                            <constraint firstItem="2RR-aS-VKT" firstAttribute="bottom" secondItem="UpA-9J-SC9" secondAttribute="bottom" id="FbM-5C-3QY"/>
+                            <constraint firstItem="W8i-r1-ovh" firstAttribute="top" secondItem="2RR-aS-VKT" secondAttribute="top" id="WPO-Ou-6UT"/>
+                            <constraint firstItem="UpA-9J-SC9" firstAttribute="top" secondItem="W8i-r1-ovh" secondAttribute="bottom" id="fGA-Wb-BFP"/>
+                            <constraint firstItem="W8i-r1-ovh" firstAttribute="leading" secondItem="2RR-aS-VKT" secondAttribute="leading" id="g30-li-Cxx"/>
+                            <constraint firstItem="2RR-aS-VKT" firstAttribute="trailing" secondItem="UpA-9J-SC9" secondAttribute="trailing" id="nEz-oG-rLl"/>
+                            <constraint firstItem="W8i-r1-ovh" firstAttribute="trailing" secondItem="2RR-aS-VKT" secondAttribute="trailing" id="seA-Sh-l44"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2RR-aS-VKT"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="VISTA GENERAL" image="Facebook Logo" id="IKa-so-Cug"/>
+                    <connections>
+                        <outlet property="generalRank" destination="H1r-6R-bST" id="UiM-1y-oyB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rzh-AM-ju1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3030" y="19"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="CUy-A8-8zF">
+            <objects>
+                <tabBarController storyboardIdentifier="SubjectSummary" id="4HA-nq-KMs" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UkY-mo-bzm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="LHn-cW-dXd" kind="relationship" relationship="viewControllers" id="TI7-cq-YWg"/>
+                        <segue destination="KKJ-PE-oXz" kind="relationship" relationship="viewControllers" id="miM-os-0fy"/>
+                        <segue destination="m7m-VC-C6f" kind="relationship" relationship="viewControllers" id="5ZS-YA-WGz"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ve-FM-c3e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2086" y="707"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Plg-sS-A5B">
+            <objects>
+                <viewController id="XIV-EQ-iIJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bmj-1T-Cot">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="376"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6dx-hf-Z5I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3823" y="17"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Facebook Logo" width="35" height="35"/>
+    </resources>
 </document>

@@ -13,6 +13,9 @@ class SubjectItem {
     var FacultadName : String?
     var Name: String?
     var ShownName : String?
+    var count : Int?
+    var totalScore : Int?
+    var prof : [String]?
 }
 
 protocol SubjectsNetwork {
@@ -40,6 +43,8 @@ extension SubjectsNetwork {
                 current.FacultadName = childDict["FacultadName"] as? String
                 current.Name = childDict["Name"] as? String
                 current.ShownName = childDict["ShownName"] as? String
+                current.count = childDict["count"] as? Int
+                current.totalScore = childDict["totalScore"] as? Int
                 children.append(current)
             }
             self.arrivedSubjects(subjects: children)

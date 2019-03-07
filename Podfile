@@ -12,4 +12,5 @@ target 'Califica Profesores' do
   pod 'FirebaseUI/Google'
   pod 'SideMenu'
   pod 'CardParts'
+  pod 'Cosmos', '~> 18.0'
 end

@@ -17,6 +17,7 @@
 		B4529CF8222B1F2F00D9856B /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4529CF7222B1F2F00D9856B /* NewsController.swift */; };
 		B454A5DB222F20B800B99B83 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = B454A5DA222F20B800B99B83 /* News.swift */; };
 		B454A5DD222F2B1A00B99B83 /* NewsCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B454A5DC222F2B1A00B99B83 /* NewsCardView.xib */; };
+		B4629CD722318138004A71FF /* SubjectSummaryGeneralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4629CD622318138004A71FF /* SubjectSummaryGeneralController.swift */; };
 		B4981BC3222B6C9100D836B9 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4981BC2222B6C9100D836B9 /* LoginView.xib */; };
 		B4B514E2222E45C000A40623 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B514E1222E45C000A40623 /* Cards.swift */; };
 		B4C6A8E5222ECF2200BB3A15 /* TestCustomCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4C6A8E4222ECF2200BB3A15 /* TestCustomCardView.xib */; };
@@ -42,6 +43,7 @@
 		B4529CF7222B1F2F00D9856B /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
 		B454A5DA222F20B800B99B83 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		B454A5DC222F2B1A00B99B83 /* NewsCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCardView.xib; sourceTree = "<group>"; };
+		B4629CD622318138004A71FF /* SubjectSummaryGeneralController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectSummaryGeneralController.swift; sourceTree = "<group>"; };
 		B4981BC2222B6C9100D836B9 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		B4B514E1222E45C000A40623 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 		B4C6A8E4222ECF2200BB3A15 /* TestCustomCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestCustomCardView.xib; sourceTree = "<group>"; };
@@ -107,6 +109,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		B4629CD5223180F5004A71FF /* SubjectSummary */ = {
+			isa = PBXGroup;
+			children = (
+				B4629CD622318138004A71FF /* SubjectSummaryGeneralController.swift */,
+			);
+			path = SubjectSummary;
+			sourceTree = "<group>";
+		};
 		B4981BC1222B6C7D00D836B9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +168,7 @@
 		B4D44A62222A295E0023BA65 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B4629CD5223180F5004A71FF /* SubjectSummary */,
 				B4D44A65222A29A50023BA65 /* LoginController.swift */,
 				B4529CF7222B1F2F00D9856B /* NewsController.swift */,
 				B4299292222DB59C00D95326 /* SideMenuController.swift */,
@@ -276,6 +287,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Califica Profesores/Pods-Califica Profesores-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CardParts/CardParts.framework",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -294,6 +306,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CardParts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -347,6 +360,7 @@
 			files = (
 				B4F24B032230A8A100F1CED1 /* Subjects.swift in Sources */,
 				B429929B222DBF6100D95326 /* LoginViewController.swift in Sources */,
+				B4629CD722318138004A71FF /* SubjectSummaryGeneralController.swift in Sources */,
 				B4299293222DB59C00D95326 /* SideMenuController.swift in Sources */,
 				B4529CF8222B1F2F00D9856B /* NewsController.swift in Sources */,
 				B454A5DB222F20B800B99B83 /* News.swift in Sources */,

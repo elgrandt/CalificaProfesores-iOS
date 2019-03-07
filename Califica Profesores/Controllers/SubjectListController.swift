@@ -34,6 +34,7 @@ class SubjectListController: CardsViewController, UISearchResultsUpdating, Subje
         super.keyboardWillShow(notification: notification)
         collectionView.contentInset.top = CardParts.theme.cardsViewContentInsetTop
     }
+
 }
 
 class SubjectCard: CardPartsViewController, RoundedCardTrait {
@@ -41,18 +42,29 @@ class SubjectCard: CardPartsViewController, RoundedCardTrait {
     var subject = CardPartTextView(type: .normal)
     var separator = CardPartSeparatorView()
     var school = CardPartTextView(type: .normal)
+    var data : SubjectItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         subject.font = UIFont(name: "AmericanTypewriter-Bold", size: 19.0)
         school.font = UIFont(name: "ArialMT", size: 12.0)
         setupCardParts([subject, separator, school])
+        self.cardTapped {
+            let board = UIStoryboard(name: "Main", bundle: nil)
+            let controller = board.instantiateViewController(withIdentifier: "SubjectSummary") as! UITabBarController
+            let generalSection = controller.children[0] as! SubjectSummaryGeneralController
+            generalSection.subject = self.data
+            self.dismiss(animated: false, completion: {
+                self.present(controller, animated: true, completion: nil)
+            })
+        }
     }
     
     init(data : SubjectItem) {
         super.init(nibName: nil, bundle: nil)
         subject.text = data.ShownName
         school.text = data.FacultadName
+        self.data = data
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -62,4 +74,5 @@ class SubjectCard: CardPartsViewController, RoundedCardTrait {
     func cornerRadius() -> CGFloat {
         return 15.0
     }
+
 }
