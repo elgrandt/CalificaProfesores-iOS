@@ -39,6 +39,9 @@ class SideMenuController: UIViewController {
         case "NOVEDADES":
             nextView = "News"
             break
+        case "BUSCAR MATERIA":
+            nextView = "BuscarMateria"
+            break
         default:
             break
         }

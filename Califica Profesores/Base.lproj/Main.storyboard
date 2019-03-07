@@ -40,27 +40,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEWS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nqe-oa-Mr2">
-                                <rect key="frame" x="163" y="323" width="49" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h8e-M0-TBa" customClass="HeaderView" customModule="Califica_Profesores" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="375" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ngL-a8-TaT"/>
                                 </constraints>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epq-mr-hFZ">
+                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                <connections>
+                                    <segue destination="oXE-wc-UhQ" kind="embed" id="5WZ-gD-AFl"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="hav-UP-4cO" firstAttribute="bottom" secondItem="epq-mr-hFZ" secondAttribute="bottom" id="CZa-Uf-9Wh"/>
+                            <constraint firstItem="epq-mr-hFZ" firstAttribute="leading" secondItem="hav-UP-4cO" secondAttribute="leading" id="GpA-C9-apk"/>
                             <constraint firstItem="h8e-M0-TBa" firstAttribute="leading" secondItem="hav-UP-4cO" secondAttribute="leading" id="VWw-eI-fQb"/>
-                            <constraint firstItem="Nqe-oa-Mr2" firstAttribute="centerY" secondItem="OPb-KR-R3l" secondAttribute="centerY" id="hdF-lZ-Lgf"/>
+                            <constraint firstItem="epq-mr-hFZ" firstAttribute="top" secondItem="h8e-M0-TBa" secondAttribute="bottom" id="Wwr-4F-UbF"/>
+                            <constraint firstItem="hav-UP-4cO" firstAttribute="trailing" secondItem="epq-mr-hFZ" secondAttribute="trailing" id="a0u-Q9-HPX"/>
                             <constraint firstItem="h8e-M0-TBa" firstAttribute="trailing" secondItem="hav-UP-4cO" secondAttribute="trailing" id="hr2-C0-dcx"/>
                             <constraint firstItem="h8e-M0-TBa" firstAttribute="top" secondItem="hav-UP-4cO" secondAttribute="top" id="huz-ZM-8Kp"/>
-                            <constraint firstItem="Nqe-oa-Mr2" firstAttribute="centerX" secondItem="OPb-KR-R3l" secondAttribute="centerX" id="o7z-Tp-vQH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hav-UP-4cO"/>
                     </view>
@@ -210,7 +212,60 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pvF-gL-IFH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1271" y="829"/>
+            <point key="canvasLocation" x="-354" y="708"/>
+        </scene>
+        <!--Subject Search Controller-->
+        <scene sceneID="LcW-6y-Drh">
+            <objects>
+                <viewController storyboardIdentifier="BuscarMateria" id="ylN-2l-OM6" customClass="SubjectSearchController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LHE-xr-hvf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8RS-dF-AXa" customClass="HeaderView" customModule="Califica_Profesores" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="VWs-Mh-gaa"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4cq-nW-aln">
+                                <rect key="frame" x="0.0" y="70" width="375" height="56"/>
+                                <color key="backgroundColor" red="1" green="0.08706427624641333" blue="0.04403306745786939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="UPH-fi-igP"/>
+                                </constraints>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQn-zA-2K0">
+                                <rect key="frame" x="0.0" y="126" width="375" height="541"/>
+                                <connections>
+                                    <segue destination="7M1-fW-CVQ" kind="embed" id="ORa-LW-Hfy"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4cq-nW-aln" firstAttribute="leading" secondItem="V2e-au-i6m" secondAttribute="leading" id="6Bj-a1-kva"/>
+                            <constraint firstItem="CQn-zA-2K0" firstAttribute="top" secondItem="4cq-nW-aln" secondAttribute="bottom" id="6WO-Gg-3cf"/>
+                            <constraint firstItem="CQn-zA-2K0" firstAttribute="trailing" secondItem="V2e-au-i6m" secondAttribute="trailing" id="FyM-St-HnI"/>
+                            <constraint firstItem="V2e-au-i6m" firstAttribute="trailing" secondItem="4cq-nW-aln" secondAttribute="trailing" id="OJk-gm-KLG"/>
+                            <constraint firstItem="CQn-zA-2K0" firstAttribute="leading" secondItem="V2e-au-i6m" secondAttribute="leading" id="OyZ-XS-lma"/>
+                            <constraint firstItem="4cq-nW-aln" firstAttribute="top" secondItem="8RS-dF-AXa" secondAttribute="bottom" id="Pi6-ve-b2j"/>
+                            <constraint firstItem="CQn-zA-2K0" firstAttribute="bottom" secondItem="V2e-au-i6m" secondAttribute="bottom" id="khU-Rq-kT4"/>
+                            <constraint firstItem="8RS-dF-AXa" firstAttribute="top" secondItem="V2e-au-i6m" secondAttribute="top" id="p5l-6c-3ou"/>
+                            <constraint firstItem="8RS-dF-AXa" firstAttribute="leading" secondItem="V2e-au-i6m" secondAttribute="leading" id="t5w-FT-vyS"/>
+                            <constraint firstItem="8RS-dF-AXa" firstAttribute="trailing" secondItem="V2e-au-i6m" secondAttribute="trailing" id="yjv-mZ-LQX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="V2e-au-i6m"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBarContainer" destination="4cq-nW-aln" id="g9M-i6-Kar"/>
+                        <outlet property="subjectSearchView" destination="CQn-zA-2K0" id="0Cb-O1-c4p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Owr-Bt-8ds" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="480.80000000000001" y="706.59670164917543"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="d89-PF-qGQ">
@@ -233,7 +288,36 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jpc-uk-ZUj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="481" y="829"/>
+            <point key="canvasLocation" x="-1148" y="708"/>
+        </scene>
+        <!--News Cards Controller-->
+        <scene sceneID="Me1-wa-SpM">
+            <objects>
+                <viewController storyboardIdentifier="NewsCards" id="oXE-wc-UhQ" customClass="NewsCardsController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8r4-8p-pfi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="5sT-nC-qWG"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Psg-ES-pDE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1270" y="18"/>
+        </scene>
+        <!--Subject List Controller-->
+        <scene sceneID="5zn-la-jVZ">
+            <objects>
+                <viewController storyboardIdentifier="SubjectList" id="7M1-fW-CVQ" customClass="SubjectListController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="181-5k-ytt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="541"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SsR-ca-JSZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1270" y="707"/>
         </scene>
     </scenes>
 </document>

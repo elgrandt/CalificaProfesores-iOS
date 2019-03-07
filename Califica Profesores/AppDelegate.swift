@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseUI
 import SideMenu
+import CardParts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,10 +23,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SideMenuManager.default.menuWidth = max(round(min((UIScreen.main.bounds.width), (UIScreen.main.bounds.height)) * 0.80), 240)
     }
     
+    func configureCardParts() {
+        var theme : CardPartsTheme =  CardPartsMintTheme()
+        theme.cardsViewContentInsetTop = 14.0
+        theme.apply()
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         configureSideMenu()
+        configureCardParts()
         return true
     }
     
