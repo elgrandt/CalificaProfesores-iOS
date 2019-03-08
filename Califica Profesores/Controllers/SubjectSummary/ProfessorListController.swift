@@ -8,6 +8,8 @@
 
 import UIKit
 import CardParts
+import LinearProgressView
+import Cosmos
 
 class ProfessorListController: CardsViewController, ProfessorsNetwork {
     
@@ -60,6 +62,10 @@ public class ProfessorInfoCardView: UIView, CardPartView {
     var professor : ProfessorItem?
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var rankStars: CosmosView!
+    @IBOutlet weak var lessonsBar: LinearProgressView!
+    @IBOutlet weak var knowledgeBar: LinearProgressView!
+    @IBOutlet weak var amabilityBar: LinearProgressView!
     
     init(data: ProfessorItem) {
         super.init(frame: CGRect.zero)
@@ -67,6 +73,12 @@ public class ProfessorInfoCardView: UIView, CardPartView {
         commonInit()
         self.professor = data
         self.nameLabel.text = data.Name
+        if (professor!.count! != 0) {
+            rankStars.rating = Double(professor!.amabilidad! + professor!.clases! + professor!.conocimiento!) / (3.0*Double(professor!.count!))
+            lessonsBar.setProgress(Float(professor!.clases!)/Float(professor!.count!), animated: true)
+            knowledgeBar.setProgress(Float(professor!.conocimiento!)/Float(professor!.count!), animated: true)
+            amabilityBar.setProgress(Float(professor!.amabilidad!)/Float(professor!.count!), animated: true)
+        }
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -83,10 +95,10 @@ public class ProfessorInfoCardView: UIView, CardPartView {
     }
     
     func commonInit() {
-        self.backgroundColor = .red
+        
     }
     
     override public var intrinsicContentSize: CGSize {
-        return CGSize(width: UIView.noIntrinsicMetric, height: 60)
+        return CGSize(width: UIView.noIntrinsicMetric, height: 65)
     }
 }

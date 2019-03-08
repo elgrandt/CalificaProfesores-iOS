@@ -16,6 +16,7 @@ class SubjectItem {
     var count : Int?
     var totalScore : Int?
     var prof : [String]?
+    var id : String?
 }
 
 protocol SubjectsNetwork {
@@ -24,12 +25,18 @@ protocol SubjectsNetwork {
 
 extension SubjectsNetwork {
     func searchSubjects(keyword : String) {
+        let keywordModified = keyword.lowercased()
+            .replacingOccurrences(of: "á", with: "a")
+            .replacingOccurrences(of: "é", with: "e")
+            .replacingOccurrences(of: "í", with: "i")
+            .replacingOccurrences(of: "ó", with: "o")
+            .replacingOccurrences(of: "ú", with: "u")
         let ref = Database.database().reference()
         ref
         .child("Materias")
         .queryOrdered(byChild: "Name")
-        .queryStarting(atValue: keyword.lowercased())
-        .queryEnding(atValue: keyword.lowercased() + "\u{f8ff}")
+        .queryStarting(atValue: keywordModified)
+        .queryEnding(atValue: keywordModified + "\u{f8ff}")
         .observeSingleEvent(of: .value, with: { (snapshot) in
             var children : [SubjectItem] = []
             for child in snapshot.children {
@@ -39,6 +46,7 @@ extension SubjectsNetwork {
                 }
                 let childDict = childSnapshot.value as! NSDictionary
                 let current = SubjectItem()
+                current.id = childSnapshot.key
                 current.Facultad = childDict["Facultad"] as? String
                 current.FacultadName = childDict["FacultadName"] as? String
                 current.Name = childDict["Name"] as? String

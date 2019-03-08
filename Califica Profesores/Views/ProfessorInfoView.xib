@@ -12,27 +12,31 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfessorInfoCardView" customModule="Califica_Profesores" customModuleProvider="target">
             <connections>
+                <outlet property="amabilityBar" destination="uCD-IJ-tcq" id="jqJ-x6-lOm"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="cbV-ox-O4i"/>
+                <outlet property="knowledgeBar" destination="0v8-tb-JSK" id="dCV-Xo-O11"/>
+                <outlet property="lessonsBar" destination="Qtb-Ud-ocu" id="YL6-GW-yUi"/>
                 <outlet property="nameLabel" destination="cbV-DJ-Nw4" id="gyb-X4-mWZ"/>
+                <outlet property="rankStars" destination="rRg-Bf-3oD" id="Ax2-rh-N85"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbV-DJ-Nw4">
-                    <rect key="frame" x="0.0" y="0.0" width="235" height="22.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="261" height="22.5"/>
                     <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rRg-Bf-3oD" customClass="CosmosView" customModule="Cosmos">
-                    <rect key="frame" x="245" y="0.0" width="120" height="20"/>
+                    <rect key="frame" x="271" y="2" width="94" height="14"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="120" id="pG7-OB-tlk"/>
-                        <constraint firstAttribute="height" constant="20" id="s46-gr-gb2"/>
+                        <constraint firstAttribute="width" constant="94" id="pG7-OB-tlk"/>
+                        <constraint firstAttribute="height" constant="14" id="s46-gr-gb2"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
@@ -47,10 +51,17 @@
                         <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
                             <color key="value" red="0.86022506480000005" green="0.86022506480000005" blue="0.86022506480000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                            <real key="value" value="18"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="updateOnTouch" value="NO"/>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qtb-Ud-ocu" customClass="LinearProgressView" customModule="LinearProgressView">
-                    <rect key="frame" x="0.0" y="40" width="115" height="20"/>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qtb-Ud-ocu" customClass="LinearProgressView" customModule="LinearProgressView">
+                    <rect key="frame" x="0.0" y="45" width="115" height="20"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="bYv-2l-kIT"/>
@@ -64,21 +75,18 @@
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isCornersRounded" value="YES"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
-                            <real key="value" value="100"/>
+                            <real key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
-                            <real key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="progress">
-                            <real key="value" value="50"/>
+                            <real key="value" value="0.0"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="barInset">
                             <real key="value" value="5"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0v8-tb-JSK" customClass="LinearProgressView" customModule="LinearProgressView">
-                    <rect key="frame" x="130" y="40" width="115" height="20"/>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0v8-tb-JSK" customClass="LinearProgressView" customModule="LinearProgressView">
+                    <rect key="frame" x="130" y="45" width="115" height="20"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="mOS-rr-mb2"/>
@@ -92,21 +100,18 @@
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isCornersRounded" value="YES"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
-                            <real key="value" value="100"/>
+                            <real key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
-                            <real key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="progress">
-                            <real key="value" value="50"/>
+                            <real key="value" value="0.0"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="barInset">
                             <real key="value" value="5"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uCD-IJ-tcq" customClass="LinearProgressView" customModule="LinearProgressView">
-                    <rect key="frame" x="260" y="40" width="115" height="20"/>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uCD-IJ-tcq" customClass="LinearProgressView" customModule="LinearProgressView">
+                    <rect key="frame" x="260" y="45" width="115" height="20"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="o3q-Ik-QsR"/>
@@ -120,31 +125,55 @@
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isCornersRounded" value="YES"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
-                            <real key="value" value="100"/>
+                            <real key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
-                            <real key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="progress">
-                            <real key="value" value="50"/>
+                            <real key="value" value="0.0"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="barInset">
                             <real key="value" value="5"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clases" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waK-nK-EEH">
+                    <rect key="frame" x="0.0" y="33" width="115" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conocimiento" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMn-9W-YLf">
+                    <rect key="frame" x="130" y="33" width="115" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amabilidad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJw-3q-mjh">
+                    <rect key="frame" x="260" y="33" width="115" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="0v8-tb-JSK" firstAttribute="top" secondItem="sMn-9W-YLf" secondAttribute="bottom" id="13x-RN-zid"/>
+                <constraint firstItem="xJw-3q-mjh" firstAttribute="leading" secondItem="sMn-9W-YLf" secondAttribute="trailing" constant="15" id="4do-RD-rxB"/>
                 <constraint firstItem="0v8-tb-JSK" firstAttribute="leading" secondItem="Qtb-Ud-ocu" secondAttribute="trailing" constant="15" id="4oR-su-n1f"/>
+                <constraint firstItem="uCD-IJ-tcq" firstAttribute="width" secondItem="xJw-3q-mjh" secondAttribute="width" id="4y7-I9-Vs3"/>
                 <constraint firstItem="cbV-DJ-Nw4" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="CUX-uj-5uD"/>
                 <constraint firstItem="uCD-IJ-tcq" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="FPZ-8N-9Zq"/>
+                <constraint firstItem="rRg-Bf-3oD" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="2" id="Hz2-pV-rhU"/>
                 <constraint firstItem="0v8-tb-JSK" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="IRj-PJ-4Mh"/>
                 <constraint firstItem="uCD-IJ-tcq" firstAttribute="leading" secondItem="0v8-tb-JSK" secondAttribute="trailing" constant="15" id="ImT-S5-VKt"/>
                 <constraint firstItem="uCD-IJ-tcq" firstAttribute="width" secondItem="Qtb-Ud-ocu" secondAttribute="width" id="Iur-Si-ONF"/>
                 <constraint firstItem="rRg-Bf-3oD" firstAttribute="leading" secondItem="cbV-DJ-Nw4" secondAttribute="trailing" constant="10" id="JE6-QR-Y1J"/>
-                <constraint firstItem="rRg-Bf-3oD" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="arS-aK-3wI"/>
+                <constraint firstItem="Qtb-Ud-ocu" firstAttribute="top" secondItem="waK-nK-EEH" secondAttribute="bottom" id="KcC-JY-38l"/>
+                <constraint firstItem="uCD-IJ-tcq" firstAttribute="top" secondItem="xJw-3q-mjh" secondAttribute="bottom" id="PWU-cZ-Dgo"/>
+                <constraint firstItem="waK-nK-EEH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Q6e-1S-KmH"/>
+                <constraint firstItem="sMn-9W-YLf" firstAttribute="leading" secondItem="waK-nK-EEH" secondAttribute="trailing" constant="15" id="eCb-jf-eGJ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Qtb-Ud-ocu" secondAttribute="bottom" id="eQt-Pv-CMe"/>
+                <constraint firstItem="0v8-tb-JSK" firstAttribute="width" secondItem="sMn-9W-YLf" secondAttribute="width" id="hDr-3y-Heh"/>
+                <constraint firstItem="Qtb-Ud-ocu" firstAttribute="width" secondItem="waK-nK-EEH" secondAttribute="width" id="jth-aF-c1M"/>
                 <constraint firstItem="0v8-tb-JSK" firstAttribute="width" secondItem="Qtb-Ud-ocu" secondAttribute="width" id="nYT-7f-K17"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="rRg-Bf-3oD" secondAttribute="trailing" constant="10" id="oMe-sY-W64"/>
                 <constraint firstItem="Qtb-Ud-ocu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="qXv-cH-sXz"/>

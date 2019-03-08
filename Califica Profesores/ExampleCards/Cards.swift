@@ -68,7 +68,7 @@ public class CustomCardView: UIView, CardPartView {
     }
     
     func commonInit() {
-        self.backgroundColor = .red
+        
     }
     
     override public var intrinsicContentSize: CGSize {

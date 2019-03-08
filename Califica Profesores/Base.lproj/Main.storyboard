@@ -322,7 +322,7 @@
         <!--OPINIONES RECIENTES-->
         <scene sceneID="dAf-ll-x4M">
             <objects>
-                <viewController id="KKJ-PE-oXz" sceneMemberID="viewController">
+                <viewController id="KKJ-PE-oXz" customClass="SubjectSummaryOpinionsController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pqw-QO-4f5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -334,12 +334,22 @@
                                     <constraint firstAttribute="height" constant="50" id="0MJ-oX-IFn"/>
                                 </constraints>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iI1-Of-ioy">
+                                <rect key="frame" x="0.0" y="70" width="375" height="548"/>
+                                <connections>
+                                    <segue destination="2av-37-CGJ" kind="embed" id="YP0-LL-7GN"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="iI1-Of-ioy" firstAttribute="leading" secondItem="tS9-99-efw" secondAttribute="leading" id="FUN-UK-Rb5"/>
+                            <constraint firstItem="tS9-99-efw" firstAttribute="bottom" secondItem="iI1-Of-ioy" secondAttribute="bottom" id="Qcw-1r-yMC"/>
                             <constraint firstItem="tjF-V1-xUS" firstAttribute="leading" secondItem="tS9-99-efw" secondAttribute="leading" id="WxZ-M3-Ltz"/>
                             <constraint firstItem="tjF-V1-xUS" firstAttribute="top" secondItem="tS9-99-efw" secondAttribute="top" id="X8R-Zr-9eM"/>
+                            <constraint firstItem="iI1-Of-ioy" firstAttribute="top" secondItem="tjF-V1-xUS" secondAttribute="bottom" id="Xtt-lz-UWE"/>
                             <constraint firstAttribute="trailing" secondItem="tjF-V1-xUS" secondAttribute="trailing" id="dSy-5E-b8j"/>
+                            <constraint firstItem="tS9-99-efw" firstAttribute="trailing" secondItem="iI1-Of-ioy" secondAttribute="trailing" id="xqo-Dn-ZxS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tS9-99-efw"/>
                     </view>
@@ -410,10 +420,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H1r-6R-bST" customClass="CosmosView" customModule="Cosmos">
-                                        <rect key="frame" x="50" y="65" width="275" height="50"/>
+                                        <rect key="frame" x="52.5" y="65" width="270" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Kjb-U0-Mh9"/>
-                                            <constraint firstAttribute="width" constant="275" id="uip-1k-FFW"/>
+                                            <constraint firstAttribute="width" constant="270" id="uip-1k-FFW"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="rating">
@@ -479,7 +489,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="VISTA GENERAL" image="Facebook Logo" id="IKa-so-Cug"/>
                     <connections>
-                        <outlet property="generalRank" destination="H1r-6R-bST" id="UiM-1y-oyB"/>
+                        <outlet property="generalRank" destination="H1r-6R-bST" id="aM5-i8-C6c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rzh-AM-ju1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -519,6 +529,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6dx-hf-Z5I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3823" y="17"/>
+        </scene>
+        <!--Subject Opinions List Controller-->
+        <scene sceneID="oDc-Vl-eqg">
+            <objects>
+                <viewController id="2av-37-CGJ" customClass="SubjectOpinionsListController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HYB-9h-7xm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gen-7i-1Br" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3822" y="706"/>
         </scene>
     </scenes>
     <resources>

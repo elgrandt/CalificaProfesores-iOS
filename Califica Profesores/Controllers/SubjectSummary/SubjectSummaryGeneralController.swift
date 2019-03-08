@@ -16,11 +16,16 @@ class SubjectSummaryGeneralController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if (subject != nil && subject!.count! != 0) {
+        if (subject == nil) { return }
+        if (subject!.count! != 0) {
             generalRank.rating = Double(subject!.totalScore!) / Double(2*subject!.count!)
         }
         let professors = self.children.first as! ProfessorListController
-        professors.loadProfessors(professors: subject?.prof ?? [])
+        professors.loadProfessors(professors: subject!.prof ?? [])
+    }
+    
+    func loadSubject(subject: SubjectItem) {
+        self.subject = subject
     }
 
 }
