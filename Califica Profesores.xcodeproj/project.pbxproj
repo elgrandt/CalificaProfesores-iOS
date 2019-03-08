@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		37454543404C87B9CF4D5239 /* Pods_Califica_Profesores.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE38EAF0AAB53FC43F7C0A07 /* Pods_Califica_Profesores.framework */; };
+		B4214CBE223220B000CB94A7 /* ProfessorListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4214CBD223220B000CB94A7 /* ProfessorListController.swift */; };
+		B4214CC02232226000CB94A7 /* Professors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4214CBF2232226000CB94A7 /* Professors.swift */; };
+		B4214CC22232341B00CB94A7 /* ProfessorInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4214CC12232341B00CB94A7 /* ProfessorInfoView.xib */; };
 		B4299293222DB59C00D95326 /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4299292222DB59C00D95326 /* SideMenuController.swift */; };
 		B4299297222DBC7B00D95326 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4299296222DBC7B00D95326 /* LoadingView.xib */; };
 		B4299299222DBC9200D95326 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4299298222DBC9200D95326 /* LoadingView.swift */; };
@@ -34,6 +37,9 @@
 
 /* Begin PBXFileReference section */
 		63F12D3BC64E930F672D4AA1 /* Pods-Califica Profesores.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Califica Profesores.debug.xcconfig"; path = "Target Support Files/Pods-Califica Profesores/Pods-Califica Profesores.debug.xcconfig"; sourceTree = "<group>"; };
+		B4214CBD223220B000CB94A7 /* ProfessorListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorListController.swift; sourceTree = "<group>"; };
+		B4214CBF2232226000CB94A7 /* Professors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Professors.swift; sourceTree = "<group>"; };
+		B4214CC12232341B00CB94A7 /* ProfessorInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfessorInfoView.xib; sourceTree = "<group>"; };
 		B4299292222DB59C00D95326 /* SideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
 		B4299296222DBC7B00D95326 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		B4299298222DBC9200D95326 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -105,6 +111,7 @@
 			children = (
 				B454A5DA222F20B800B99B83 /* News.swift */,
 				B4F24B022230A8A100F1CED1 /* Subjects.swift */,
+				B4214CBF2232226000CB94A7 /* Professors.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -113,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				B4629CD622318138004A71FF /* SubjectSummaryGeneralController.swift */,
+				B4214CBD223220B000CB94A7 /* ProfessorListController.swift */,
 			);
 			path = SubjectSummary;
 			sourceTree = "<group>";
@@ -126,6 +134,7 @@
 				B429929C222DD05600D95326 /* HeaderView.xib */,
 				B429929E222DD07400D95326 /* HeaderView.swift */,
 				B454A5DC222F2B1A00B99B83 /* NewsCardView.xib */,
+				B4214CC12232341B00CB94A7 /* ProfessorInfoView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -244,6 +253,7 @@
 				B4D44A68222A34290023BA65 /* GoogleService-Info.plist in Resources */,
 				B4D44A58222A28D70023BA65 /* Assets.xcassets in Resources */,
 				B4299297222DBC7B00D95326 /* LoadingView.xib in Resources */,
+				B4214CC22232341B00CB94A7 /* ProfessorInfoView.xib in Resources */,
 				B4981BC3222B6C9100D836B9 /* LoginView.xib in Resources */,
 				B4D44A56222A28D50023BA65 /* Main.storyboard in Resources */,
 				B429929D222DD05600D95326 /* HeaderView.xib in Resources */,
@@ -292,6 +302,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/LinearProgressView/LinearProgressView.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
@@ -311,6 +322,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LinearProgressView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
@@ -358,10 +370,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4214CC02232226000CB94A7 /* Professors.swift in Sources */,
 				B4F24B032230A8A100F1CED1 /* Subjects.swift in Sources */,
 				B429929B222DBF6100D95326 /* LoginViewController.swift in Sources */,
 				B4629CD722318138004A71FF /* SubjectSummaryGeneralController.swift in Sources */,
 				B4299293222DB59C00D95326 /* SideMenuController.swift in Sources */,
+				B4214CBE223220B000CB94A7 /* ProfessorListController.swift in Sources */,
 				B4529CF8222B1F2F00D9856B /* NewsController.swift in Sources */,
 				B454A5DB222F20B800B99B83 /* News.swift in Sources */,
 				B4B514E2222E45C000A40623 /* Cards.swift in Sources */,

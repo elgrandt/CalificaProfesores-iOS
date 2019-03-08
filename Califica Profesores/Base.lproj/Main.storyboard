@@ -398,19 +398,19 @@
                                 <rect key="frame" x="0.0" y="70" width="375" height="548"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CALIFICACIÓN GENERAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytD-xw-apR">
-                                        <rect key="frame" x="72.5" y="20" width="230" height="21"/>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="17"/>
+                                        <rect key="frame" x="52.5" y="20" width="270.5" height="25"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROFESORES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYf-Hp-p7M">
-                                        <rect key="frame" x="127.5" y="131" width="120" height="21"/>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="17"/>
+                                        <rect key="frame" x="117" y="135" width="141" height="25"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H1r-6R-bST" customClass="CosmosView" customModule="Cosmos">
-                                        <rect key="frame" x="50" y="61" width="275" height="50"/>
+                                        <rect key="frame" x="50" y="65" width="275" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Kjb-U0-Mh9"/>
                                             <constraint firstAttribute="width" constant="275" id="uip-1k-FFW"/>
@@ -444,7 +444,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1g-Ar-Tqh">
-                                        <rect key="frame" x="0.0" y="172" width="375" height="376"/>
+                                        <rect key="frame" x="0.0" y="160" width="375" height="388"/>
                                         <connections>
                                             <segue destination="XIV-EQ-iIJ" kind="embed" id="s6q-64-nw9"/>
                                         </connections>
@@ -458,7 +458,7 @@
                                     <constraint firstItem="pYf-Hp-p7M" firstAttribute="top" secondItem="H1r-6R-bST" secondAttribute="bottom" constant="20" id="7LA-1L-lch"/>
                                     <constraint firstItem="pYf-Hp-p7M" firstAttribute="centerX" secondItem="UpA-9J-SC9" secondAttribute="centerX" id="Amv-vk-Dnj"/>
                                     <constraint firstAttribute="bottom" secondItem="n1g-Ar-Tqh" secondAttribute="bottom" id="JM7-rj-3XW"/>
-                                    <constraint firstItem="n1g-Ar-Tqh" firstAttribute="top" secondItem="pYf-Hp-p7M" secondAttribute="bottom" constant="20" id="QNo-kJ-NUB"/>
+                                    <constraint firstItem="n1g-Ar-Tqh" firstAttribute="top" secondItem="pYf-Hp-p7M" secondAttribute="bottom" id="QNo-kJ-NUB"/>
                                     <constraint firstItem="n1g-Ar-Tqh" firstAttribute="leading" secondItem="UpA-9J-SC9" secondAttribute="leading" id="bHs-Xu-jnA"/>
                                     <constraint firstItem="ytD-xw-apR" firstAttribute="centerX" secondItem="UpA-9J-SC9" secondAttribute="centerX" id="hcf-c9-KYa"/>
                                     <constraint firstItem="H1r-6R-bST" firstAttribute="centerX" secondItem="UpA-9J-SC9" secondAttribute="centerX" id="sYs-MN-40d"/>
@@ -505,14 +505,15 @@
             </objects>
             <point key="canvasLocation" x="2086" y="707"/>
         </scene>
-        <!--View Controller-->
+        <!--Professor List Controller-->
         <scene sceneID="Plg-sS-A5B">
             <objects>
-                <viewController id="XIV-EQ-iIJ" sceneMemberID="viewController">
+                <viewController id="XIV-EQ-iIJ" customClass="ProfessorListController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bmj-1T-Cot">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="376"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="388"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="4fi-kc-0TE"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6dx-hf-Z5I" userLabel="First Responder" sceneMemberID="firstResponder"/>

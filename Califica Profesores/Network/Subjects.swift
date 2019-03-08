@@ -45,6 +45,11 @@ extension SubjectsNetwork {
                 current.ShownName = childDict["ShownName"] as? String
                 current.count = childDict["count"] as? Int
                 current.totalScore = childDict["totalScore"] as? Int
+                current.prof = []
+                for prof in childSnapshot.childSnapshot(forPath: "Prof").children {
+                    let profSnapshot = prof as! DataSnapshot
+                    current.prof!.append(profSnapshot.key)
+                }
                 children.append(current)
             }
             self.arrivedSubjects(subjects: children)

@@ -19,10 +19,8 @@ class SubjectSummaryGeneralController: UIViewController {
         if (subject != nil && subject!.count! != 0) {
             generalRank.rating = Double(subject!.totalScore!) / Double(2*subject!.count!)
         }
-    }
-    
-    func arrivedSubjectCalification(calification: Int) {
-        
+        let professors = self.children.first as! ProfessorListController
+        professors.loadProfessors(professors: subject?.prof ?? [])
     }
 
 }
