@@ -9,28 +9,26 @@
 import UIKit
 import CardParts
 import Cosmos
+import XLPagerTabStrip
 
-class SubjectSummaryOpinionsController: UIViewController {
+class SubjectSummaryOpinionsController: CardsViewController, SubjectOpinionNetwork, IndicatorInfoProvider {
+    
     var subject: SubjectItem?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let opinions = self.children[0] as! SubjectOpinionsListController
-        opinions.getOpinions(subjectID: subject!.id!)
-    }
-    
-    func loadSubject(subject: SubjectItem) {
-        self.subject = subject
-    }
-}
-
-class SubjectOpinionsListController: CardsViewController, SubjectOpinionNetwork {
     
     var cards: [CardController] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadCards(cards: cards)
+        self.getOpinions(subjectID: subject!.id!)
+    }
+    
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: "OPINIONES RECIENTES")
+    }
+    
+    func loadSubject(subject: SubjectItem) {
+        self.subject = subject
     }
     
     func arrivedOpinions(opinions: [OpinionItem]) {

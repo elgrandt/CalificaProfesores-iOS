@@ -319,38 +319,73 @@
             </objects>
             <point key="canvasLocation" x="1270" y="707"/>
         </scene>
-        <!--OPINIONES RECIENTES-->
-        <scene sceneID="dAf-ll-x4M">
+        <!--Subject Summary Pager-->
+        <scene sceneID="Yly-bS-4wr">
             <objects>
-                <viewController id="KKJ-PE-oXz" customClass="SubjectSummaryOpinionsController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Pqw-QO-4f5">
+                <viewController storyboardIdentifier="SubjectSummary" id="mmd-hs-mGX" customClass="SubjectSummaryPager" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rgs-MD-iTd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tjF-V1-xUS" customClass="HeaderView" customModule="Califica_Profesores" customModuleProvider="target">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HTv-eu-ks4">
+                                <rect key="frame" x="0.0" y="115" width="375" height="552"/>
+                            </scrollView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="stE-2c-MOh" customClass="ButtonBarView" customModule="XLPagerTabStrip">
+                                <rect key="frame" x="0.0" y="70" width="375" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Ek7-Wn-lCD"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Qcn-XF-R9h">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hHs-Q0-zfp" customClass="HeaderView" customModule="Califica_Profesores" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="375" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="0MJ-oX-IFn"/>
+                                    <constraint firstAttribute="height" constant="50" id="3gN-ND-GMI"/>
                                 </constraints>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iI1-Of-ioy">
-                                <rect key="frame" x="0.0" y="70" width="375" height="548"/>
-                                <connections>
-                                    <segue destination="2av-37-CGJ" kind="embed" id="YP0-LL-7GN"/>
-                                </connections>
-                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="iI1-Of-ioy" firstAttribute="leading" secondItem="tS9-99-efw" secondAttribute="leading" id="FUN-UK-Rb5"/>
-                            <constraint firstItem="tS9-99-efw" firstAttribute="bottom" secondItem="iI1-Of-ioy" secondAttribute="bottom" id="Qcw-1r-yMC"/>
-                            <constraint firstItem="tjF-V1-xUS" firstAttribute="leading" secondItem="tS9-99-efw" secondAttribute="leading" id="WxZ-M3-Ltz"/>
-                            <constraint firstItem="tjF-V1-xUS" firstAttribute="top" secondItem="tS9-99-efw" secondAttribute="top" id="X8R-Zr-9eM"/>
-                            <constraint firstItem="iI1-Of-ioy" firstAttribute="top" secondItem="tjF-V1-xUS" secondAttribute="bottom" id="Xtt-lz-UWE"/>
-                            <constraint firstAttribute="trailing" secondItem="tjF-V1-xUS" secondAttribute="trailing" id="dSy-5E-b8j"/>
-                            <constraint firstItem="tS9-99-efw" firstAttribute="trailing" secondItem="iI1-Of-ioy" secondAttribute="trailing" id="xqo-Dn-ZxS"/>
+                            <constraint firstItem="stE-2c-MOh" firstAttribute="top" secondItem="hHs-Q0-zfp" secondAttribute="bottom" id="1pi-5z-EOa"/>
+                            <constraint firstItem="hHs-Q0-zfp" firstAttribute="trailing" secondItem="G5y-ge-t66" secondAttribute="trailing" id="2jE-bD-TVY"/>
+                            <constraint firstItem="stE-2c-MOh" firstAttribute="leading" secondItem="G5y-ge-t66" secondAttribute="leading" id="4Ll-Dk-sgQ"/>
+                            <constraint firstItem="hHs-Q0-zfp" firstAttribute="leading" secondItem="G5y-ge-t66" secondAttribute="leading" id="IzX-j9-e7g"/>
+                            <constraint firstItem="G5y-ge-t66" firstAttribute="trailing" secondItem="stE-2c-MOh" secondAttribute="trailing" id="Rlq-gf-0Py"/>
+                            <constraint firstItem="hHs-Q0-zfp" firstAttribute="top" secondItem="G5y-ge-t66" secondAttribute="top" id="Ruy-Z4-vt2"/>
+                            <constraint firstItem="stE-2c-MOh" firstAttribute="leading" secondItem="G5y-ge-t66" secondAttribute="leading" id="VXG-vm-nek"/>
+                            <constraint firstItem="HTv-eu-ks4" firstAttribute="top" secondItem="stE-2c-MOh" secondAttribute="bottom" id="WW9-LS-Kzw"/>
+                            <constraint firstItem="G5y-ge-t66" firstAttribute="bottom" secondItem="HTv-eu-ks4" secondAttribute="bottom" id="bxs-HE-l58"/>
+                            <constraint firstItem="HTv-eu-ks4" firstAttribute="leading" secondItem="G5y-ge-t66" secondAttribute="leading" id="cLg-8m-1Xs"/>
+                            <constraint firstItem="G5y-ge-t66" firstAttribute="trailing" secondItem="HTv-eu-ks4" secondAttribute="trailing" id="s88-Lw-lx5"/>
+                            <constraint firstItem="stE-2c-MOh" firstAttribute="trailing" secondItem="G5y-ge-t66" secondAttribute="trailing" id="yOY-0v-sqo"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="G5y-ge-t66"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonBarView" destination="stE-2c-MOh" id="qoE-o1-Cbt"/>
+                        <outlet property="containerView" destination="HTv-eu-ks4" id="Zap-wc-XL8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VQy-qB-1B7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2149.5999999999999" y="706.59670164917543"/>
+        </scene>
+        <!--OPINIONES RECIENTES-->
+        <scene sceneID="dAf-ll-x4M">
+            <objects>
+                <viewController storyboardIdentifier="SubjectOpinions" id="KKJ-PE-oXz" customClass="SubjectSummaryOpinionsController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pqw-QO-4f5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="tS9-99-efw"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="OPINIONES RECIENTES" image="Facebook Logo" id="UnM-AC-K2N"/>
@@ -362,24 +397,46 @@
         <!--TU OPINION-->
         <scene sceneID="2jg-Uy-60m">
             <objects>
-                <viewController id="m7m-VC-C6f" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SubjectMyOpinion" id="m7m-VC-C6f" customClass="SubjectSummaryMyOpinionController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r2P-aO-tQf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ieh-xz-i5Z" customClass="HeaderView" customModule="Califica_Profesores" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TU OPINIÓN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iay-Z4-5zN">
+                                <rect key="frame" x="105.5" y="60" width="164" height="31"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAk-vz-7oi">
+                                <rect key="frame" x="30" y="597" width="315" height="40"/>
+                                <color key="backgroundColor" red="0.86022506480000005" green="0.86022506480000005" blue="0.86022506480000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="DOb-2P-1gj"/>
+                                    <constraint firstAttribute="height" constant="40" id="PIJ-gS-o88"/>
                                 </constraints>
-                            </view>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="17"/>
+                                <state key="normal" title="OPINAR">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZF-TD-0Zh">
+                                <rect key="frame" x="37" y="305.5" width="301.5" height="56"/>
+                                <string key="text">¿Has cursado esta materia?
+¡Comparte tu opinión!</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="ieh-xz-i5Z" secondAttribute="trailing" id="KPp-ET-Oa8"/>
-                            <constraint firstItem="ieh-xz-i5Z" firstAttribute="leading" secondItem="Nob-Gm-fhU" secondAttribute="leading" id="P9b-dr-DVW"/>
-                            <constraint firstItem="ieh-xz-i5Z" firstAttribute="top" secondItem="Nob-Gm-fhU" secondAttribute="top" id="woR-ek-qqf"/>
+                            <constraint firstItem="lAk-vz-7oi" firstAttribute="leading" secondItem="Nob-Gm-fhU" secondAttribute="leading" constant="30" id="B9w-ZS-N58"/>
+                            <constraint firstItem="iay-Z4-5zN" firstAttribute="top" secondItem="Nob-Gm-fhU" secondAttribute="top" constant="40" id="byW-Qj-Htn"/>
+                            <constraint firstItem="KZF-TD-0Zh" firstAttribute="centerX" secondItem="r2P-aO-tQf" secondAttribute="centerX" id="dQE-QJ-wwy"/>
+                            <constraint firstItem="KZF-TD-0Zh" firstAttribute="centerY" secondItem="r2P-aO-tQf" secondAttribute="centerY" id="iKc-eV-BSS"/>
+                            <constraint firstItem="Nob-Gm-fhU" firstAttribute="trailing" secondItem="lAk-vz-7oi" secondAttribute="trailing" constant="30" id="jQ2-kS-yFE"/>
+                            <constraint firstItem="Nob-Gm-fhU" firstAttribute="bottom" secondItem="lAk-vz-7oi" secondAttribute="bottom" constant="30" id="pvN-Ew-XSO"/>
+                            <constraint firstItem="iay-Z4-5zN" firstAttribute="centerX" secondItem="r2P-aO-tQf" secondAttribute="centerX" id="xfp-i4-4Jn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nob-Gm-fhU"/>
                     </view>
@@ -387,25 +444,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dw8-D1-zAM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3030" y="1478"/>
+            <point key="canvasLocation" x="3030" y="1398"/>
         </scene>
         <!--VISTA GENERAL-->
         <scene sceneID="R8x-KA-fXz">
             <objects>
-                <viewController storyboardIdentifier="Test" id="LHn-cW-dXd" customClass="SubjectSummaryGeneralController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SubjectGeneral" id="LHn-cW-dXd" customClass="SubjectSummaryGeneralController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eNf-nT-gnG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W8i-r1-ovh" customClass="HeaderView" customModule="Califica_Profesores" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="hjl-Qh-G7X"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UpA-9J-SC9">
-                                <rect key="frame" x="0.0" y="70" width="375" height="548"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CALIFICACIÓN GENERAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytD-xw-apR">
                                         <rect key="frame" x="52.5" y="20" width="270.5" height="25"/>
@@ -454,7 +504,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1g-Ar-Tqh">
-                                        <rect key="frame" x="0.0" y="160" width="375" height="388"/>
+                                        <rect key="frame" x="0.0" y="160" width="375" height="487"/>
                                         <connections>
                                             <segue destination="XIV-EQ-iIJ" kind="embed" id="s6q-64-nw9"/>
                                         </connections>
@@ -479,11 +529,8 @@
                         <constraints>
                             <constraint firstItem="UpA-9J-SC9" firstAttribute="leading" secondItem="2RR-aS-VKT" secondAttribute="leading" id="Bw9-nq-m8F"/>
                             <constraint firstItem="2RR-aS-VKT" firstAttribute="bottom" secondItem="UpA-9J-SC9" secondAttribute="bottom" id="FbM-5C-3QY"/>
-                            <constraint firstItem="W8i-r1-ovh" firstAttribute="top" secondItem="2RR-aS-VKT" secondAttribute="top" id="WPO-Ou-6UT"/>
-                            <constraint firstItem="UpA-9J-SC9" firstAttribute="top" secondItem="W8i-r1-ovh" secondAttribute="bottom" id="fGA-Wb-BFP"/>
-                            <constraint firstItem="W8i-r1-ovh" firstAttribute="leading" secondItem="2RR-aS-VKT" secondAttribute="leading" id="g30-li-Cxx"/>
                             <constraint firstItem="2RR-aS-VKT" firstAttribute="trailing" secondItem="UpA-9J-SC9" secondAttribute="trailing" id="nEz-oG-rLl"/>
-                            <constraint firstItem="W8i-r1-ovh" firstAttribute="trailing" secondItem="2RR-aS-VKT" secondAttribute="trailing" id="seA-Sh-l44"/>
+                            <constraint firstItem="UpA-9J-SC9" firstAttribute="top" secondItem="2RR-aS-VKT" secondAttribute="top" id="tm2-Bg-baG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2RR-aS-VKT"/>
                     </view>
@@ -496,31 +543,12 @@
             </objects>
             <point key="canvasLocation" x="3030" y="19"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="CUy-A8-8zF">
-            <objects>
-                <tabBarController storyboardIdentifier="SubjectSummary" id="4HA-nq-KMs" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UkY-mo-bzm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="LHn-cW-dXd" kind="relationship" relationship="viewControllers" id="TI7-cq-YWg"/>
-                        <segue destination="KKJ-PE-oXz" kind="relationship" relationship="viewControllers" id="miM-os-0fy"/>
-                        <segue destination="m7m-VC-C6f" kind="relationship" relationship="viewControllers" id="5ZS-YA-WGz"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ve-FM-c3e" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2086" y="707"/>
-        </scene>
         <!--Professor List Controller-->
         <scene sceneID="Plg-sS-A5B">
             <objects>
                 <viewController id="XIV-EQ-iIJ" customClass="ProfessorListController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bmj-1T-Cot">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="388"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="4fi-kc-0TE"/>
@@ -528,21 +556,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6dx-hf-Z5I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3823" y="17"/>
-        </scene>
-        <!--Subject Opinions List Controller-->
-        <scene sceneID="oDc-Vl-eqg">
-            <objects>
-                <viewController id="2av-37-CGJ" customClass="SubjectOpinionsListController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HYB-9h-7xm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="548"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gen-7i-1Br" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3822" y="706"/>
+            <point key="canvasLocation" x="3822" y="17"/>
         </scene>
     </scenes>
     <resources>

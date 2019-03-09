@@ -8,6 +8,7 @@
 
 import UIKit
 import CardParts
+import XLPagerTabStrip
 
 class SubjectListController: CardsViewController, UISearchResultsUpdating, SubjectsNetwork {
     
@@ -51,11 +52,8 @@ class SubjectCard: CardPartsViewController, RoundedCardTrait {
         setupCardParts([subject, separator, school])
         self.cardTapped {
             let board = UIStoryboard(name: "Main", bundle: nil)
-            let controller = board.instantiateViewController(withIdentifier: "SubjectSummary") as! UITabBarController
-            let generalSection = controller.children[0] as! SubjectSummaryGeneralController
-            generalSection.loadSubject(subject: self.data!)
-            let opinionsSection = controller.children[1] as! SubjectSummaryOpinionsController
-            opinionsSection.loadSubject(subject: self.data!)
+            let controller = board.instantiateViewController(withIdentifier: "SubjectSummary") as! SubjectSummaryPager
+            controller.loadSubject(subject: self.data!)
             let searchController = self.parent?.parent as? SubjectSearchController
             searchController?.searchController?.isActive = false
             self.present(controller, animated: false, completion: nil)

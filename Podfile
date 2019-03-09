@@ -14,4 +14,5 @@ target 'Califica Profesores' do
   pod 'CardParts'
   pod 'Cosmos', '~> 18.0'
   pod 'LinearProgressView', '~> 2.0'
+  pod 'XLPagerTabStrip'
 end

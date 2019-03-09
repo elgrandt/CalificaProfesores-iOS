@@ -27,6 +27,8 @@
 		B4CDEDEF2232EB52005B9087 /* SubjectSummaryOpinionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CDEDEE2232EB52005B9087 /* SubjectSummaryOpinionsController.swift */; };
 		B4CDEDF12232F107005B9087 /* OpinionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4CDEDF02232F107005B9087 /* OpinionView.xib */; };
 		B4CDEDF32233019B005B9087 /* Opinions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CDEDF22233019B005B9087 /* Opinions.swift */; };
+		B4CDEDF62233275F005B9087 /* SubjectSummaryPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CDEDF52233275F005B9087 /* SubjectSummaryPager.swift */; };
+		B4CDEDF822333C5B005B9087 /* SubjectSummaryMyOpinionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CDEDF722333C5B005B9087 /* SubjectSummaryMyOpinionController.swift */; };
 		B4D44A51222A28D50023BA65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D44A50222A28D50023BA65 /* AppDelegate.swift */; };
 		B4D44A56222A28D50023BA65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4D44A54222A28D50023BA65 /* Main.storyboard */; };
 		B4D44A58222A28D70023BA65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4D44A57222A28D70023BA65 /* Assets.xcassets */; };
@@ -59,6 +61,8 @@
 		B4CDEDEE2232EB52005B9087 /* SubjectSummaryOpinionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectSummaryOpinionsController.swift; sourceTree = "<group>"; };
 		B4CDEDF02232F107005B9087 /* OpinionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OpinionView.xib; sourceTree = "<group>"; };
 		B4CDEDF22233019B005B9087 /* Opinions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opinions.swift; sourceTree = "<group>"; };
+		B4CDEDF52233275F005B9087 /* SubjectSummaryPager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectSummaryPager.swift; sourceTree = "<group>"; };
+		B4CDEDF722333C5B005B9087 /* SubjectSummaryMyOpinionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectSummaryMyOpinionController.swift; sourceTree = "<group>"; };
 		B4D44A4D222A28D50023BA65 /* Califica Profesores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Califica Profesores.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D44A50222A28D50023BA65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4D44A55222A28D50023BA65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 				B4629CD622318138004A71FF /* SubjectSummaryGeneralController.swift */,
 				B4214CBD223220B000CB94A7 /* ProfessorListController.swift */,
 				B4CDEDEE2232EB52005B9087 /* SubjectSummaryOpinionsController.swift */,
+				B4CDEDF52233275F005B9087 /* SubjectSummaryPager.swift */,
+				B4CDEDF722333C5B005B9087 /* SubjectSummaryMyOpinionController.swift */,
 			);
 			path = SubjectSummary;
 			sourceTree = "<group>";
@@ -319,6 +325,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -339,6 +346,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -383,6 +391,7 @@
 				B4214CC02232226000CB94A7 /* Professors.swift in Sources */,
 				B4F24B032230A8A100F1CED1 /* Subjects.swift in Sources */,
 				B4CDEDEF2232EB52005B9087 /* SubjectSummaryOpinionsController.swift in Sources */,
+				B4CDEDF822333C5B005B9087 /* SubjectSummaryMyOpinionController.swift in Sources */,
 				B429929B222DBF6100D95326 /* LoginViewController.swift in Sources */,
 				B4629CD722318138004A71FF /* SubjectSummaryGeneralController.swift in Sources */,
 				B4299293222DB59C00D95326 /* SideMenuController.swift in Sources */,
@@ -393,6 +402,7 @@
 				B4D44A66222A29A50023BA65 /* LoginController.swift in Sources */,
 				B4F24B01223089F000F1CED1 /* SubjectListController.swift in Sources */,
 				B4F24AFF2230862E00F1CED1 /* SubjectSearchController.swift in Sources */,
+				B4CDEDF62233275F005B9087 /* SubjectSummaryPager.swift in Sources */,
 				B4CDEDF32233019B005B9087 /* Opinions.swift in Sources */,
 				B4D44A51222A28D50023BA65 /* AppDelegate.swift in Sources */,
 				B4299299222DBC9200D95326 /* LoadingView.swift in Sources */,

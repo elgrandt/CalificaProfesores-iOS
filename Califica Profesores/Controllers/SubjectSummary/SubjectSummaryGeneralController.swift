@@ -8,8 +8,13 @@
 
 import UIKit
 import Cosmos
+import XLPagerTabStrip
 
-class SubjectSummaryGeneralController: UIViewController {
+class SubjectSummaryGeneralController: UIViewController, IndicatorInfoProvider {
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: "VISTA GENERAL")
+    }
+    
     
     @IBOutlet weak var generalRank: CosmosView!
     var subject : SubjectItem?
