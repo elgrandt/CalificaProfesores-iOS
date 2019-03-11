@@ -16,11 +16,13 @@ class HeaderView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configNib()
+        commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         configNib()
+        commonInit()
     }
     
     func configNib() {
@@ -28,6 +30,10 @@ class HeaderView: UIView {
         addSubview(view)
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+    }
+    
+    func commonInit() {
+        
     }
     
     func getCurrentViewController() -> UIViewController? {
@@ -44,8 +50,7 @@ class HeaderView: UIView {
     }
 
     @IBAction func openMenu(_ sender: Any) {
-        let storyboard: UIStoryboard = UIStoryboard (name: "Main", bundle: nil)
-        let vc: UIViewController? = storyboard.instantiateViewController(withIdentifier: "SideMenu")
+        let vc: UIViewController? = SideMenuManager.default.menuLeftNavigationController!
         let currentController = self.getCurrentViewController()
         currentController?.present(vc!, animated: true, completion: nil)
     }

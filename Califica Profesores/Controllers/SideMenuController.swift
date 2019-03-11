@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseUI
+import SideMenu
 
 class SideMenuController: UIViewController {
     
@@ -16,6 +17,10 @@ class SideMenuController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        userLabel.text = currentUser?.displayName
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         userLabel.text = currentUser?.displayName
     }
     

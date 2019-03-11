@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import CardParts
 
-class LoadingView: UIView {
-    @IBOutlet var view: UIView!
+class LoadingView: UIView, CardPartView {
+    public var margins: UIEdgeInsets = CardParts.theme.cardPartMargins
+    @IBOutlet var contentView: UIView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,9 +25,31 @@ class LoadingView: UIView {
     
     func configNib() {
         Bundle.main.loadNibNamed("LoadingView", owner: self, options: nil)
-        addSubview(view)
-        view.frame = self.bounds
-        view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        addSubview(contentView)
+        contentView.frame = self.bounds
+        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
+    
+    override public var intrinsicContentSize: CGSize {
+        return CGSize(width: UIView.noIntrinsicMetric, height: 65)
+    }
+}
 
+class LoadingCard: CardPartsViewController, TransparentCardTrait {
+    
+    var mainView : LoadingView?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupCardParts([mainView!])
+    }
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        self.mainView = LoadingView(frame: CGRect.zero)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 }

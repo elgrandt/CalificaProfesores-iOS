@@ -17,6 +17,7 @@ class ProfessorListController: CardsViewController, ProfessorsNetwork {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        cards.append(LoadingCard())
         self.loadCards(cards: cards)
     }
     

@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SideMenuManager.default.menuPresentMode = .menuSlideIn
         SideMenuManager.default.menuFadeStatusBar = false
         SideMenuManager.default.menuWidth = max(round(min((UIScreen.main.bounds.width), (UIScreen.main.bounds.height)) * 0.80), 240)
+        let menuLeftNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SideMenu") as! UISideMenuNavigationController
+        SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
     }
     
     func configureCardParts() {

@@ -19,6 +19,7 @@ class SubjectSummaryOpinionsController: CardsViewController, SubjectOpinionNetwo
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        cards.append(LoadingCard())
         self.loadCards(cards: cards)
         self.getOpinions(subjectID: subject!.id!)
     }
@@ -32,6 +33,7 @@ class SubjectSummaryOpinionsController: CardsViewController, SubjectOpinionNetwo
     }
     
     func arrivedOpinions(opinions: [OpinionItem]) {
+        cards = []
         for op in opinions {
             cards.append(OpinionCard(opinion: op))
         }

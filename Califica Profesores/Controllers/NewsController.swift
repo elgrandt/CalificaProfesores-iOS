@@ -26,6 +26,7 @@ class NewsCardsController: CardsViewController, NewsNetwork {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.startGettingNews()
+        self.cards.append(LoadingCard())
         self.loadCards(cards: cards)
     }
     
@@ -84,7 +85,8 @@ public class NewsCardView: UIView, CardPartView {
         commonInit()
         self.title.text = title
         self.desc.text = content
-        altura = self.title.intrinsicContentSize.height + 20.0 + desc.contentSize.height
+        self.desc.sizeToFit()
+        altura = self.title.frame.height + desc.contentSize.height
     }
     
     public required init?(coder aDecoder: NSCoder) {

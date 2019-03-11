@@ -418,6 +418,9 @@
                                 <state key="normal" title="OPINAR">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="4bg-Kz-H3z" kind="show" animates="NO" id="MVw-f2-V1Z"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZF-TD-0Zh">
                                 <rect key="frame" x="37" y="305.5" width="301.5" height="56"/>
@@ -445,6 +448,107 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dw8-D1-zAM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3030" y="1398"/>
+        </scene>
+        <!--Review Subject Controller-->
+        <scene sceneID="msM-8t-6cN">
+            <objects>
+                <viewController storyboardIdentifier="Review" id="4bg-Kz-H3z" customClass="ReviewSubjectController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gnw-27-51o">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaa-oi-KfA" customClass="HeaderView" customModule="Califica_Profesores" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="TQR-aP-rb9"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="heO-hP-Lw1">
+                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CALIFICACIÓN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZrT-Ce-c8J">
+                                        <rect key="frame" x="108.5" y="20" width="158" height="25"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HKn-yI-LFt" customClass="CosmosView" customModule="Cosmos">
+                                        <rect key="frame" x="40" y="55" width="295" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="Jda-dh-Gbv"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="updateOnTouch" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                <color key="value" red="1" green="0.2686770027" blue="0.57932315369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                <color key="value" red="0.79313066710000002" green="0.79313066710000002" blue="0.79313066710000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                <real key="value" value="55"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="minTouchRating">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EN PALABRAS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPM-kh-SJM">
+                                        <rect key="frame" x="109.5" y="120" width="156" height="25"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView verifyAmbiguity="ignoreSizes" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Comentario..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vel-be-fcj">
+                                        <rect key="frame" x="30" y="175" width="315" height="35.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="vel-be-fcj" firstAttribute="top" secondItem="ZPM-kh-SJM" secondAttribute="bottom" constant="30" id="06J-Z7-HqP"/>
+                                    <constraint firstItem="ZPM-kh-SJM" firstAttribute="centerX" secondItem="heO-hP-Lw1" secondAttribute="centerX" id="7xt-lm-2k3"/>
+                                    <constraint firstItem="ZrT-Ce-c8J" firstAttribute="top" secondItem="heO-hP-Lw1" secondAttribute="top" constant="20" id="CQU-1Y-1Fa"/>
+                                    <constraint firstItem="ZPM-kh-SJM" firstAttribute="top" secondItem="HKn-yI-LFt" secondAttribute="bottom" constant="10" id="GzR-s7-dPr"/>
+                                    <constraint firstItem="vel-be-fcj" firstAttribute="leading" secondItem="heO-hP-Lw1" secondAttribute="leading" constant="30" id="QeV-cP-7t9"/>
+                                    <constraint firstItem="ZrT-Ce-c8J" firstAttribute="centerX" secondItem="heO-hP-Lw1" secondAttribute="centerX" id="aNQ-OO-p9L"/>
+                                    <constraint firstItem="HKn-yI-LFt" firstAttribute="top" secondItem="ZrT-Ce-c8J" secondAttribute="bottom" constant="10" id="j2j-Gw-PFm"/>
+                                    <constraint firstItem="HKn-yI-LFt" firstAttribute="centerX" secondItem="heO-hP-Lw1" secondAttribute="centerX" id="uCj-yf-t9W"/>
+                                    <constraint firstAttribute="trailing" secondItem="vel-be-fcj" secondAttribute="trailing" constant="30" id="zYT-NH-m8B"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Yaa-oi-KfA" firstAttribute="top" secondItem="aAP-c6-bXJ" secondAttribute="top" id="5sw-Ny-Tb9"/>
+                            <constraint firstItem="heO-hP-Lw1" firstAttribute="leading" secondItem="aAP-c6-bXJ" secondAttribute="leading" id="8eM-Yy-RiG"/>
+                            <constraint firstItem="Yaa-oi-KfA" firstAttribute="leading" secondItem="aAP-c6-bXJ" secondAttribute="leading" id="J8w-eK-OLE"/>
+                            <constraint firstItem="Yaa-oi-KfA" firstAttribute="trailing" secondItem="aAP-c6-bXJ" secondAttribute="trailing" id="VnF-sY-LAf"/>
+                            <constraint firstItem="heO-hP-Lw1" firstAttribute="top" secondItem="Yaa-oi-KfA" secondAttribute="bottom" id="XSZ-W1-uAg"/>
+                            <constraint firstItem="aAP-c6-bXJ" firstAttribute="bottom" secondItem="heO-hP-Lw1" secondAttribute="bottom" id="hfw-Ph-YoW"/>
+                            <constraint firstItem="aAP-c6-bXJ" firstAttribute="trailing" secondItem="heO-hP-Lw1" secondAttribute="trailing" id="rKZ-LG-ZJT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aAP-c6-bXJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ckF-5o-DiZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3821.5999999999999" y="1396.5517241379312"/>
         </scene>
         <!--VISTA GENERAL-->
         <scene sceneID="R8x-KA-fXz">
