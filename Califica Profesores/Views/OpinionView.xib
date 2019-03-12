@@ -22,21 +22,21 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="184"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rPo-30-06g">
-                    <rect key="frame" x="85" y="0.0" width="15" height="184"/>
+                    <rect key="frame" x="85" y="0.0" width="15" height="170"/>
                     <color key="backgroundColor" red="0.58165903490000004" green="0.81805602619999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="15" id="SaI-Yk-CL6"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wmf-TL-eUL">
-                    <rect key="frame" x="0.0" y="0.0" width="100" height="184"/>
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="170"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5c-xO-pWr">
-                            <rect key="frame" x="0.0" y="0.0" width="100" height="184"/>
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="170"/>
                             <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="18"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -52,7 +52,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOb-go-xrM">
-                    <rect key="frame" x="100" y="0.0" width="275" height="184"/>
+                    <rect key="frame" x="100" y="0.0" width="275" height="170"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKL-wg-jze" customClass="CosmosView" customModule="Cosmos">
                             <rect key="frame" x="87.5" y="10" width="100" height="20"/>
@@ -78,22 +78,24 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R42-FJ-hJe">
-                            <rect key="frame" x="15" y="167" width="245" height="12"/>
+                            <rect key="frame" x="15" y="153" width="245" height="12"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="12" id="TtT-n0-vLF"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybw-MI-hFg">
-                            <rect key="frame" x="0.0" y="161" width="275" height="1"/>
+                            <rect key="frame" x="0.0" y="147" width="275" height="1"/>
                             <color key="backgroundColor" red="0.79313066710000002" green="0.79313066710000002" blue="0.79313066710000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="cEZ-UU-3m5"/>
                             </constraints>
                         </view>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJQ-AA-FMt">
-                            <rect key="frame" x="15" y="30" width="245" height="121"/>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" scrollEnabled="NO" editable="NO" text="DESCRIPCION" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJQ-AA-FMt">
+                            <rect key="frame" x="15" y="30" width="245" height="33"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
@@ -104,7 +106,7 @@
                         <constraint firstItem="gKL-wg-jze" firstAttribute="top" secondItem="bOb-go-xrM" secondAttribute="top" constant="10" id="BvB-my-4fD"/>
                         <constraint firstAttribute="trailing" secondItem="TJQ-AA-FMt" secondAttribute="trailing" constant="15" id="GQR-R9-sfA"/>
                         <constraint firstItem="ybw-MI-hFg" firstAttribute="leading" secondItem="bOb-go-xrM" secondAttribute="leading" id="I8q-Kp-mn3"/>
-                        <constraint firstItem="ybw-MI-hFg" firstAttribute="top" secondItem="TJQ-AA-FMt" secondAttribute="bottom" constant="10" id="SyZ-fZ-KJg"/>
+                        <constraint firstItem="ybw-MI-hFg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="TJQ-AA-FMt" secondAttribute="bottom" constant="10" id="SyZ-fZ-KJg"/>
                         <constraint firstItem="R42-FJ-hJe" firstAttribute="leading" secondItem="bOb-go-xrM" secondAttribute="leading" constant="15" id="Xej-Jv-128"/>
                         <constraint firstItem="TJQ-AA-FMt" firstAttribute="top" secondItem="gKL-wg-jze" secondAttribute="bottom" id="ZSt-Yp-MiS"/>
                         <constraint firstItem="TJQ-AA-FMt" firstAttribute="leading" secondItem="bOb-go-xrM" secondAttribute="leading" constant="15" id="Zbw-dw-MOC"/>
@@ -130,7 +132,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="47.200000000000003" y="-163.71814092953525"/>
+            <point key="canvasLocation" x="47.200000000000003" y="-170.01499250374815"/>
         </view>
     </objects>
 </document>

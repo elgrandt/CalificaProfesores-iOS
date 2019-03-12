@@ -25,6 +25,7 @@
 		B4B514E2222E45C000A40623 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B514E1222E45C000A40623 /* Cards.swift */; };
 		B4C6A8E5222ECF2200BB3A15 /* TestCustomCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4C6A8E4222ECF2200BB3A15 /* TestCustomCardView.xib */; };
 		B4CAA3582235B074001C784F /* ReviewSubjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CAA3572235B074001C784F /* ReviewSubjectController.swift */; };
+		B4CD3DEC2236B77E00AE3A51 /* ReviewSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CD3DEB2236B77E00AE3A51 /* ReviewSubject.swift */; };
 		B4CDEDEF2232EB52005B9087 /* SubjectSummaryOpinionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CDEDEE2232EB52005B9087 /* SubjectSummaryOpinionsController.swift */; };
 		B4CDEDF12232F107005B9087 /* OpinionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4CDEDF02232F107005B9087 /* OpinionView.xib */; };
 		B4CDEDF32233019B005B9087 /* Opinions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CDEDF22233019B005B9087 /* Opinions.swift */; };
@@ -60,6 +61,7 @@
 		B4B514E1222E45C000A40623 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 		B4C6A8E4222ECF2200BB3A15 /* TestCustomCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestCustomCardView.xib; sourceTree = "<group>"; };
 		B4CAA3572235B074001C784F /* ReviewSubjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSubjectController.swift; sourceTree = "<group>"; };
+		B4CD3DEB2236B77E00AE3A51 /* ReviewSubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSubject.swift; sourceTree = "<group>"; };
 		B4CDEDEE2232EB52005B9087 /* SubjectSummaryOpinionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectSummaryOpinionsController.swift; sourceTree = "<group>"; };
 		B4CDEDF02232F107005B9087 /* OpinionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OpinionView.xib; sourceTree = "<group>"; };
 		B4CDEDF22233019B005B9087 /* Opinions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opinions.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				B4F24B022230A8A100F1CED1 /* Subjects.swift */,
 				B4214CBF2232226000CB94A7 /* Professors.swift */,
 				B4CDEDF22233019B005B9087 /* Opinions.swift */,
+				B4CD3DEB2236B77E00AE3A51 /* ReviewSubject.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				B4B514E2222E45C000A40623 /* Cards.swift in Sources */,
 				B4D44A66222A29A50023BA65 /* LoginController.swift in Sources */,
 				B4F24B01223089F000F1CED1 /* SubjectListController.swift in Sources */,
+				B4CD3DEC2236B77E00AE3A51 /* ReviewSubject.swift in Sources */,
 				B4F24AFF2230862E00F1CED1 /* SubjectSearchController.swift in Sources */,
 				B4CDEDF62233275F005B9087 /* SubjectSummaryPager.swift in Sources */,
 				B4CDEDF32233019B005B9087 /* Opinions.swift in Sources */,

@@ -12,6 +12,7 @@ import XLPagerTabStrip
 class SubjectSummaryPager: ButtonBarPagerTabStripViewController {
     
     var subject : SubjectItem?
+    @IBOutlet weak var bar: ButtonBarView!
     
     override func viewDidLoad() {
         let light_gray = UIColor(red: 220.0/255.0, green: 220.0/255.0, blue: 220.0/255.0, alpha: 1)
@@ -33,6 +34,7 @@ class SubjectSummaryPager: ButtonBarPagerTabStripViewController {
         if (subject != nil) {
             general.loadSubject(subject: subject!)
             opinions.loadSubject(subject: subject!)
+            myOpinion.loadSubject(subj: subject!)
         }
         return [general, opinions, myOpinion]
     }

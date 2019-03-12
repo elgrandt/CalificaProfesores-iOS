@@ -24,6 +24,10 @@ class SubjectSummaryOpinionsController: CardsViewController, SubjectOpinionNetwo
         self.getOpinions(subjectID: subject!.id!)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.getOpinions(subjectID: subject!.id!)
+    }
+    
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: "OPINIONES RECIENTES")
     }
@@ -74,24 +78,16 @@ public class OpinionCardView: UIView, CardPartView {
     @IBOutlet weak var content: UITextView!
     @IBOutlet weak var timeLabel: UILabel!
     
-    init(opinion: OpinionItem) {
+    init(opinion: OpinionItem? = nil) {
         super.init(frame: CGRect.zero)
         configNib()
-        commonInit()
-        nameLabel.text = opinion.author
-        score.rating = Double(opinion.valoracion!)/2.0
-        content.text = opinion.content!
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
-        dateFormatter.locale = Locale(identifier: "es_ES")
-        dateFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss" //Specify your format that you want
-        timeLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: Double(opinion.timestamp!/1000)))
+        commonInit(op: opinion)
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         configNib()
-        commonInit()
+        commonInit(op: nil)
     }
     
     func configNib() {
@@ -102,8 +98,19 @@ public class OpinionCardView: UIView, CardPartView {
         contentView.layer.cornerRadius = 15.0
     }
     
-    func commonInit() {
+    func commonInit(op: OpinionItem?) {
         leftView.layer.cornerRadius = 15.0
+        if op != nil {
+            let opinion = op!
+            nameLabel.text = opinion.author
+            score.rating = Double(opinion.valoracion!)/2.0
+            content.text = opinion.content!
+            let dateFormatter = DateFormatter()
+            dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
+            dateFormatter.locale = Locale(identifier: "es_ES")
+            dateFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss" //Specify your format that you want
+            timeLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: Double(opinion.timestamp!/1000)))
+        }
     }
     
     override public var intrinsicContentSize: CGSize {

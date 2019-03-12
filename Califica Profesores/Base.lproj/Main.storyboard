@@ -370,6 +370,7 @@
                         <viewLayoutGuide key="safeArea" id="G5y-ge-t66"/>
                     </view>
                     <connections>
+                        <outlet property="bar" destination="stE-2c-MOh" id="XVd-fO-KTL"/>
                         <outlet property="buttonBarView" destination="stE-2c-MOh" id="qoE-o1-Cbt"/>
                         <outlet property="containerView" destination="HTv-eu-ks4" id="Zap-wc-XL8"/>
                     </connections>
@@ -397,6 +398,7 @@
         <!--TU OPINION-->
         <scene sceneID="2jg-Uy-60m">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dw8-D1-zAM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="SubjectMyOpinion" id="m7m-VC-C6f" customClass="SubjectSummaryMyOpinionController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r2P-aO-tQf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -415,14 +417,14 @@
                                     <constraint firstAttribute="height" constant="40" id="PIJ-gS-o88"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="17"/>
-                                <state key="normal" title="OPINAR">
+                                <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="4bg-Kz-H3z" kind="show" animates="NO" id="MVw-f2-V1Z"/>
+                                    <action selector="goToReview:" destination="m7m-VC-C6f" eventType="touchUpInside" id="f9Q-XL-bI6"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZF-TD-0Zh">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZF-TD-0Zh" userLabel="¿Has cursado esta materia? ¡Comparte tu opinión!">
                                 <rect key="frame" x="37" y="305.5" width="301.5" height="56"/>
                                 <string key="text">¿Has cursado esta materia?
 ¡Comparte tu opinión!</string>
@@ -430,12 +432,33 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C34-kR-oj0" customClass="OpinionCardView" customModule="Califica_Profesores" customModuleProvider="target">
+                                <rect key="frame" x="20" y="288.5" width="335" height="90"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="rR2-vN-Yy2"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i0a-Wn-Y9a" customClass="LoadingView" customModule="Califica_Profesores" customModuleProvider="target">
+                                <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="YDE-6A-R78"/>
+                                    <constraint firstAttribute="width" constant="100" id="aDI-oc-hmS"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="i0a-Wn-Y9a" firstAttribute="centerY" secondItem="r2P-aO-tQf" secondAttribute="centerY" id="AXO-6a-6nm"/>
                             <constraint firstItem="lAk-vz-7oi" firstAttribute="leading" secondItem="Nob-Gm-fhU" secondAttribute="leading" constant="30" id="B9w-ZS-N58"/>
+                            <constraint firstItem="C34-kR-oj0" firstAttribute="centerX" secondItem="r2P-aO-tQf" secondAttribute="centerX" id="Cfa-Ol-6d7"/>
+                            <constraint firstItem="Nob-Gm-fhU" firstAttribute="trailing" secondItem="C34-kR-oj0" secondAttribute="trailing" constant="20" id="Okw-Fn-QY8"/>
                             <constraint firstItem="iay-Z4-5zN" firstAttribute="top" secondItem="Nob-Gm-fhU" secondAttribute="top" constant="40" id="byW-Qj-Htn"/>
+                            <constraint firstItem="C34-kR-oj0" firstAttribute="centerY" secondItem="r2P-aO-tQf" secondAttribute="centerY" id="d2X-Dm-1Lg"/>
                             <constraint firstItem="KZF-TD-0Zh" firstAttribute="centerX" secondItem="r2P-aO-tQf" secondAttribute="centerX" id="dQE-QJ-wwy"/>
+                            <constraint firstItem="C34-kR-oj0" firstAttribute="leading" secondItem="Nob-Gm-fhU" secondAttribute="leading" constant="20" id="djs-c3-Wyb"/>
+                            <constraint firstItem="i0a-Wn-Y9a" firstAttribute="centerX" secondItem="r2P-aO-tQf" secondAttribute="centerX" id="fff-tU-89K"/>
                             <constraint firstItem="KZF-TD-0Zh" firstAttribute="centerY" secondItem="r2P-aO-tQf" secondAttribute="centerY" id="iKc-eV-BSS"/>
                             <constraint firstItem="Nob-Gm-fhU" firstAttribute="trailing" secondItem="lAk-vz-7oi" secondAttribute="trailing" constant="30" id="jQ2-kS-yFE"/>
                             <constraint firstItem="Nob-Gm-fhU" firstAttribute="bottom" secondItem="lAk-vz-7oi" secondAttribute="bottom" constant="30" id="pvN-Ew-XSO"/>
@@ -444,15 +467,21 @@
                         <viewLayoutGuide key="safeArea" id="Nob-Gm-fhU"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="TU OPINION" image="Facebook Logo" id="3P6-Du-b78"/>
+                    <connections>
+                        <outlet property="loading" destination="i0a-Wn-Y9a" id="89n-sH-j9j"/>
+                        <outlet property="myOpinionCard" destination="C34-kR-oj0" id="1nK-Ah-jcw"/>
+                        <outlet property="myOpinionCardHeight" destination="rR2-vN-Yy2" id="jBx-PA-b8w"/>
+                        <outlet property="noOpinionText" destination="KZF-TD-0Zh" id="bKb-JQ-NQk"/>
+                        <outlet property="reviewButton" destination="lAk-vz-7oi" id="KCe-kk-ONb"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dw8-D1-zAM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3030" y="1398"/>
         </scene>
         <!--Review Subject Controller-->
         <scene sceneID="msM-8t-6cN">
             <objects>
-                <viewController storyboardIdentifier="Review" id="4bg-Kz-H3z" customClass="ReviewSubjectController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReviewSubject" id="4bg-Kz-H3z" customClass="ReviewSubjectController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gnw-27-51o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -553,6 +582,9 @@
                                                         <color key="value" red="1" green="0.2686770027" blue="0.57932315369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="noRankChanged:" destination="4bg-Kz-H3z" eventType="valueChanged" id="KwZ-Sm-QCT"/>
+                                                </connections>
                                             </view>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO OPINAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srK-8W-gdO">
                                                 <rect key="frame" x="268" y="66.5" width="77" height="17"/>
@@ -637,6 +669,9 @@
                                         <state key="normal" title="ENVIAR">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <state key="disabled" title="ENVIAR">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="sendButton:" destination="4bg-Kz-H3z" eventType="touchUpInside" id="ywA-5t-t3J"/>
                                         </connections>
@@ -661,6 +696,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Yaa-oi-KfA" firstAttribute="top" secondItem="aAP-c6-bXJ" secondAttribute="top" id="5sw-Ny-Tb9"/>
                             <constraint firstItem="heO-hP-Lw1" firstAttribute="leading" secondItem="aAP-c6-bXJ" secondAttribute="leading" id="8eM-Yy-RiG"/>
@@ -677,6 +713,8 @@
                         <outlet property="anonymousLabel" destination="LxB-so-Fx9" id="Q5j-J8-AP1"/>
                         <outlet property="norateCheckbox" destination="Tr9-gS-G8c" id="Rkm-Vi-37C"/>
                         <outlet property="norateLabel" destination="srK-8W-gdO" id="v8R-os-xdP"/>
+                        <outlet property="rate" destination="HKn-yI-LFt" id="Zuv-6z-0jL"/>
+                        <outlet property="sendButton" destination="Gwm-x8-z8P" id="CmZ-MN-ped"/>
                         <outlet property="textView" destination="vel-be-fcj" id="rLY-Mf-4AQ"/>
                     </connections>
                 </viewController>
