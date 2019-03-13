@@ -398,7 +398,6 @@
         <!--TU OPINION-->
         <scene sceneID="2jg-Uy-60m">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dw8-D1-zAM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="SubjectMyOpinion" id="m7m-VC-C6f" customClass="SubjectSummaryMyOpinionController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r2P-aO-tQf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -475,6 +474,7 @@
                         <outlet property="reviewButton" destination="lAk-vz-7oi" id="KCe-kk-ONb"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dw8-D1-zAM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3030" y="1398"/>
         </scene>
@@ -617,7 +617,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mIn-Rl-7XJ">
                                         <rect key="frame" x="0.0" y="65" width="375" height="70"/>
                                         <subviews>
-                                            <view verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HKn-yI-LFt" customClass="CosmosView" customModule="Cosmos">
+                                            <view verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HKn-yI-LFt" customClass="CosmosView" customModule="Cosmos">
                                                 <rect key="frame" x="40" y="7.5" width="295" height="55"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="55" id="Jda-dh-Gbv"/>
@@ -745,7 +745,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H1r-6R-bST" customClass="CosmosView" customModule="Cosmos">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H1r-6R-bST" customClass="CosmosView" customModule="Cosmos">
                                         <rect key="frame" x="52.5" y="65" width="270" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Kjb-U0-Mh9"/>
@@ -785,6 +785,18 @@
                                             <segue destination="XIV-EQ-iIJ" kind="embed" id="s6q-64-nw9"/>
                                         </connections>
                                     </containerView>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XYG-GH-zCt" customClass="NotFoundView" customModule="Califica_Profesores" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="65" width="345" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="190" id="tnh-AQ-kVG"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="tnh-AQ-kVG"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -793,11 +805,15 @@
                                     <constraint firstItem="ytD-xw-apR" firstAttribute="top" secondItem="UpA-9J-SC9" secondAttribute="top" constant="20" id="5BW-hL-KIW"/>
                                     <constraint firstItem="pYf-Hp-p7M" firstAttribute="top" secondItem="H1r-6R-bST" secondAttribute="bottom" constant="20" id="7LA-1L-lch"/>
                                     <constraint firstItem="pYf-Hp-p7M" firstAttribute="centerX" secondItem="UpA-9J-SC9" secondAttribute="centerX" id="Amv-vk-Dnj"/>
+                                    <constraint firstItem="XYG-GH-zCt" firstAttribute="top" secondItem="ytD-xw-apR" secondAttribute="bottom" constant="20" id="GKw-q9-n6E"/>
                                     <constraint firstAttribute="bottom" secondItem="n1g-Ar-Tqh" secondAttribute="bottom" id="JM7-rj-3XW"/>
                                     <constraint firstItem="n1g-Ar-Tqh" firstAttribute="top" secondItem="pYf-Hp-p7M" secondAttribute="bottom" id="QNo-kJ-NUB"/>
+                                    <constraint firstItem="XYG-GH-zCt" firstAttribute="leading" secondItem="UpA-9J-SC9" secondAttribute="leading" constant="15" id="TAA-sJ-cqX"/>
                                     <constraint firstItem="n1g-Ar-Tqh" firstAttribute="leading" secondItem="UpA-9J-SC9" secondAttribute="leading" id="bHs-Xu-jnA"/>
                                     <constraint firstItem="ytD-xw-apR" firstAttribute="centerX" secondItem="UpA-9J-SC9" secondAttribute="centerX" id="hcf-c9-KYa"/>
+                                    <constraint firstAttribute="trailing" secondItem="XYG-GH-zCt" secondAttribute="trailing" constant="15" id="lsL-jo-yJc"/>
                                     <constraint firstItem="H1r-6R-bST" firstAttribute="centerX" secondItem="UpA-9J-SC9" secondAttribute="centerX" id="sYs-MN-40d"/>
+                                    <constraint firstItem="pYf-Hp-p7M" firstAttribute="top" secondItem="XYG-GH-zCt" secondAttribute="bottom" constant="20" id="wWb-gd-YkR"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -813,11 +829,14 @@
                     <tabBarItem key="tabBarItem" title="VISTA GENERAL" image="Facebook Logo" id="IKa-so-Cug"/>
                     <connections>
                         <outlet property="generalRank" destination="H1r-6R-bST" id="aM5-i8-C6c"/>
+                        <outlet property="noOpinionView" destination="XYG-GH-zCt" id="ujP-Jl-5HG"/>
+                        <outlet property="noOpinionViewHeight" destination="tnh-AQ-kVG" id="bUz-L0-HyM"/>
+                        <outlet property="rankHeight" destination="Kjb-U0-Mh9" id="6ju-vf-EOc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rzh-AM-ju1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3030" y="19"/>
+            <point key="canvasLocation" x="3029.5999999999999" y="18.440779610194905"/>
         </scene>
         <!--Professor List Controller-->
         <scene sceneID="Plg-sS-A5B">

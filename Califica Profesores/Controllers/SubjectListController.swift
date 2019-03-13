@@ -13,9 +13,12 @@ import XLPagerTabStrip
 class SubjectListController: CardsViewController, UISearchResultsUpdating, SubjectsNetwork {
     
     var cards: [CardController] = []
+    let notFoundCard = NotFoundCard()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        notFoundCard.mainView?.configure(description: "¿No encontraste lo que buscabas?", buttonText: "AGREGAR NUEVA MATERIA", redirectController: UIViewController())
+        cards.append(notFoundCard)
         loadCards(cards: cards)
     }
     
@@ -28,6 +31,7 @@ class SubjectListController: CardsViewController, UISearchResultsUpdating, Subje
         for s in subjects {
             cards.append(SubjectCard(data: s))
         }
+        cards.append(notFoundCard)
         self.reload(cards: cards)
     }
     

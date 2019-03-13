@@ -12,6 +12,7 @@ import XLPagerTabStrip
 class SubjectSummaryMyOpinionController: UIViewController, IndicatorInfoProvider, SubjectOpinionNetwork {
     
     var subject : SubjectItem?
+    var opinion : OpinionItem?
     @IBOutlet weak var myOpinionCard: OpinionCardView!
     @IBOutlet weak var myOpinionCardHeight: NSLayoutConstraint!
     @IBOutlet weak var noOpinionText: UILabel!
@@ -45,6 +46,7 @@ class SubjectSummaryMyOpinionController: UIViewController, IndicatorInfoProvider
             myOpinionCard.commonInit(op: opinions.first!)
             myOpinionCardHeight.constant = 80 + myOpinionCard.content.contentSize.height
             reviewButton.setTitle("CAMBIAR OPINIÓN", for: .normal)
+            opinion = opinions.first
         } else {
             noOpinionText.isHidden = false
             reviewButton.setTitle("OPINAR", for: .normal)
@@ -54,6 +56,9 @@ class SubjectSummaryMyOpinionController: UIViewController, IndicatorInfoProvider
     @IBAction func goToReview(_ sender: Any) {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "ReviewSubject") as! ReviewSubjectController
         controller.loadSubject(subj: subject!)
+        if opinion != nil {
+            controller.loadOpinion(op: opinion!)
+        }
         self.present(controller, animated: false, completion: nil)
     }
 }

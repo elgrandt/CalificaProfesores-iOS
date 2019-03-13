@@ -17,13 +17,24 @@ class SubjectSummaryGeneralController: UIViewController, IndicatorInfoProvider {
     
     
     @IBOutlet weak var generalRank: CosmosView!
+    @IBOutlet weak var noOpinionView: NotFoundView!
     var subject : SubjectItem?
+    @IBOutlet weak var noOpinionViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var rankHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if (subject == nil) { return }
         if (subject!.count! != 0) {
+            generalRank.isHidden = false
             generalRank.rating = Double(subject!.totalScore!) / Double(2*subject!.count!)
+        } else {
+            noOpinionView.isHidden = false
+            let rankController =  storyboard?.instantiateViewController(withIdentifier: "ReviewSubject") as! ReviewSubjectController
+            rankController.loadSubject(subj: subject!)
+            noOpinionView.configure(description: "No hay opiniones", buttonText: "¡SÉ EL PRIMERO!", redirectController: rankController)
+            noOpinionViewHeight.isActive = true
+            rankHeight.isActive = false
         }
         let professors = self.children.first as! ProfessorListController
         professors.loadProfessors(professors: subject!.prof ?? [])

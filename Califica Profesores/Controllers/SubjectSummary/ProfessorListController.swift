@@ -26,6 +26,12 @@ class ProfessorListController: CardsViewController, ProfessorsNetwork {
         for x in professors {
             self.searchProfessor(hash: x)
         }
+        if professors.isEmpty {
+            let noProfessorsCard = NotFoundCard()
+            noProfessorsCard.mainView?.configure(description: "No hay información de profesores", buttonText: "AGREGAR PROFESOR", redirectController: UIViewController())
+            cards.append(noProfessorsCard)
+        }
+        self.reload(cards: cards)
     }
     
     func arrivedProfessor(professor: ProfessorItem) {

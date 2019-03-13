@@ -22,6 +22,7 @@ class ReviewSubjectController: UIViewController, UITextViewDelegate, ReviewSubje
     @IBOutlet weak var rate: CosmosView!
     @IBOutlet weak var sendButton: UIButton!
     var subject : SubjectItem?
+    var opinion : OpinionItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,20 @@ class ReviewSubjectController: UIViewController, UITextViewDelegate, ReviewSubje
         view.addGestureRecognizer(tap3)
         sendButton.isEnabled = false
         sendButton.alpha = 0.6
+        if opinion != nil {
+            configure()
+        }
+    }
+    
+    func configure() {
+        self.rate.rating = Double(opinion!.valoracion!) / 2.0
+        textViewDidBeginEditing(textView)
+        textView.text = opinion!.content!
+        norateCheckbox.setOn(!(opinion!.conTexto!), animated: false)
+        anonymousCheckbox.setOn(opinion!.anonimo!, animated: false)
+        noRankChanged(norateCheckbox)
+        textViewDidChange(textView)
+        textViewDidEndEditing(textView)
     }
     
     @objc func dismissKeyboard(sender:UITapGestureRecognizer) {
@@ -79,6 +94,10 @@ class ReviewSubjectController: UIViewController, UITextViewDelegate, ReviewSubje
     
     func loadSubject(subj : SubjectItem) {
         self.subject = subj
+    }
+    
+    func loadOpinion(op: OpinionItem) {
+        opinion = op
     }
     
     @IBAction func noRankChanged(_ sender: BEMCheckBox) {

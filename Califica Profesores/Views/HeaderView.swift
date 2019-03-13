@@ -36,7 +36,7 @@ class HeaderView: UIView {
         
     }
     
-    func getCurrentViewController() -> UIViewController? {
+    public func getCurrentViewController() -> UIViewController? {
         
         if let rootController = UIApplication.shared.keyWindow?.rootViewController {
             var currentController: UIViewController! = rootController

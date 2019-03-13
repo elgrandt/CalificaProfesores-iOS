@@ -41,6 +41,13 @@ class SubjectSummaryOpinionsController: CardsViewController, SubjectOpinionNetwo
         for op in opinions {
             cards.append(OpinionCard(opinion: op))
         }
+        if cards.count == 0 {
+            let notFound = NotFoundCard()
+            let reviewController = storyboard!.instantiateViewController(withIdentifier: "ReviewSubject") as! ReviewSubjectController
+            reviewController.loadSubject(subj: self.subject!)
+            notFound.mainView?.configure(description: "No hay opiniones", buttonText: "¡SÉ EL PRIMERO!", redirectController: reviewController)
+            cards.append(notFound)
+        }
         self.reload(cards: cards)
     }
     

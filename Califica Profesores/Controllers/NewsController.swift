@@ -31,6 +31,7 @@ class NewsCardsController: CardsViewController, NewsNetwork {
     }
     
     func arrivedNews(news: [NewsItem]) {
+        cards = []
         for new in news {
             cards.append(NewsCard(new: new))
         }
