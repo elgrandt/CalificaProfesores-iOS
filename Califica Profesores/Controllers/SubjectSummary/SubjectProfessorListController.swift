@@ -1,5 +1,5 @@
 //
-//  SubjectProfessorListController.swift
+//  SubjectSubjectProfessorListController.swift
 //  Califica Profesores
 //
 //  Created by Dylan Tasat on 08/03/2019.
@@ -11,7 +11,7 @@ import CardParts
 import LinearProgressView
 import Cosmos
 
-class ProfessorListController: CardsViewController, ProfessorsNetwork {
+class SubjectProfessorListController: CardsViewController, ProfessorsNetwork {
     
     var cards: [CardController] = []
     

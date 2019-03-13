@@ -36,7 +36,7 @@ class SubjectSummaryGeneralController: UIViewController, IndicatorInfoProvider {
             noOpinionViewHeight.isActive = true
             rankHeight.isActive = false
         }
-        let professors = self.children.first as! ProfessorListController
+        let professors = self.children.first as! SubjectProfessorListController
         professors.loadProfessors(professors: subject!.prof ?? [])
     }
     

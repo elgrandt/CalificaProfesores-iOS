@@ -838,10 +838,10 @@
             </objects>
             <point key="canvasLocation" x="3029.5999999999999" y="18.440779610194905"/>
         </scene>
-        <!--Professor List Controller-->
+        <!--Subject Professor List Controller-->
         <scene sceneID="Plg-sS-A5B">
             <objects>
-                <viewController id="XIV-EQ-iIJ" customClass="ProfessorListController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XIV-EQ-iIJ" customClass="SubjectProfessorListController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bmj-1T-Cot">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -39,6 +39,7 @@ class SideMenuController: UIViewController {
     
     @IBAction func jumpView(_ sender: UIButton) {
         var nextView : String?
+        var storyboardName = "Main"
         
         switch sender.currentTitle {
         case "NOVEDADES":
@@ -47,13 +48,18 @@ class SideMenuController: UIViewController {
         case "BUSCAR MATERIA":
             nextView = "BuscarMateria"
             break
+        case "BUSCAR PROFESOR":
+            nextView = "BuscarProfesor"
+            storyboardName = "Professors"
+            break
         default:
             break
         }
         
         if nextView != nil {
             self.dismiss(animated: true) { () -> Void in
-                let controller = self.storyboard?.instantiateViewController(withIdentifier: nextView!)
+                let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: nextView!)
                 UIApplication.shared.keyWindow?.rootViewController = controller
             }
         }

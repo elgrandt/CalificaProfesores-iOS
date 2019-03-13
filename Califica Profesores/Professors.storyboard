@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Professor Search Controller-->
+        <scene sceneID="jHq-wL-Izk">
+            <objects>
+                <viewController storyboardIdentifier="BuscarProfesor" id="W2t-k4-eBf" customClass="ProfessorSearchController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j2W-hW-q4r">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPF-0g-92X" customClass="HeaderView" customModule="Califica_Profesores" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="pa7-dC-323"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ot-0O-6zq">
+                                <rect key="frame" x="0.0" y="70" width="375" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="2Xy-1G-MuS"/>
+                                </constraints>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x55-uo-2Px">
+                                <rect key="frame" x="0.0" y="126" width="375" height="541"/>
+                                <connections>
+                                    <segue destination="O7W-bj-esT" kind="embed" id="XMt-vr-Clc"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DPF-0g-92X" firstAttribute="leading" secondItem="6su-0b-5c6" secondAttribute="leading" id="7ba-nI-cdd"/>
+                            <constraint firstItem="6su-0b-5c6" firstAttribute="bottom" secondItem="x55-uo-2Px" secondAttribute="bottom" id="FFz-Yr-OjN"/>
+                            <constraint firstItem="0ot-0O-6zq" firstAttribute="leading" secondItem="6su-0b-5c6" secondAttribute="leading" id="TS3-GR-XIH"/>
+                            <constraint firstItem="0ot-0O-6zq" firstAttribute="top" secondItem="DPF-0g-92X" secondAttribute="bottom" id="UdV-5h-MXB"/>
+                            <constraint firstItem="6su-0b-5c6" firstAttribute="trailing" secondItem="x55-uo-2Px" secondAttribute="trailing" id="Z4N-Wy-xdF"/>
+                            <constraint firstItem="DPF-0g-92X" firstAttribute="trailing" secondItem="6su-0b-5c6" secondAttribute="trailing" id="gH9-AO-ojz"/>
+                            <constraint firstItem="6su-0b-5c6" firstAttribute="trailing" secondItem="0ot-0O-6zq" secondAttribute="trailing" id="jBj-hQ-aCX"/>
+                            <constraint firstItem="x55-uo-2Px" firstAttribute="top" secondItem="0ot-0O-6zq" secondAttribute="bottom" id="la2-1M-hpF"/>
+                            <constraint firstItem="x55-uo-2Px" firstAttribute="leading" secondItem="6su-0b-5c6" secondAttribute="leading" id="mg2-CG-6YH"/>
+                            <constraint firstItem="DPF-0g-92X" firstAttribute="top" secondItem="6su-0b-5c6" secondAttribute="top" id="sCX-8y-g1u"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6su-0b-5c6"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBarContainer" destination="0ot-0O-6zq" id="Dqi-N1-fr7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6hY-KN-r6v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="148" y="149"/>
+        </scene>
+        <!--Professor List Controller-->
+        <scene sceneID="fyu-KF-lfW">
+            <objects>
+                <viewController id="O7W-bj-esT" customClass="ProfessorListController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BYP-ev-h45">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="541"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ihb-td-lia" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="967" y="149"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,5 +1,5 @@
 //
-//  SubjectListController.swift
+//  SubjectSearchController.swift
 //  Califica Profesores
 //
 //  Created by Dylan Tasat on 06/03/2019.
@@ -9,6 +9,21 @@
 import UIKit
 import CardParts
 import XLPagerTabStrip
+
+class SubjectSearchController: UIViewController, UISearchControllerDelegate {
+    var searchController : UISearchController?
+    @IBOutlet weak var searchBarContainer: UIView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let controller = self.children.first as! SubjectListController
+        searchController = UISearchController(searchResultsController: nil)
+        searchController?.searchBar.placeholder = "Buscar Materia"
+        searchController?.searchResultsUpdater = controller
+        searchController?.obscuresBackgroundDuringPresentation = false
+        searchBarContainer.addSubview((searchController?.searchBar)!)
+    }
+}
 
 class SubjectListController: CardsViewController, UISearchResultsUpdating, SubjectsNetwork {
     
@@ -25,7 +40,7 @@ class SubjectListController: CardsViewController, UISearchResultsUpdating, Subje
     func updateSearchResults(for searchController: UISearchController) {
         self.searchSubjects(keyword: searchController.searchBar.text ?? "")
     }
-
+    
     func arrivedSubjects(subjects: [SubjectItem]) {
         cards = []
         for s in subjects {
@@ -39,7 +54,7 @@ class SubjectListController: CardsViewController, UISearchResultsUpdating, Subje
         super.keyboardWillShow(notification: notification)
         collectionView.contentInset.top = CardParts.theme.cardsViewContentInsetTop
     }
-
+    
 }
 
 class SubjectCard: CardPartsViewController, RoundedCardTrait {
@@ -78,5 +93,5 @@ class SubjectCard: CardPartsViewController, RoundedCardTrait {
     func cornerRadius() -> CGFloat {
         return 15.0
     }
-
+    
 }

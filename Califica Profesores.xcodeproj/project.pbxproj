@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		37454543404C87B9CF4D5239 /* Pods_Califica_Profesores.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE38EAF0AAB53FC43F7C0A07 /* Pods_Califica_Profesores.framework */; };
-		B4214CBE223220B000CB94A7 /* ProfessorListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4214CBD223220B000CB94A7 /* ProfessorListController.swift */; };
+		B4214CBE223220B000CB94A7 /* SubjectProfessorListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4214CBD223220B000CB94A7 /* SubjectProfessorListController.swift */; };
 		B4214CC02232226000CB94A7 /* Professors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4214CBF2232226000CB94A7 /* Professors.swift */; };
 		B4214CC22232341B00CB94A7 /* ProfessorInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4214CC12232341B00CB94A7 /* ProfessorInfoView.xib */; };
 		B4299293222DB59C00D95326 /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4299292222DB59C00D95326 /* SideMenuController.swift */; };
@@ -33,20 +33,21 @@
 		B4CDEDF32233019B005B9087 /* Opinions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CDEDF22233019B005B9087 /* Opinions.swift */; };
 		B4CDEDF62233275F005B9087 /* SubjectSummaryPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CDEDF52233275F005B9087 /* SubjectSummaryPager.swift */; };
 		B4CDEDF822333C5B005B9087 /* SubjectSummaryMyOpinionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CDEDF722333C5B005B9087 /* SubjectSummaryMyOpinionController.swift */; };
+		B4D3DEB42239702500489F84 /* Professors.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4D3DEB32239702500489F84 /* Professors.storyboard */; };
+		B4D3DEB6223971CB00489F84 /* ProfessorSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D3DEB5223971CB00489F84 /* ProfessorSearch.swift */; };
 		B4D44A51222A28D50023BA65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D44A50222A28D50023BA65 /* AppDelegate.swift */; };
 		B4D44A56222A28D50023BA65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4D44A54222A28D50023BA65 /* Main.storyboard */; };
 		B4D44A58222A28D70023BA65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4D44A57222A28D70023BA65 /* Assets.xcassets */; };
 		B4D44A5B222A28D70023BA65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4D44A59222A28D70023BA65 /* LaunchScreen.storyboard */; };
 		B4D44A66222A29A50023BA65 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D44A65222A29A50023BA65 /* LoginController.swift */; };
 		B4D44A68222A34290023BA65 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4D44A67222A34290023BA65 /* GoogleService-Info.plist */; };
-		B4F24AFF2230862E00F1CED1 /* SubjectSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F24AFE2230862E00F1CED1 /* SubjectSearchController.swift */; };
-		B4F24B01223089F000F1CED1 /* SubjectListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F24B00223089F000F1CED1 /* SubjectListController.swift */; };
+		B4F24AFF2230862E00F1CED1 /* SubjectSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F24AFE2230862E00F1CED1 /* SubjectSearch.swift */; };
 		B4F24B032230A8A100F1CED1 /* Subjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F24B022230A8A100F1CED1 /* Subjects.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		63F12D3BC64E930F672D4AA1 /* Pods-Califica Profesores.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Califica Profesores.debug.xcconfig"; path = "Target Support Files/Pods-Califica Profesores/Pods-Califica Profesores.debug.xcconfig"; sourceTree = "<group>"; };
-		B4214CBD223220B000CB94A7 /* ProfessorListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorListController.swift; sourceTree = "<group>"; };
+		B4214CBD223220B000CB94A7 /* SubjectProfessorListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectProfessorListController.swift; sourceTree = "<group>"; };
 		B4214CBF2232226000CB94A7 /* Professors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Professors.swift; sourceTree = "<group>"; };
 		B4214CC12232341B00CB94A7 /* ProfessorInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfessorInfoView.xib; sourceTree = "<group>"; };
 		B4299292222DB59C00D95326 /* SideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
@@ -71,6 +72,8 @@
 		B4CDEDF22233019B005B9087 /* Opinions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opinions.swift; sourceTree = "<group>"; };
 		B4CDEDF52233275F005B9087 /* SubjectSummaryPager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectSummaryPager.swift; sourceTree = "<group>"; };
 		B4CDEDF722333C5B005B9087 /* SubjectSummaryMyOpinionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectSummaryMyOpinionController.swift; sourceTree = "<group>"; };
+		B4D3DEB32239702500489F84 /* Professors.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Professors.storyboard; sourceTree = "<group>"; };
+		B4D3DEB5223971CB00489F84 /* ProfessorSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorSearch.swift; sourceTree = "<group>"; };
 		B4D44A4D222A28D50023BA65 /* Califica Profesores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Califica Profesores.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D44A50222A28D50023BA65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4D44A55222A28D50023BA65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -79,8 +82,7 @@
 		B4D44A5C222A28D70023BA65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4D44A65222A29A50023BA65 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		B4D44A67222A34290023BA65 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		B4F24AFE2230862E00F1CED1 /* SubjectSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectSearchController.swift; sourceTree = "<group>"; };
-		B4F24B00223089F000F1CED1 /* SubjectListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectListController.swift; sourceTree = "<group>"; };
+		B4F24AFE2230862E00F1CED1 /* SubjectSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectSearch.swift; sourceTree = "<group>"; };
 		B4F24B022230A8A100F1CED1 /* Subjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subjects.swift; sourceTree = "<group>"; };
 		DF10E011D9F5149E720D1D5F /* Pods-Califica Profesores.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Califica Profesores.release.xcconfig"; path = "Target Support Files/Pods-Califica Profesores/Pods-Califica Profesores.release.xcconfig"; sourceTree = "<group>"; };
 		FE38EAF0AAB53FC43F7C0A07 /* Pods_Califica_Profesores.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Califica_Profesores.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,7 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				B4629CD622318138004A71FF /* SubjectSummaryGeneralController.swift */,
-				B4214CBD223220B000CB94A7 /* ProfessorListController.swift */,
+				B4214CBD223220B000CB94A7 /* SubjectProfessorListController.swift */,
 				B4CDEDEE2232EB52005B9087 /* SubjectSummaryOpinionsController.swift */,
 				B4CDEDF52233275F005B9087 /* SubjectSummaryPager.swift */,
 				B4CDEDF722333C5B005B9087 /* SubjectSummaryMyOpinionController.swift */,
@@ -193,6 +195,7 @@
 				B4D44A62222A295E0023BA65 /* Controllers */,
 				B4D44A50222A28D50023BA65 /* AppDelegate.swift */,
 				B4D44A54222A28D50023BA65 /* Main.storyboard */,
+				B4D3DEB32239702500489F84 /* Professors.storyboard */,
 				B4D44A57222A28D70023BA65 /* Assets.xcassets */,
 				B4D44A59222A28D70023BA65 /* LaunchScreen.storyboard */,
 				B4D44A5C222A28D70023BA65 /* Info.plist */,
@@ -209,8 +212,8 @@
 				B4529CF7222B1F2F00D9856B /* NewsController.swift */,
 				B4299292222DB59C00D95326 /* SideMenuController.swift */,
 				B429929A222DBF6100D95326 /* LoginViewController.swift */,
-				B4F24AFE2230862E00F1CED1 /* SubjectSearchController.swift */,
-				B4F24B00223089F000F1CED1 /* SubjectListController.swift */,
+				B4F24AFE2230862E00F1CED1 /* SubjectSearch.swift */,
+				B4D3DEB5223971CB00489F84 /* ProfessorSearch.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				B4D44A58222A28D70023BA65 /* Assets.xcassets in Resources */,
 				B4299297222DBC7B00D95326 /* LoadingView.xib in Resources */,
 				B4214CC22232341B00CB94A7 /* ProfessorInfoView.xib in Resources */,
+				B4D3DEB42239702500489F84 /* Professors.storyboard in Resources */,
 				B4708E7222381D5100142BE0 /* NotFoundView.xib in Resources */,
 				B4981BC3222B6C9100D836B9 /* LoginView.xib in Resources */,
 				B4D44A56222A28D50023BA65 /* Main.storyboard in Resources */,
@@ -411,14 +415,14 @@
 				B429929B222DBF6100D95326 /* LoginViewController.swift in Sources */,
 				B4629CD722318138004A71FF /* SubjectSummaryGeneralController.swift in Sources */,
 				B4299293222DB59C00D95326 /* SideMenuController.swift in Sources */,
-				B4214CBE223220B000CB94A7 /* ProfessorListController.swift in Sources */,
+				B4214CBE223220B000CB94A7 /* SubjectProfessorListController.swift in Sources */,
 				B4529CF8222B1F2F00D9856B /* NewsController.swift in Sources */,
+				B4D3DEB6223971CB00489F84 /* ProfessorSearch.swift in Sources */,
 				B454A5DB222F20B800B99B83 /* News.swift in Sources */,
 				B4B514E2222E45C000A40623 /* Cards.swift in Sources */,
 				B4D44A66222A29A50023BA65 /* LoginController.swift in Sources */,
-				B4F24B01223089F000F1CED1 /* SubjectListController.swift in Sources */,
 				B4CD3DEC2236B77E00AE3A51 /* ReviewSubject.swift in Sources */,
-				B4F24AFF2230862E00F1CED1 /* SubjectSearchController.swift in Sources */,
+				B4F24AFF2230862E00F1CED1 /* SubjectSearch.swift in Sources */,
 				B4CDEDF62233275F005B9087 /* SubjectSummaryPager.swift in Sources */,
 				B4CDEDF32233019B005B9087 /* Opinions.swift in Sources */,
 				B4D44A51222A28D50023BA65 /* AppDelegate.swift in Sources */,
