@@ -70,7 +70,7 @@ class SubjectCard: CardPartsViewController, RoundedCardTrait {
         school.font = UIFont(name: "ArialMT", size: 12.0)
         setupCardParts([subject, separator, school])
         self.cardTapped {
-            let board = UIStoryboard(name: "Main", bundle: nil)
+            let board = UIStoryboard(name: "Subjects", bundle: nil)
             let controller = board.instantiateViewController(withIdentifier: "SubjectSummary") as! SubjectSummaryPager
             controller.loadSubject(subject: self.data!)
             let searchController = self.parent?.parent as? SubjectSearchController

@@ -69,12 +69,12 @@ class ProfessorCard: CardPartsViewController, RoundedCardTrait {
         school.font = UIFont(name: "ArialMT", size: 12.0)
         setupCardParts([professor, separator, school])
         self.cardTapped {
-            /*let board = UIStoryboard(name: "Main", bundle: nil)
-            let controller = board.instantiateViewController(withIdentifier: "SubjectSummary") as! SubjectSummaryPager
-            controller.loadSubject(subject: self.data!)
-            let searchController = self.parent?.parent as? SubjectSearchController
+            let board = UIStoryboard(name: "Professors", bundle: nil)
+            let controller = board.instantiateViewController(withIdentifier: "ProfessorSummary") as! ProfessorSummaryPager
+            controller.loadProfessor(professor: self.data!)
+            let searchController = self.parent?.parent as? ProfessorSearchController
             searchController?.searchController?.isActive = false
-            self.present(controller, animated: false, completion: nil)*/
+            self.present(controller, animated: false, completion: nil)
         }
     }
     

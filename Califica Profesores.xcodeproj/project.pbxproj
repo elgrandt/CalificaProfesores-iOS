@@ -35,6 +35,9 @@
 		B4CDEDF822333C5B005B9087 /* SubjectSummaryMyOpinionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CDEDF722333C5B005B9087 /* SubjectSummaryMyOpinionController.swift */; };
 		B4D3DEB42239702500489F84 /* Professors.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4D3DEB32239702500489F84 /* Professors.storyboard */; };
 		B4D3DEB6223971CB00489F84 /* ProfessorSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D3DEB5223971CB00489F84 /* ProfessorSearch.swift */; };
+		B4D3DEB82239912000489F84 /* Subjects.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4D3DEB72239912000489F84 /* Subjects.storyboard */; };
+		B4D3DEBB223995A400489F84 /* ProfessorSummaryPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D3DEBA223995A400489F84 /* ProfessorSummaryPager.swift */; };
+		B4D3DEBD223998D200489F84 /* ProfessorSummaryGeneralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D3DEBC223998D200489F84 /* ProfessorSummaryGeneralController.swift */; };
 		B4D44A51222A28D50023BA65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D44A50222A28D50023BA65 /* AppDelegate.swift */; };
 		B4D44A56222A28D50023BA65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4D44A54222A28D50023BA65 /* Main.storyboard */; };
 		B4D44A58222A28D70023BA65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4D44A57222A28D70023BA65 /* Assets.xcassets */; };
@@ -74,6 +77,9 @@
 		B4CDEDF722333C5B005B9087 /* SubjectSummaryMyOpinionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectSummaryMyOpinionController.swift; sourceTree = "<group>"; };
 		B4D3DEB32239702500489F84 /* Professors.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Professors.storyboard; sourceTree = "<group>"; };
 		B4D3DEB5223971CB00489F84 /* ProfessorSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorSearch.swift; sourceTree = "<group>"; };
+		B4D3DEB72239912000489F84 /* Subjects.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Subjects.storyboard; sourceTree = "<group>"; };
+		B4D3DEBA223995A400489F84 /* ProfessorSummaryPager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorSummaryPager.swift; sourceTree = "<group>"; };
+		B4D3DEBC223998D200489F84 /* ProfessorSummaryGeneralController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorSummaryGeneralController.swift; sourceTree = "<group>"; };
 		B4D44A4D222A28D50023BA65 /* Califica Profesores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Califica Profesores.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D44A50222A28D50023BA65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4D44A55222A28D50023BA65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -168,6 +174,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		B4D3DEB92239953700489F84 /* ProfessorSummary */ = {
+			isa = PBXGroup;
+			children = (
+				B4D3DEBA223995A400489F84 /* ProfessorSummaryPager.swift */,
+				B4D3DEBC223998D200489F84 /* ProfessorSummaryGeneralController.swift */,
+			);
+			path = ProfessorSummary;
+			sourceTree = "<group>";
+		};
 		B4D44A44222A28D50023BA65 = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +210,7 @@
 				B4D44A62222A295E0023BA65 /* Controllers */,
 				B4D44A50222A28D50023BA65 /* AppDelegate.swift */,
 				B4D44A54222A28D50023BA65 /* Main.storyboard */,
+				B4D3DEB72239912000489F84 /* Subjects.storyboard */,
 				B4D3DEB32239702500489F84 /* Professors.storyboard */,
 				B4D44A57222A28D70023BA65 /* Assets.xcassets */,
 				B4D44A59222A28D70023BA65 /* LaunchScreen.storyboard */,
@@ -207,6 +223,7 @@
 		B4D44A62222A295E0023BA65 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B4D3DEB92239953700489F84 /* ProfessorSummary */,
 				B4629CD5223180F5004A71FF /* SubjectSummary */,
 				B4D44A65222A29A50023BA65 /* LoginController.swift */,
 				B4529CF7222B1F2F00D9856B /* NewsController.swift */,
@@ -290,6 +307,7 @@
 				B4D44A56222A28D50023BA65 /* Main.storyboard in Resources */,
 				B429929D222DD05600D95326 /* HeaderView.xib in Resources */,
 				B4C6A8E5222ECF2200BB3A15 /* TestCustomCardView.xib in Resources */,
+				B4D3DEB82239912000489F84 /* Subjects.storyboard in Resources */,
 				B4CDEDF12232F107005B9087 /* OpinionView.xib in Resources */,
 				B454A5DD222F2B1A00B99B83 /* NewsCardView.xib in Resources */,
 			);
@@ -422,11 +440,13 @@
 				B4B514E2222E45C000A40623 /* Cards.swift in Sources */,
 				B4D44A66222A29A50023BA65 /* LoginController.swift in Sources */,
 				B4CD3DEC2236B77E00AE3A51 /* ReviewSubject.swift in Sources */,
+				B4D3DEBB223995A400489F84 /* ProfessorSummaryPager.swift in Sources */,
 				B4F24AFF2230862E00F1CED1 /* SubjectSearch.swift in Sources */,
 				B4CDEDF62233275F005B9087 /* SubjectSummaryPager.swift in Sources */,
 				B4CDEDF32233019B005B9087 /* Opinions.swift in Sources */,
 				B4D44A51222A28D50023BA65 /* AppDelegate.swift in Sources */,
 				B4708E7422381D7000142BE0 /* NotFoundView.swift in Sources */,
+				B4D3DEBD223998D200489F84 /* ProfessorSummaryGeneralController.swift in Sources */,
 				B4299299222DBC9200D95326 /* LoadingView.swift in Sources */,
 				B429929F222DD07400D95326 /* HeaderView.swift in Sources */,
 			);

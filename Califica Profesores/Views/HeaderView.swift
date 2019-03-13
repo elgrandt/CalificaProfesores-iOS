@@ -54,4 +54,8 @@ class HeaderView: UIView {
         let currentController = self.getCurrentViewController()
         currentController?.present(vc!, animated: true, completion: nil)
     }
+    
+    @IBAction func goBack(_ sender: UIButton) {
+        self.getCurrentViewController()?.dismiss(animated: true, completion: nil)
+    }
 }

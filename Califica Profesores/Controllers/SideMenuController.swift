@@ -46,6 +46,7 @@ class SideMenuController: UIViewController {
             nextView = "News"
             break
         case "BUSCAR MATERIA":
+            storyboardName = "Subjects"
             nextView = "BuscarMateria"
             break
         case "BUSCAR PROFESOR":

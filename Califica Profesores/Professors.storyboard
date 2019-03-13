@@ -76,5 +76,165 @@
             </objects>
             <point key="canvasLocation" x="967" y="149"/>
         </scene>
+        <!--Professor Summary Pager-->
+        <scene sceneID="3Yo-6e-nwu">
+            <objects>
+                <viewController storyboardIdentifier="ProfessorSummary" id="pL3-ea-xD9" customClass="ProfessorSummaryPager" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="joH-fs-AYl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uw9-fd-wMe">
+                                <rect key="frame" x="0.0" y="115" width="375" height="552"/>
+                            </scrollView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qC4-aU-dWU" customClass="ButtonBarView" customModule="XLPagerTabStrip">
+                                <rect key="frame" x="0.0" y="70" width="375" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="dWd-4a-9zp"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hpc-Lw-IeY">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mzO-eF-Qyi" customClass="HeaderView" customModule="Califica_Profesores" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Nv4-w9-GP8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qC4-aU-dWU" firstAttribute="leading" secondItem="GTo-z4-nly" secondAttribute="leading" id="4Sj-s7-oEA"/>
+                            <constraint firstItem="GTo-z4-nly" firstAttribute="bottom" secondItem="Uw9-fd-wMe" secondAttribute="bottom" id="8gX-kr-vYA"/>
+                            <constraint firstItem="Uw9-fd-wMe" firstAttribute="top" secondItem="qC4-aU-dWU" secondAttribute="bottom" id="AhI-xd-XqW"/>
+                            <constraint firstItem="mzO-eF-Qyi" firstAttribute="top" secondItem="GTo-z4-nly" secondAttribute="top" id="Hg8-OH-axU"/>
+                            <constraint firstItem="mzO-eF-Qyi" firstAttribute="trailing" secondItem="GTo-z4-nly" secondAttribute="trailing" id="IBI-D2-HyT"/>
+                            <constraint firstItem="GTo-z4-nly" firstAttribute="trailing" secondItem="Uw9-fd-wMe" secondAttribute="trailing" id="IZD-q9-Khe"/>
+                            <constraint firstItem="qC4-aU-dWU" firstAttribute="leading" secondItem="GTo-z4-nly" secondAttribute="leading" id="Nvs-LW-Ksh"/>
+                            <constraint firstItem="qC4-aU-dWU" firstAttribute="trailing" secondItem="GTo-z4-nly" secondAttribute="trailing" id="WdS-g5-qrd"/>
+                            <constraint firstItem="Uw9-fd-wMe" firstAttribute="leading" secondItem="GTo-z4-nly" secondAttribute="leading" id="cau-r5-nSJ"/>
+                            <constraint firstItem="GTo-z4-nly" firstAttribute="trailing" secondItem="qC4-aU-dWU" secondAttribute="trailing" id="eAH-xB-4bO"/>
+                            <constraint firstItem="mzO-eF-Qyi" firstAttribute="leading" secondItem="GTo-z4-nly" secondAttribute="leading" id="iXE-4L-32s"/>
+                            <constraint firstItem="qC4-aU-dWU" firstAttribute="top" secondItem="mzO-eF-Qyi" secondAttribute="bottom" id="xmG-EP-sFW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GTo-z4-nly"/>
+                    </view>
+                    <connections>
+                        <outlet property="bar" destination="qC4-aU-dWU" id="ZJZ-rS-LR6"/>
+                        <outlet property="buttonBarView" destination="qC4-aU-dWU" id="AEV-1J-O73"/>
+                        <outlet property="containerView" destination="Uw9-fd-wMe" id="ND0-Tw-qFV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YTr-HJ-0dP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1778" y="149"/>
+        </scene>
+        <!--VISTA GENERAL-->
+        <scene sceneID="SNj-zN-VYj">
+            <objects>
+                <viewController storyboardIdentifier="ProfessorGeneral" id="HA0-qy-x89" customClass="ProfessorSummaryGeneralController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="USm-d7-bLq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ojX-U0-1HS">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CALIFICACIÓN GENERAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RL2-5h-ECu">
+                                        <rect key="frame" x="52.5" y="20" width="270.5" height="25"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qN7-4Y-SBx" customClass="CosmosView" customModule="Cosmos">
+                                        <rect key="frame" x="52.5" y="65" width="270" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="270" id="OGv-RC-GzH"/>
+                                            <constraint firstAttribute="height" constant="50" id="qVd-uc-PzS"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="updateOnTouch" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="minTouchRating">
+                                                <real key="value" value="-1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                <color key="value" red="1" green="0.2686770027" blue="0.57932315369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                <color key="value" red="0.79313066710000002" green="0.79313066710000002" blue="0.79313066710000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                <real key="value" value="50"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qN6-do-ALh" customClass="NotFoundView" customModule="Califica_Profesores" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="65" width="345" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="190" id="6sb-Yx-KhL"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="6sb-Yx-KhL"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qN6-do-ALh" secondAttribute="trailing" constant="15" id="1IQ-Sf-wTp"/>
+                                    <constraint firstItem="qN6-do-ALh" firstAttribute="leading" secondItem="ojX-U0-1HS" secondAttribute="leading" constant="15" id="IB7-vH-ZbE"/>
+                                    <constraint firstItem="qN6-do-ALh" firstAttribute="top" secondItem="RL2-5h-ECu" secondAttribute="bottom" constant="20" id="Kxg-jx-eJA"/>
+                                    <constraint firstItem="qN7-4Y-SBx" firstAttribute="centerX" secondItem="ojX-U0-1HS" secondAttribute="centerX" id="YS9-Kx-q1v"/>
+                                    <constraint firstItem="RL2-5h-ECu" firstAttribute="top" secondItem="ojX-U0-1HS" secondAttribute="top" constant="20" id="aCM-aU-Jdg"/>
+                                    <constraint firstItem="qN7-4Y-SBx" firstAttribute="top" secondItem="RL2-5h-ECu" secondAttribute="bottom" constant="20" id="bKS-Tg-b2u"/>
+                                    <constraint firstItem="RL2-5h-ECu" firstAttribute="centerX" secondItem="ojX-U0-1HS" secondAttribute="centerX" id="gcU-a8-Rdt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ojX-U0-1HS" firstAttribute="top" secondItem="8bO-UR-pCr" secondAttribute="top" id="3Fo-Og-cno"/>
+                            <constraint firstItem="8bO-UR-pCr" firstAttribute="bottom" secondItem="ojX-U0-1HS" secondAttribute="bottom" id="HpB-Vd-FGJ"/>
+                            <constraint firstItem="ojX-U0-1HS" firstAttribute="leading" secondItem="8bO-UR-pCr" secondAttribute="leading" id="lLe-Nc-znk"/>
+                            <constraint firstItem="8bO-UR-pCr" firstAttribute="trailing" secondItem="ojX-U0-1HS" secondAttribute="trailing" id="y4b-fS-jAj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8bO-UR-pCr"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="VISTA GENERAL" image="Facebook Logo" id="cyG-sN-05K"/>
+                    <connections>
+                        <outlet property="generalRank" destination="qN7-4Y-SBx" id="nfM-r0-Eis"/>
+                        <outlet property="noOpinionView" destination="qN6-do-ALh" id="8uD-JA-trn"/>
+                        <outlet property="noOpinionViewHeight" destination="6sb-Yx-KhL" id="AxX-rJ-fKf"/>
+                        <outlet property="rankHeight" destination="qVd-uc-PzS" id="eW0-FD-Nzb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3tZ-Gm-udR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2748" y="-586"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Facebook Logo" width="35" height="35"/>
+    </resources>
 </document>
