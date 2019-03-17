@@ -70,6 +70,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="541"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="p9p-j6-duf"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihb-td-lia" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -136,6 +137,21 @@
             </objects>
             <point key="canvasLocation" x="1778" y="149"/>
         </scene>
+        <!--Professor Summary Opinions Controller-->
+        <scene sceneID="GUf-2G-S97">
+            <objects>
+                <viewController storyboardIdentifier="ProfessorOpinions" id="wvY-pO-mkf" customClass="ProfessorSummaryOpinionsController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D9q-om-NR1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="EcL-pI-iMp"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tTZ-5B-en6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2748" y="149"/>
+        </scene>
         <!--VISTA GENERAL-->
         <scene sceneID="SNj-zN-VYj">
             <objects>
@@ -187,28 +203,39 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qN6-do-ALh" customClass="NotFoundView" customModule="Califica_Profesores" customModuleProvider="target">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qN6-do-ALh" customClass="NotFoundView" customModule="Califica_Profesores" customModuleProvider="target">
                                         <rect key="frame" x="15" y="65" width="345" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="190" id="6sb-Yx-KhL"/>
+                                            <constraint firstAttribute="height" constant="190" id="uax-uU-dKN"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="6sb-Yx-KhL"/>
+                                                <exclude reference="uax-uU-dKN"/>
                                             </mask>
                                         </variation>
                                     </view>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfb-bT-231">
+                                        <rect key="frame" x="0.0" y="125" width="375" height="522"/>
+                                        <connections>
+                                            <segue destination="kdM-dX-GJj" kind="embed" id="Gcb-Yx-7Ka"/>
+                                        </connections>
+                                    </containerView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="qN6-do-ALh" secondAttribute="trailing" constant="15" id="1IQ-Sf-wTp"/>
                                     <constraint firstItem="qN6-do-ALh" firstAttribute="leading" secondItem="ojX-U0-1HS" secondAttribute="leading" constant="15" id="IB7-vH-ZbE"/>
+                                    <constraint firstAttribute="bottom" secondItem="nfb-bT-231" secondAttribute="bottom" id="IMU-cK-iXp"/>
+                                    <constraint firstAttribute="trailing" secondItem="nfb-bT-231" secondAttribute="trailing" id="JCJ-az-g68"/>
+                                    <constraint firstItem="nfb-bT-231" firstAttribute="top" secondItem="qN6-do-ALh" secondAttribute="bottom" constant="10" id="K7S-Mv-7TO"/>
                                     <constraint firstItem="qN6-do-ALh" firstAttribute="top" secondItem="RL2-5h-ECu" secondAttribute="bottom" constant="20" id="Kxg-jx-eJA"/>
                                     <constraint firstItem="qN7-4Y-SBx" firstAttribute="centerX" secondItem="ojX-U0-1HS" secondAttribute="centerX" id="YS9-Kx-q1v"/>
                                     <constraint firstItem="RL2-5h-ECu" firstAttribute="top" secondItem="ojX-U0-1HS" secondAttribute="top" constant="20" id="aCM-aU-Jdg"/>
                                     <constraint firstItem="qN7-4Y-SBx" firstAttribute="top" secondItem="RL2-5h-ECu" secondAttribute="bottom" constant="20" id="bKS-Tg-b2u"/>
+                                    <constraint firstItem="nfb-bT-231" firstAttribute="leading" secondItem="ojX-U0-1HS" secondAttribute="leading" id="cwR-nY-PQD"/>
                                     <constraint firstItem="RL2-5h-ECu" firstAttribute="centerX" secondItem="ojX-U0-1HS" secondAttribute="centerX" id="gcU-a8-Rdt"/>
+                                    <constraint firstItem="nfb-bT-231" firstAttribute="top" secondItem="qN7-4Y-SBx" secondAttribute="bottom" constant="10" id="p09-Av-H5B"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -225,13 +252,28 @@
                     <connections>
                         <outlet property="generalRank" destination="qN7-4Y-SBx" id="nfM-r0-Eis"/>
                         <outlet property="noOpinionView" destination="qN6-do-ALh" id="8uD-JA-trn"/>
-                        <outlet property="noOpinionViewHeight" destination="6sb-Yx-KhL" id="AxX-rJ-fKf"/>
+                        <outlet property="noOpinionViewHeight" destination="uax-uU-dKN" id="bfS-3P-qba"/>
                         <outlet property="rankHeight" destination="qVd-uc-PzS" id="eW0-FD-Nzb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3tZ-Gm-udR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2748" y="-586"/>
+            <point key="canvasLocation" x="2748" y="-586.05697151424295"/>
+        </scene>
+        <!--Professor Summary Info Controller-->
+        <scene sceneID="7pV-Dl-QeO">
+            <objects>
+                <viewController id="kdM-dX-GJj" customClass="ProfessorSummaryInfoController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lnf-fc-gir">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="522"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fUn-ro-d8q"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AED-Y9-WCu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3585" y="-587"/>
         </scene>
     </scenes>
     <resources>

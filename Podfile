@@ -16,4 +16,5 @@ target 'Califica Profesores' do
   pod 'LinearProgressView', '~> 2.0'
   pod 'XLPagerTabStrip'
   pod 'BEMCheckBox'
+  pod 'HGCircularSlider', '~> 2.0.0'
 end

@@ -24,6 +24,8 @@ class ProfessorSummaryGeneralController: UIViewController, IndicatorInfoProvider
     override func viewDidLoad() {
         super.viewDidLoad()
         if (professor == nil) { return }
+        let info = children.first as! ProfessorSummaryInfoController
+        info.loadProfessor(prof: professor!)
         if (professor!.count! != 0) {
             generalRank.isHidden = false
             generalRank.rating = Double(professor!.amabilidad! + professor!.clases! + professor!.conocimiento!) / Double(3*2*professor!.count!)

@@ -30,10 +30,12 @@ class ProfessorSummaryPager: ButtonBarPagerTabStripViewController {
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         let general = self.storyboard?.instantiateViewController(withIdentifier: "ProfessorGeneral") as! ProfessorSummaryGeneralController
+        let opinions = self.storyboard?.instantiateViewController(withIdentifier: "ProfessorOpinions") as! ProfessorSummaryOpinionsController
         if professor != nil {
             general.loadProfessor(professor: professor!)
+            opinions.loadProfessor(professor: professor!)
         }
-        return [general]
+        return [general, opinions]
     }
     
     func loadProfessor(professor: ProfessorItem) {
