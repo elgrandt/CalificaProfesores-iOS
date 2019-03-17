@@ -40,7 +40,10 @@ func snapToOpinion(opSnap : DataSnapshot) -> OpinionItem {
     opinion.conocimiento = opDict["conocimiento"] as? Int
     opinion.clases = opDict["clases"] as? Int
     if opSnap.hasChild("materias") {
-        opinion.materias = opSnap.childSnapshot(forPath: "materias").value as! [String:String]
+        for mat in opSnap.childSnapshot(forPath: "materias").children {
+            let matSnap = mat as! DataSnapshot
+            opinion.materias[matSnap.key] = matSnap.value as? String
+        }
     }
     return opinion
 }

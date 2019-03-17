@@ -21,6 +21,7 @@
 		B4529CF8222B1F2F00D9856B /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4529CF7222B1F2F00D9856B /* NewsController.swift */; };
 		B454A5DB222F20B800B99B83 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = B454A5DA222F20B800B99B83 /* News.swift */; };
 		B454A5DD222F2B1A00B99B83 /* NewsCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B454A5DC222F2B1A00B99B83 /* NewsCardView.xib */; };
+		B45773E5223DF37E00AE3612 /* OpinionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45773E4223DF37E00AE3612 /* OpinionsView.swift */; };
 		B4629CD722318138004A71FF /* SubjectSummaryGeneralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4629CD622318138004A71FF /* SubjectSummaryGeneralController.swift */; };
 		B4708E7222381D5100142BE0 /* NotFoundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4708E7122381D5100142BE0 /* NotFoundView.xib */; };
 		B4708E7422381D7000142BE0 /* NotFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4708E7322381D7000142BE0 /* NotFoundView.swift */; };
@@ -66,6 +67,7 @@
 		B4529CF7222B1F2F00D9856B /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
 		B454A5DA222F20B800B99B83 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		B454A5DC222F2B1A00B99B83 /* NewsCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCardView.xib; sourceTree = "<group>"; };
+		B45773E4223DF37E00AE3612 /* OpinionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpinionsView.swift; sourceTree = "<group>"; };
 		B4629CD622318138004A71FF /* SubjectSummaryGeneralController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectSummaryGeneralController.swift; sourceTree = "<group>"; };
 		B4708E7122381D5100142BE0 /* NotFoundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotFoundView.xib; sourceTree = "<group>"; };
 		B4708E7322381D7000142BE0 /* NotFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFoundView.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				B454A5DC222F2B1A00B99B83 /* NewsCardView.xib */,
 				B4214CC12232341B00CB94A7 /* ProfessorInfoView.xib */,
 				B4CDEDF02232F107005B9087 /* OpinionView.xib */,
+				B45773E4223DF37E00AE3612 /* OpinionsView.swift */,
 				B4708E7122381D5100142BE0 /* NotFoundView.xib */,
 				B4708E7322381D7000142BE0 /* NotFoundView.swift */,
 				B4F80BD4223C577E003758FA /* ProfessorDataView.xib */,
@@ -448,6 +451,7 @@
 				B4214CBE223220B000CB94A7 /* SubjectProfessorListController.swift in Sources */,
 				B4529CF8222B1F2F00D9856B /* NewsController.swift in Sources */,
 				B4D3DEB6223971CB00489F84 /* ProfessorSearch.swift in Sources */,
+				B45773E5223DF37E00AE3612 /* OpinionsView.swift in Sources */,
 				B454A5DB222F20B800B99B83 /* News.swift in Sources */,
 				B4B514E2222E45C000A40623 /* Cards.swift in Sources */,
 				B4D44A66222A29A50023BA65 /* LoginController.swift in Sources */,

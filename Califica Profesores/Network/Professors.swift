@@ -33,6 +33,7 @@ extension ProfessorsNetwork {
             .observeSingleEvent(of: .value, with: { (snapshot) in
                 let dataDict = snapshot.value as! NSDictionary
                 let professor = ProfessorItem()
+                professor.id = snapshot.key
                 professor.Name = dataDict["Name"] as? String
                 professor.SearchName = dataDict["SearchName"] as? String
                 professor.amabilidad = dataDict["amabilidad"] as? Int
@@ -81,6 +82,7 @@ extension ProfessorListNetwork {
                     }
                     let childDict = childSnapshot.value as! NSDictionary
                     let professor = ProfessorItem()
+                    professor.id = childSnapshot.key
                     professor.Name = childDict["Name"] as? String
                     professor.SearchName = childDict["SearchName"] as? String
                     professor.amabilidad = childDict["amabilidad"] as? Int
