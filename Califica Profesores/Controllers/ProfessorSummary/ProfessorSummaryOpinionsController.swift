@@ -38,8 +38,8 @@ class ProfessorSummaryOpinionsController: CardsViewController, ProfessorOpinionN
         }
         if cards.count == 0 {
             let notFound = NotFoundCard()
-            //let reviewController = storyboard!.instantiateViewController(withIdentifier: "ReviewSubject") as! ReviewSubjectController
-            //reviewController.loadSubject(subj: self.subject!)
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "ReviewProfessor") as! ReviewProfessorController
+            controller.loadProfessor(prof: professor!)
             let reviewController = UIViewController()
             notFound.mainView?.configure(description: "No hay opiniones", buttonText: "¡SÉ EL PRIMERO!", redirectController: reviewController)
             cards.append(notFound)

@@ -28,12 +28,11 @@ class ProfessorSummaryGeneralController: UIViewController, IndicatorInfoProvider
         info.loadProfessor(prof: professor!)
         if (professor!.count! != 0) {
             generalRank.isHidden = false
-            generalRank.rating = Double(professor!.amabilidad! + professor!.clases! + professor!.conocimiento!) / Double(3*2*professor!.count!)
+            generalRank.rating = Double(professor!.amabilidad! + professor!.clases! + professor!.conocimiento!) / Double(3*professor!.count!)
         } else {
             noOpinionView.isHidden = false
-            /*let rankController =  storyboard?.instantiateViewController(withIdentifier: "ReviewSubject") as! ReviewSubjectController
-            rankController.loadSubject(subj: subject!)*/
-            let rankController = UIViewController() // TEMP
+            let rankController = self.storyboard?.instantiateViewController(withIdentifier: "ReviewProfessor") as! ReviewProfessorController
+            rankController.loadProfessor(prof: professor!)
             noOpinionView.configure(description: "No hay opiniones", buttonText: "¡SÉ EL PRIMERO!", redirectController: rankController)
             noOpinionViewHeight.isActive = true
             rankHeight.isActive = false

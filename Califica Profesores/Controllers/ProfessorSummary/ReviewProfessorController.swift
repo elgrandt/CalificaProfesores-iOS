@@ -12,7 +12,7 @@ import Cosmos
 import CardParts
 import HGCircularSlider
 
-class ReviewProfessorController: UIViewController, UITextViewDelegate, RealTimeCircularSliderDelegate {
+class ReviewProfessorController: UIViewController, UITextViewDelegate, RealTimeCircularSliderDelegate, ReviewProfessorNetwork {
 
     var professor : ProfessorItem?
     var opinion : OpinionItem?
@@ -33,6 +33,7 @@ class ReviewProfessorController: UIViewController, UITextViewDelegate, RealTimeC
     @IBOutlet weak var conocimientoNumber: UILabel!
     @IBOutlet weak var clasesNumber: UILabel!
     @IBOutlet weak var amabilidadNumber: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,10 @@ class ReviewProfessorController: UIViewController, UITextViewDelegate, RealTimeC
         let tap2 = UITapGestureRecognizer(target: self, action: #selector(ReviewSubjectController.switchNorate))
         norateLabel.addGestureRecognizer(tap2)
         // ARREGLO EL BUG DEL TECLADO
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        // AGREGO PARA QUE SE CIERRE EL TECLADO TOCANDO AFUERA
         let tap3: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ReviewSubjectController.dismissKeyboard))
         view.addGestureRecognizer(tap3)
         // CONFIGURO EL BOTON DE ENVIAR
@@ -65,19 +70,22 @@ class ReviewProfessorController: UIViewController, UITextViewDelegate, RealTimeC
         clasesSlider.endPointValue = 2.5
         conocimientoSlider.endPointValue = 2.5
         updateRank()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        subjectsContainerHeight.constant = subjList!.collectionView.contentSize.height + 24
+        subjList?.collectionView.isScrollEnabled = false
         // REVISO SI HAY DATOS CARGADOS
         if opinion != nil {
             configure()
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        subjectsContainerHeight.constant = subjList!.collectionView.contentSize.height + 24
-        subjList?.collectionView.isScrollEnabled = false
-    }
-    
     func configure() {
-        self.rate.rating = Double(opinion!.valoracion!) / 2.0
+        amabilidadSlider.endPointValue = CGFloat(opinion!.amabilidad!)
+        clasesSlider.endPointValue = CGFloat(opinion!.clases!)
+        conocimientoSlider.endPointValue = CGFloat(opinion!.conocimiento!)
+        updateRank()
         textViewDidBeginEditing(textView)
         textView.text = opinion!.content!
         norateCheckbox.setOn(!(opinion!.conTexto!), animated: false)
@@ -85,6 +93,14 @@ class ReviewProfessorController: UIViewController, UITextViewDelegate, RealTimeC
         noRankChanged(norateCheckbox)
         textViewDidChange(textView)
         textViewDidEndEditing(textView)
+        for card in subjList!.cards {
+            if let selectableCard = card as? SelectableSubjectCard {
+                selectableCard.setSelected(selected: opinion!.materias[selectableCard.data!.id!] != nil)
+            }
+        }
+        for slider in [amabilidadSlider, clasesSlider, conocimientoSlider] {
+            self.updateTracking(element: slider!, number: slider?.number)
+        }
     }
     
     @objc func dismissKeyboard(sender:UITapGestureRecognizer) {
@@ -116,8 +132,17 @@ class ReviewProfessorController: UIViewController, UITextViewDelegate, RealTimeC
         opinion.conTexto = !(norateCheckbox.on)
         opinion.likes = 0
         opinion.timestamp = Int(Date().timeIntervalSince1970 * 1000.0)
-        opinion.valoracion = Int(rate.rating * 2)
-        //sendReview(opinion: opinion, subjectId: subject!.id!, userUID: currentUser!.uid)
+        opinion.amabilidad = Int(amabilidadSlider.endPointValue.rounded(roundingRule))
+        opinion.clases = Int(clasesSlider.endPointValue.rounded(roundingRule))
+        opinion.conocimiento = Int(conocimientoSlider.endPointValue.rounded(roundingRule))
+        for card in subjList!.cards {
+            if let selectableCard = card as? SelectableSubjectCard {
+                if selectableCard.selected {
+                    opinion.materias[selectableCard.data!.id!] = selectableCard.data!.ShownName!
+                }
+            }
+        }
+        sendReview(opinion: opinion, professorId: professor!.id!, userUID: currentUser!.uid)
     }
     
     func finishedSend(success: Bool) {
@@ -182,6 +207,19 @@ class ReviewProfessorController: UIViewController, UITextViewDelegate, RealTimeC
         rank /= 3.0
         self.rate.rating = rank
     }
+    
+    @objc func keyboardWillShow(notification: Notification) {
+        let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        let new_inset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardRect!.height, right: 0)
+        scrollView.contentInset = new_inset
+        scrollView.scrollIndicatorInsets = new_inset
+    }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        let new_inset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        scrollView.contentInset = new_inset
+        scrollView.scrollIndicatorInsets = new_inset
+    }
 }
 
 class ProfessorReviewSubjectList: CardsViewController {
@@ -240,14 +278,17 @@ class SelectableSubjectCard: CardPartsViewController, RoundedCardTrait, NoTopBot
         school.font = UIFont(name: "ArialMT", size: 12.0)
         setupCardParts([marginTop, subject, separator, school, marginBottom])
         self.cardTapped {
-            if self.selected {
-                self.view.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
-                self.selected = false
-            } else {
-                self.view.backgroundColor = UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1.0)
-                self.selected = true
-            }
+            self.setSelected(selected: !self.selected)
         }
+    }
+    
+    func setSelected(selected: Bool) {
+        if selected {
+            self.view.backgroundColor = UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1.0)
+        } else {
+            self.view.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
+        }
+        self.selected = selected
     }
     
     init(data : SubjectItem) {

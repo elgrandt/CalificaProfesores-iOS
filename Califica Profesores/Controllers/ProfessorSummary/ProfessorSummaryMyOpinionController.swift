@@ -44,7 +44,7 @@ class ProfessorSummaryMyOpinionController: UIViewController, IndicatorInfoProvid
         if opinions.count > 0 {
             myOpinionCard.isHidden = false
             myOpinionCard.commonInit(op: opinions.first!)
-            myOpinionCardHeight.constant = 80 + myOpinionCard.content.contentSize.height
+            myOpinionCardHeight.constant = myOpinionCard.intrinsicContentSize.height
             reviewButton.setTitle("CAMBIAR OPINIÓN", for: .normal)
             opinion = opinions.first
         } else {

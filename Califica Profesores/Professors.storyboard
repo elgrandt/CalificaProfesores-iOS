@@ -260,7 +260,7 @@
                                                 <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
-                                                <integer key="value" value="1"/>
+                                                <integer key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="updateOnTouch" value="NO"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="minTouchRating">
@@ -627,7 +627,7 @@
                                                             <constraint firstItem="xPt-OX-Ux4" firstAttribute="centerX" secondItem="Xc8-Zs-Pqu" secondAttribute="centerX" id="sg9-1D-MJ4"/>
                                                         </constraints>
                                                     </view>
-                                                    <view verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Go-gS-VyN" customClass="CosmosView" customModule="Cosmos">
+                                                    <view verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Go-gS-VyN" customClass="CosmosView" customModule="Cosmos">
                                                         <rect key="frame" x="40" y="20" width="295" height="55"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="55" id="L67-o7-XRA"/>
@@ -860,6 +860,7 @@
                         <outlet property="norateCheckbox" destination="8gX-Nk-ipu" id="1wS-rb-kdA"/>
                         <outlet property="norateLabel" destination="r5j-V2-s8J" id="mEo-hs-p5u"/>
                         <outlet property="rate" destination="5Go-gS-VyN" id="guv-y3-ucJ"/>
+                        <outlet property="scrollView" destination="b3z-v0-RPy" id="p6z-pj-RzO"/>
                         <outlet property="sendButton" destination="shP-Nt-rVI" id="RaN-oN-Cd1"/>
                         <outlet property="subjectsContainerHeight" destination="8zv-sZ-Lfr" id="F7k-tC-6Qp"/>
                         <outlet property="textView" destination="b64-Yf-9QA" id="qh5-i1-hzU"/>

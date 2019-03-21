@@ -76,6 +76,7 @@ public class OpinionCardView: UIView, CardPartView {
             let opinion = op!
             nameLabel.text = opinion.author
             content.text = opinion.content!
+            content.sizeToFit()
             let dateFormatter = DateFormatter()
             dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
             dateFormatter.locale = Locale(identifier: "es_ES")
@@ -101,6 +102,6 @@ public class OpinionCardView: UIView, CardPartView {
     }
     
     override public var intrinsicContentSize: CGSize {
-        return CGSize(width: UIView.noIntrinsicMetric, height: 53 + professorDataHeight.constant + content.contentSize.height)
+        return CGSize(width: UIView.noIntrinsicMetric, height: 63 + professorDataHeight.constant + content.contentSize.height)
     }
 }
