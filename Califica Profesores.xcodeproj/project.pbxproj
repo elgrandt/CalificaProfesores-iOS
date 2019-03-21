@@ -27,6 +27,8 @@
 		B4708E7422381D7000142BE0 /* NotFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4708E7322381D7000142BE0 /* NotFoundView.swift */; };
 		B4981BC3222B6C9100D836B9 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4981BC2222B6C9100D836B9 /* LoginView.xib */; };
 		B4B514E2222E45C000A40623 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B514E1222E45C000A40623 /* Cards.swift */; };
+		B4C0A928223F220A00317457 /* ProfessorSummaryMyOpinionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C0A927223F220A00317457 /* ProfessorSummaryMyOpinionController.swift */; };
+		B4C0A92A223F2C4E00317457 /* ReviewProfessorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C0A929223F2C4E00317457 /* ReviewProfessorController.swift */; };
 		B4C6A8E5222ECF2200BB3A15 /* TestCustomCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4C6A8E4222ECF2200BB3A15 /* TestCustomCardView.xib */; };
 		B4CAA3582235B074001C784F /* ReviewSubjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CAA3572235B074001C784F /* ReviewSubjectController.swift */; };
 		B4CD3DEC2236B77E00AE3A51 /* ReviewSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CD3DEB2236B77E00AE3A51 /* ReviewSubject.swift */; };
@@ -73,6 +75,8 @@
 		B4708E7322381D7000142BE0 /* NotFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFoundView.swift; sourceTree = "<group>"; };
 		B4981BC2222B6C9100D836B9 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		B4B514E1222E45C000A40623 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		B4C0A927223F220A00317457 /* ProfessorSummaryMyOpinionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorSummaryMyOpinionController.swift; sourceTree = "<group>"; };
+		B4C0A929223F2C4E00317457 /* ReviewProfessorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewProfessorController.swift; sourceTree = "<group>"; };
 		B4C6A8E4222ECF2200BB3A15 /* TestCustomCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestCustomCardView.xib; sourceTree = "<group>"; };
 		B4CAA3572235B074001C784F /* ReviewSubjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSubjectController.swift; sourceTree = "<group>"; };
 		B4CD3DEB2236B77E00AE3A51 /* ReviewSubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSubject.swift; sourceTree = "<group>"; };
@@ -155,10 +159,10 @@
 		B4629CD5223180F5004A71FF /* SubjectSummary */ = {
 			isa = PBXGroup;
 			children = (
+				B4CDEDF52233275F005B9087 /* SubjectSummaryPager.swift */,
 				B4629CD622318138004A71FF /* SubjectSummaryGeneralController.swift */,
 				B4214CBD223220B000CB94A7 /* SubjectProfessorListController.swift */,
 				B4CDEDEE2232EB52005B9087 /* SubjectSummaryOpinionsController.swift */,
-				B4CDEDF52233275F005B9087 /* SubjectSummaryPager.swift */,
 				B4CDEDF722333C5B005B9087 /* SubjectSummaryMyOpinionController.swift */,
 				B4CAA3572235B074001C784F /* ReviewSubjectController.swift */,
 			);
@@ -191,6 +195,8 @@
 				B4D3DEBC223998D200489F84 /* ProfessorSummaryGeneralController.swift */,
 				B4F80BD2223C420D003758FA /* ProfessorSummaryInfoController.swift */,
 				B44B9FE4223DB6F000360FC9 /* ProfessorSummaryOpinionsController.swift */,
+				B4C0A927223F220A00317457 /* ProfessorSummaryMyOpinionController.swift */,
+				B4C0A929223F2C4E00317457 /* ReviewProfessorController.swift */,
 			);
 			path = ProfessorSummary;
 			sourceTree = "<group>";
@@ -451,6 +457,7 @@
 				B4214CBE223220B000CB94A7 /* SubjectProfessorListController.swift in Sources */,
 				B4529CF8222B1F2F00D9856B /* NewsController.swift in Sources */,
 				B4D3DEB6223971CB00489F84 /* ProfessorSearch.swift in Sources */,
+				B4C0A928223F220A00317457 /* ProfessorSummaryMyOpinionController.swift in Sources */,
 				B45773E5223DF37E00AE3612 /* OpinionsView.swift in Sources */,
 				B454A5DB222F20B800B99B83 /* News.swift in Sources */,
 				B4B514E2222E45C000A40623 /* Cards.swift in Sources */,
@@ -461,6 +468,7 @@
 				B4F80BD3223C420D003758FA /* ProfessorSummaryInfoController.swift in Sources */,
 				B4CDEDF62233275F005B9087 /* SubjectSummaryPager.swift in Sources */,
 				B4CDEDF32233019B005B9087 /* Opinions.swift in Sources */,
+				B4C0A92A223F2C4E00317457 /* ReviewProfessorController.swift in Sources */,
 				B4D44A51222A28D50023BA65 /* AppDelegate.swift in Sources */,
 				B4708E7422381D7000142BE0 /* NotFoundView.swift in Sources */,
 				B4D3DEBD223998D200489F84 /* ProfessorSummaryGeneralController.swift in Sources */,

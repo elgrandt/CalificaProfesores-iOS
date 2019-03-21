@@ -23,44 +23,59 @@ protocol SubjectsNetwork {
     func arrivedSubjects(subjects : [SubjectItem])
 }
 
+func SnapToSubject(snap: DataSnapshot) -> SubjectItem {
+    let dict = snap.value as! NSDictionary
+    let current = SubjectItem()
+    current.id = snap.key
+    current.Facultad = dict["Facultad"] as? String
+    current.FacultadName = dict["FacultadName"] as? String
+    current.Name = dict["Name"] as? String
+    current.ShownName = dict["ShownName"] as? String
+    current.count = dict["count"] as? Int
+    current.totalScore = dict["totalScore"] as? Int
+    current.prof = []
+    for prof in snap.childSnapshot(forPath: "Prof").children {
+        let profSnapshot = prof as! DataSnapshot
+        current.prof!.append(profSnapshot.key)
+    }
+    return current
+}
+
 extension SubjectsNetwork {
-    func searchSubjects(keyword : String) {
-        let keywordModified = keyword.lowercased()
-            .replacingOccurrences(of: "á", with: "a")
-            .replacingOccurrences(of: "é", with: "e")
-            .replacingOccurrences(of: "í", with: "i")
-            .replacingOccurrences(of: "ó", with: "o")
-            .replacingOccurrences(of: "ú", with: "u")
-        let ref = Database.database().reference()
-        ref
-        .child("Materias")
-        .queryOrdered(byChild: "Name")
-        .queryStarting(atValue: keywordModified)
-        .queryEnding(atValue: keywordModified + "\u{f8ff}")
-        .observeSingleEvent(of: .value, with: { (snapshot) in
-            var children : [SubjectItem] = []
-            for child in snapshot.children {
-                let childSnapshot = child as! DataSnapshot
-                if childSnapshot.key == "0" {
-                    continue
+    func searchSubjects(keyword : String? = nil, hash : String? = nil) {
+        var query : DatabaseQuery?
+        if keyword != nil {
+            let keywordModified = keyword!.lowercased()
+                .replacingOccurrences(of: "á", with: "a")
+                .replacingOccurrences(of: "é", with: "e")
+                .replacingOccurrences(of: "í", with: "i")
+                .replacingOccurrences(of: "ó", with: "o")
+                .replacingOccurrences(of: "ú", with: "u")
+            query = Database.database().reference()
+                .child("Materias")
+                .queryOrdered(byChild: "Name")
+                .queryStarting(atValue: keywordModified)
+                .queryEnding(atValue: keywordModified + "\u{f8ff}")
+        } else {
+            query = Database.database().reference()
+                .child("Materias")
+                .child(hash!)
+        }
+        
+        query!.observeSingleEvent(of: .value, with: { (snapshot) in
+            if keyword != nil {
+                var children : [SubjectItem] = []
+                for child in snapshot.children {
+                    let childSnapshot = child as! DataSnapshot
+                    if childSnapshot.key == "0" {
+                        continue
+                    }
+                    children.append(SnapToSubject(snap: childSnapshot))
                 }
-                let childDict = childSnapshot.value as! NSDictionary
-                let current = SubjectItem()
-                current.id = childSnapshot.key
-                current.Facultad = childDict["Facultad"] as? String
-                current.FacultadName = childDict["FacultadName"] as? String
-                current.Name = childDict["Name"] as? String
-                current.ShownName = childDict["ShownName"] as? String
-                current.count = childDict["count"] as? Int
-                current.totalScore = childDict["totalScore"] as? Int
-                current.prof = []
-                for prof in childSnapshot.childSnapshot(forPath: "Prof").children {
-                    let profSnapshot = prof as! DataSnapshot
-                    current.prof!.append(profSnapshot.key)
-                }
-                children.append(current)
+                self.arrivedSubjects(subjects: children)
+            } else {
+                self.arrivedSubjects(subjects: [SnapToSubject(snap: snapshot)])
             }
-            self.arrivedSubjects(subjects: children)
         })
     }
 }

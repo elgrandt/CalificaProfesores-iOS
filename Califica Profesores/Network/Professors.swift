@@ -16,12 +16,38 @@ class ProfessorItem {
     var conocimiento : Int?
     var count : Int?
     var Facultades : [String]?
-    var Mat : [String]?
+    var Mat : [SubjectItem] = []
     var id : String?
 }
 
 protocol ProfessorsNetwork {
     func arrivedProfessor(professor : ProfessorItem)
+}
+
+func SnapToProfessor(snap: DataSnapshot) -> ProfessorItem {
+    let dataDict = snap.value as! NSDictionary
+    let professor = ProfessorItem()
+    professor.id = snap.key
+    professor.Name = dataDict["Name"] as? String
+    professor.SearchName = dataDict["SearchName"] as? String
+    professor.amabilidad = dataDict["amabilidad"] as? Int
+    professor.clases = dataDict["clases"] as? Int
+    professor.conocimiento = dataDict["conocimiento"] as? Int
+    professor.count = dataDict["count"] as? Int
+    professor.Facultades = []
+    for facultades in snap.childSnapshot(forPath: "Facultades").children {
+        let facSnap = facultades as! DataSnapshot
+        professor.Facultades?.append(facSnap.value as! String)
+    }
+    for materias in snap.childSnapshot(forPath: "Mat").children {
+        let matSnap = materias as! DataSnapshot
+        let current = SubjectItem()
+        current.FacultadName = matSnap.childSnapshot(forPath: "facultad").value as? String
+        current.ShownName = matSnap.childSnapshot(forPath: "nombre").value as? String
+        current.id = matSnap.key
+        professor.Mat.append(current)
+    }
+    return professor
 }
 
 extension ProfessorsNetwork {
@@ -31,26 +57,7 @@ extension ProfessorsNetwork {
             .child("Prof")
             .child(hash)
             .observeSingleEvent(of: .value, with: { (snapshot) in
-                let dataDict = snapshot.value as! NSDictionary
-                let professor = ProfessorItem()
-                professor.id = snapshot.key
-                professor.Name = dataDict["Name"] as? String
-                professor.SearchName = dataDict["SearchName"] as? String
-                professor.amabilidad = dataDict["amabilidad"] as? Int
-                professor.clases = dataDict["clases"] as? Int
-                professor.conocimiento = dataDict["conocimiento"] as? Int
-                professor.count = dataDict["count"] as? Int
-                professor.Facultades = []
-                professor.Mat = []
-                for facultades in snapshot.childSnapshot(forPath: "Facultades").children {
-                    let facSnap = facultades as! DataSnapshot
-                    professor.Facultades?.append(facSnap.value as! String)
-                }
-                for materias in snapshot.childSnapshot(forPath: "Mat").children {
-                    let matSnap = materias as! DataSnapshot
-                    professor.Mat?.append(matSnap.key)
-                }
-                self.arrivedProfessor(professor: professor)
+                self.arrivedProfessor(professor: SnapToProfessor(snap: snapshot))
             })
     }
 }
@@ -80,26 +87,7 @@ extension ProfessorListNetwork {
                     if childSnapshot.key == "0" {
                         continue
                     }
-                    let childDict = childSnapshot.value as! NSDictionary
-                    let professor = ProfessorItem()
-                    professor.id = childSnapshot.key
-                    professor.Name = childDict["Name"] as? String
-                    professor.SearchName = childDict["SearchName"] as? String
-                    professor.amabilidad = childDict["amabilidad"] as? Int
-                    professor.clases = childDict["clases"] as? Int
-                    professor.conocimiento = childDict["conocimiento"] as? Int
-                    professor.count = childDict["count"] as? Int
-                    professor.Facultades = []
-                    professor.Mat = []
-                    for facultades in childSnapshot.childSnapshot(forPath: "Facultades").children {
-                        let facSnap = facultades as! DataSnapshot
-                        professor.Facultades?.append(facSnap.value as! String)
-                    }
-                    for materias in childSnapshot.childSnapshot(forPath: "Mat").children {
-                        let matSnap = materias as! DataSnapshot
-                        professor.Mat?.append(matSnap.key)
-                    }
-                    children.append(professor)
+                    children.append(SnapToProfessor(snap: childSnapshot))
                 }
                 self.arrivedProfessors(professors: children)
             })
