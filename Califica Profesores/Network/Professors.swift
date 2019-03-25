@@ -93,3 +93,47 @@ extension ProfessorListNetwork {
             })
     }
 }
+
+struct ProfessorAddRequest {
+    var create : Bool?
+    var erase : Bool?
+    var facultades : [String:String] = [:]
+    var materias : [String:[String:String]] = [:]
+    var profId : String?
+    var profName : String?
+    var timestamp : Int?
+}
+
+protocol AddProfessor {
+    func finishedSend(success: Bool)
+}
+
+extension AddProfessor {
+    func add(subj: ProfessorAddRequest) {
+        let ref = Database.database().reference()
+        let profId = ref
+            .child("Prof")
+            .childByAutoId()
+            .key
+        let dict : [String : Any] = [
+            "create" : subj.create as Any,
+            "erase" : subj.erase as Any,
+            "facultades" : subj.facultades as Any,
+            "materias" : subj.materias as Any,
+            "profId" : profId as Any,
+            "profName" : subj.profName as Any,
+            "timestamp" : subj.timestamp as Any
+        ]
+        ref
+            .child("ProfAddRequests")
+            .child(currentUser!.uid)
+            .childByAutoId()
+            .setValue(dict) { (error, database) in
+                var suc = false
+                if (error == nil) {
+                    suc = true
+                }
+                self.finishedSend(success: suc)
+        }
+    }
+}

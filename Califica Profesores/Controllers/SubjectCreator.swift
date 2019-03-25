@@ -128,7 +128,7 @@ class SchoolSelectorViewController: UIViewController, SchoolNetwork, SelectorCar
         var height = selectedListHeight.constant
         height += (inputContainerHeight.isActive) ? 0 : 52
         height += searchList!.collectionView.contentSize.height
-        height += (searchList!.cards.count > 0) ? 4 : 0
+        height += 4
         
         parentObj.schoolSelectorHeight.constant = height
     }

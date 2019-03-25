@@ -30,6 +30,7 @@
 		B4B514E2222E45C000A40623 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B514E1222E45C000A40623 /* Cards.swift */; };
 		B4BBA2192243E73100F449C7 /* ReviewProfessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BBA2182243E73100F449C7 /* ReviewProfessor.swift */; };
 		B4BD686622493717000F7969 /* Schools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BD686522493717000F7969 /* Schools.swift */; };
+		B4BD686822496D4A000F7969 /* ProfessorCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BD686722496D4A000F7969 /* ProfessorCreator.swift */; };
 		B4C0A928223F220A00317457 /* ProfessorSummaryMyOpinionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C0A927223F220A00317457 /* ProfessorSummaryMyOpinionController.swift */; };
 		B4C0A92A223F2C4E00317457 /* ReviewProfessorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C0A929223F2C4E00317457 /* ReviewProfessorController.swift */; };
 		B4C6A8E5222ECF2200BB3A15 /* TestCustomCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4C6A8E4222ECF2200BB3A15 /* TestCustomCardView.xib */; };
@@ -83,6 +84,7 @@
 		B4B514E1222E45C000A40623 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 		B4BBA2182243E73100F449C7 /* ReviewProfessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewProfessor.swift; sourceTree = "<group>"; };
 		B4BD686522493717000F7969 /* Schools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schools.swift; sourceTree = "<group>"; };
+		B4BD686722496D4A000F7969 /* ProfessorCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorCreator.swift; sourceTree = "<group>"; };
 		B4C0A927223F220A00317457 /* ProfessorSummaryMyOpinionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorSummaryMyOpinionController.swift; sourceTree = "<group>"; };
 		B4C0A929223F2C4E00317457 /* ReviewProfessorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewProfessorController.swift; sourceTree = "<group>"; };
 		B4C6A8E4222ECF2200BB3A15 /* TestCustomCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestCustomCardView.xib; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				B4F24AFE2230862E00F1CED1 /* SubjectSearch.swift */,
 				B4D3DEB5223971CB00489F84 /* ProfessorSearch.swift */,
 				B43FFBFC2245510600CE23BD /* SubjectCreator.swift */,
+				B4BD686722496D4A000F7969 /* ProfessorCreator.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				B4CDEDF32233019B005B9087 /* Opinions.swift in Sources */,
 				B4C0A92A223F2C4E00317457 /* ReviewProfessorController.swift in Sources */,
 				B4D44A51222A28D50023BA65 /* AppDelegate.swift in Sources */,
+				B4BD686822496D4A000F7969 /* ProfessorCreator.swift in Sources */,
 				B4708E7422381D7000142BE0 /* NotFoundView.swift in Sources */,
 				B4BBA2192243E73100F449C7 /* ReviewProfessor.swift in Sources */,
 				B4D3DEBD223998D200489F84 /* ProfessorSummaryGeneralController.swift in Sources */,

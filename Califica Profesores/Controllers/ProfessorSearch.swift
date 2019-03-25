@@ -31,7 +31,8 @@ class ProfessorListController: CardsViewController, UISearchResultsUpdating, Pro
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        notFoundCard.mainView?.configure(description: "¿No encontraste lo que buscabas?", buttonText: "AGREGAR NUEVO PROFESOR", redirectController: UIViewController())
+        let professorCreator = self.storyboard?.instantiateViewController(withIdentifier: "ProfessorCreator") as? ProfessorCreator
+        notFoundCard.mainView?.configure(description: "¿No encontraste lo que buscabas?", buttonText: "AGREGAR NUEVO PROFESOR", redirectController: professorCreator!)
         cards.append(notFoundCard)
         loadCards(cards: cards)
     }

@@ -232,7 +232,7 @@ class ProfessorReviewSubjectList: CardsViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if professor == nil || professor!.count! == 0 { return }
+        if professor == nil { return }
         for mat in professor!.Mat {
             let card = SelectableSubjectCard(data: mat)
             cards.append(card)
