@@ -8,10 +8,15 @@
 
 import UIKit
 
-class SubjectCreator: UIViewController {
+class SubjectCreator: UIViewController, AddSubject {
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var professorSelectorHeight: NSLayoutConstraint!
     @IBOutlet weak var schoolSelectorHeight: NSLayoutConstraint!
+    @IBOutlet weak var subjectName: UITextField!
+    
+    var schoolSelector : SchoolSelectorViewController?
+    var professorSelector : ProfessorSelectorViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +27,9 @@ class SubjectCreator: UIViewController {
         // AGREGO PARA QUE SE CIERRE EL TECLADO TOCANDO AFUERA
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ReviewSubjectController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        // OBTENGO LOS HIJOS
+        schoolSelector = self.children[0] as? SchoolSelectorViewController
+        professorSelector = self.children[1] as? ProfessorSelectorViewController
     }
     
     @objc func dismissKeyboard(sender:UITapGestureRecognizer) {
@@ -41,6 +49,32 @@ class SubjectCreator: UIViewController {
         scrollView.scrollIndicatorInsets = new_inset
     }
 
+    @IBAction func send(_ sender: UIButton) {
+        let schoolCard = schoolSelector?.selectedList?.cards.first as? SelectorCard
+        let subject = SubjectItem()
+        subject.count = 0
+        subject.Facultad = schoolCard?.id
+        subject.FacultadName = schoolCard?.tit
+        subject.Name = subjectName.text?.lowercased()
+            .replacingOccurrences(of: "á", with: "a")
+            .replacingOccurrences(of: "é", with: "e")
+            .replacingOccurrences(of: "í", with: "i")
+            .replacingOccurrences(of: "ó", with: "o")
+            .replacingOccurrences(of: "ú", with: "u")
+        subject.prof = [:]
+        subject.ShownName = subjectName.text
+        subject.totalScore = 0
+        if professorSelector!.addLaterSwitch.isOn == false {
+            for card in professorSelector!.selectedList!.cards as! [SelectorCard] {
+                subject.prof[card.id!] = card.tit
+            }
+        }
+        self.add(subj: subject)
+    }
+    
+    func finishedSend(success: Bool) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 class SchoolSelectorViewController: UIViewController, SchoolNetwork, SelectorCardDelegate {

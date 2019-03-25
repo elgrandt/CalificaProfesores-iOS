@@ -44,6 +44,8 @@ class SelectorCard: CardPartsViewController, RoundedCardTrait, NoTopBottomMargin
     var mainView : SelectorCardView?
     var delegate : SelectorCardDelegate?
     var id : String?
+    var tit : String?
+    var desc : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +59,8 @@ class SelectorCard: CardPartsViewController, RoundedCardTrait, NoTopBottomMargin
         super.init(nibName: nil, bundle: nil)
         mainView = SelectorCardView(title: title, description: description)
         self.id = id
+        self.tit = title
+        self.desc = description
         self.delegate = delegate
     }
     

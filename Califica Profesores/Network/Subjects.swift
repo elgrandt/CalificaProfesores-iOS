@@ -15,7 +15,7 @@ class SubjectItem {
     var ShownName : String?
     var count : Int?
     var totalScore : Int?
-    var prof : [String]?
+    var prof : [String:String] = [:]
     var id : String?
 }
 
@@ -33,10 +33,9 @@ func SnapToSubject(snap: DataSnapshot) -> SubjectItem {
     current.ShownName = dict["ShownName"] as? String
     current.count = dict["count"] as? Int
     current.totalScore = dict["totalScore"] as? Int
-    current.prof = []
     for prof in snap.childSnapshot(forPath: "Prof").children {
         let profSnapshot = prof as! DataSnapshot
-        current.prof!.append(profSnapshot.key)
+        current.prof[profSnapshot.key] = profSnapshot.value as? String
     }
     return current
 }
@@ -77,5 +76,35 @@ extension SubjectsNetwork {
                 self.arrivedSubjects(subjects: [SnapToSubject(snap: snapshot)])
             }
         })
+    }
+}
+
+protocol AddSubject {
+    func finishedSend(success: Bool)
+}
+
+extension AddSubject {
+    func add(subj: SubjectItem) {
+        let ref = Database.database().reference()
+        let dict : [String : Any] = [
+            "classId": 0 as Any,
+            "erase" : false as Any,
+            "facultadId" : subj.Facultad as Any,
+            "facultadName" : subj.FacultadName as Any,
+            "name" : subj.ShownName as Any,
+            "prof" : subj.prof as Any,
+            "timestamp" : Int(Date().timeIntervalSince1970 * 1000.0) as Any
+        ]
+        ref
+            .child("ClassAddRequests")
+            .child(currentUser!.uid)
+            .childByAutoId()
+            .setValue(dict) { (error, database) in
+                var suc = false
+                if (error == nil) {
+                    suc = true
+                }
+                self.finishedSend(success: suc)
+            }
     }
 }

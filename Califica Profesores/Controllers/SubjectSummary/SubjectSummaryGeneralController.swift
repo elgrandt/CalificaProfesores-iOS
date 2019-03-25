@@ -36,8 +36,12 @@ class SubjectSummaryGeneralController: UIViewController, IndicatorInfoProvider {
             noOpinionViewHeight.isActive = true
             rankHeight.isActive = false
         }
+        var profIDs : [String] = []
+        for profid in subject!.prof.keys {
+            profIDs.append(profid)
+        }
         let professors = self.children.first as! SubjectProfessorListController
-        professors.loadProfessors(professors: subject!.prof ?? [])
+        professors.loadProfessors(professors: profIDs)
     }
     
     func loadSubject(subject: SubjectItem) {

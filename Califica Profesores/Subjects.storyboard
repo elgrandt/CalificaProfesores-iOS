@@ -172,7 +172,7 @@
                                 <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89l-QR-kJ6">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="367"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="427"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l21-Bc-oKw">
                                                 <rect key="frame" x="0.0" y="65" width="375" height="50"/>
@@ -239,6 +239,24 @@
                                                     <segue destination="dgf-6o-JbP" kind="embed" id="KvE-Nj-ud7"/>
                                                 </connections>
                                             </containerView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zID-E5-aRH">
+                                                <rect key="frame" x="60" y="367" width="255" height="40"/>
+                                                <color key="backgroundColor" red="0.86022506480000005" green="0.86022506480000005" blue="0.86022506480000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="T3w-k6-fth"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="17"/>
+                                                <state key="normal" title="ENVIAR">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <state key="disabled" title="ENVIAR">
+                                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="send:" destination="GgF-ft-zGo" eventType="touchUpInside" id="8F7-8t-3Gp"/>
+                                                    <action selector="sendButton:" destination="Plp-Zf-UVK" eventType="touchUpInside" id="8Xm-JS-dey"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -249,12 +267,15 @@
                                             <constraint firstItem="iuW-Xz-Rq2" firstAttribute="top" secondItem="l21-Bc-oKw" secondAttribute="bottom" constant="20" id="HtM-fO-vXO"/>
                                             <constraint firstItem="l21-Bc-oKw" firstAttribute="leading" secondItem="89l-QR-kJ6" secondAttribute="leading" id="K2h-Ud-seq"/>
                                             <constraint firstAttribute="trailing" secondItem="oog-A7-th4" secondAttribute="trailing" id="LbS-WD-D4h"/>
-                                            <constraint firstAttribute="bottom" secondItem="oog-A7-th4" secondAttribute="bottom" constant="20" id="Mth-uN-gfx"/>
                                             <constraint firstItem="2cu-un-saU" firstAttribute="top" secondItem="iuW-Xz-Rq2" secondAttribute="bottom" constant="20" id="NDw-UZ-tsI"/>
                                             <constraint firstItem="l21-Bc-oKw" firstAttribute="top" secondItem="Rnz-P9-Sv9" secondAttribute="bottom" constant="20" id="Uag-Zg-oMf"/>
+                                            <constraint firstAttribute="trailing" secondItem="zID-E5-aRH" secondAttribute="trailing" constant="60" id="dSp-To-zZw"/>
                                             <constraint firstItem="oog-A7-th4" firstAttribute="leading" secondItem="89l-QR-kJ6" secondAttribute="leading" id="eRK-cX-MYY"/>
                                             <constraint firstItem="Rnz-P9-Sv9" firstAttribute="top" secondItem="89l-QR-kJ6" secondAttribute="top" constant="20" id="iJK-Dg-3JN"/>
+                                            <constraint firstItem="zID-E5-aRH" firstAttribute="top" secondItem="oog-A7-th4" secondAttribute="bottom" constant="20" id="iJv-cH-TM7"/>
+                                            <constraint firstAttribute="bottom" secondItem="zID-E5-aRH" secondAttribute="bottom" constant="20" id="meu-HC-KYE"/>
                                             <constraint firstItem="2cu-un-saU" firstAttribute="leading" secondItem="89l-QR-kJ6" secondAttribute="leading" id="pgF-E1-tHu"/>
+                                            <constraint firstItem="zID-E5-aRH" firstAttribute="leading" secondItem="89l-QR-kJ6" secondAttribute="leading" constant="60" id="qlq-C0-RN5"/>
                                             <constraint firstAttribute="trailing" secondItem="2cu-un-saU" secondAttribute="trailing" id="uEt-aO-umB"/>
                                             <constraint firstItem="YUk-Jf-yAP" firstAttribute="centerX" secondItem="89l-QR-kJ6" secondAttribute="centerX" id="uPe-hN-snH"/>
                                             <constraint firstAttribute="trailing" secondItem="l21-Bc-oKw" secondAttribute="trailing" id="zbL-eg-YF5"/>
@@ -287,6 +308,7 @@
                         <outlet property="professorSelectorHeight" destination="HHp-UD-C4f" id="Yz9-vg-fiR"/>
                         <outlet property="schoolSelectorHeight" destination="Zfm-Zw-L9y" id="rGw-7q-lGS"/>
                         <outlet property="scrollView" destination="7SF-vc-XfH" id="ehg-4q-gf6"/>
+                        <outlet property="subjectName" destination="j8A-KQ-VhV" id="7AA-ph-l3T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EqZ-dH-OXI" userLabel="First Responder" sceneMemberID="firstResponder"/>
