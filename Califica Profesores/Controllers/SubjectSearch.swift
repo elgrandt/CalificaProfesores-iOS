@@ -32,7 +32,8 @@ class SubjectListController: CardsViewController, UISearchResultsUpdating, Subje
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        notFoundCard.mainView?.configure(description: "¿No encontraste lo que buscabas?", buttonText: "AGREGAR NUEVA MATERIA", redirectController: UIViewController())
+        let subjectCreator = self.storyboard?.instantiateViewController(withIdentifier: "SubjectCreator")
+        notFoundCard.mainView?.configure(description: "¿No encontraste lo que buscabas?", buttonText: "AGREGAR NUEVA MATERIA", redirectController: subjectCreator!)
         cards.append(notFoundCard)
         loadCards(cards: cards)
     }

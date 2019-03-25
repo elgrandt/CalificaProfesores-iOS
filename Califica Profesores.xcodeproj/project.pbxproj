@@ -17,6 +17,7 @@
 		B429929B222DBF6100D95326 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B429929A222DBF6100D95326 /* LoginViewController.swift */; };
 		B429929D222DD05600D95326 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B429929C222DD05600D95326 /* HeaderView.xib */; };
 		B429929F222DD07400D95326 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B429929E222DD07400D95326 /* HeaderView.swift */; };
+		B43FFBFD2245510600CE23BD /* SubjectCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43FFBFC2245510600CE23BD /* SubjectCreator.swift */; };
 		B44B9FE5223DB6F000360FC9 /* ProfessorSummaryOpinionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44B9FE4223DB6F000360FC9 /* ProfessorSummaryOpinionsController.swift */; };
 		B4529CF8222B1F2F00D9856B /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4529CF7222B1F2F00D9856B /* NewsController.swift */; };
 		B454A5DB222F20B800B99B83 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = B454A5DA222F20B800B99B83 /* News.swift */; };
@@ -49,6 +50,8 @@
 		B4D44A5B222A28D70023BA65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4D44A59222A28D70023BA65 /* LaunchScreen.storyboard */; };
 		B4D44A66222A29A50023BA65 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D44A65222A29A50023BA65 /* LoginController.swift */; };
 		B4D44A68222A34290023BA65 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4D44A67222A34290023BA65 /* GoogleService-Info.plist */; };
+		B4D51E962246CF7A009B666E /* SelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D51E952246CF7A009B666E /* SelectorView.swift */; };
+		B4EAD4E5224822A10089F399 /* SelectorCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4EAD4E4224822A10089F399 /* SelectorCardView.xib */; };
 		B4F24AFF2230862E00F1CED1 /* SubjectSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F24AFE2230862E00F1CED1 /* SubjectSearch.swift */; };
 		B4F24B032230A8A100F1CED1 /* Subjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F24B022230A8A100F1CED1 /* Subjects.swift */; };
 		B4F80BD3223C420D003758FA /* ProfessorSummaryInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F80BD2223C420D003758FA /* ProfessorSummaryInfoController.swift */; };
@@ -66,6 +69,7 @@
 		B429929A222DBF6100D95326 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B429929C222DD05600D95326 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		B429929E222DD07400D95326 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		B43FFBFC2245510600CE23BD /* SubjectCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCreator.swift; sourceTree = "<group>"; };
 		B44B9FE4223DB6F000360FC9 /* ProfessorSummaryOpinionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorSummaryOpinionsController.swift; sourceTree = "<group>"; };
 		B4529CF7222B1F2F00D9856B /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
 		B454A5DA222F20B800B99B83 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 		B4D44A5C222A28D70023BA65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4D44A65222A29A50023BA65 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		B4D44A67222A34290023BA65 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B4D51E952246CF7A009B666E /* SelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorView.swift; sourceTree = "<group>"; };
+		B4EAD4E4224822A10089F399 /* SelectorCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectorCardView.xib; sourceTree = "<group>"; };
 		B4F24AFE2230862E00F1CED1 /* SubjectSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectSearch.swift; sourceTree = "<group>"; };
 		B4F24B022230A8A100F1CED1 /* Subjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subjects.swift; sourceTree = "<group>"; };
 		B4F80BD2223C420D003758FA /* ProfessorSummaryInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorSummaryInfoController.swift; sourceTree = "<group>"; };
@@ -187,6 +193,8 @@
 				B4708E7122381D5100142BE0 /* NotFoundView.xib */,
 				B4708E7322381D7000142BE0 /* NotFoundView.swift */,
 				B4F80BD4223C577E003758FA /* ProfessorDataView.xib */,
+				B4EAD4E4224822A10089F399 /* SelectorCardView.xib */,
+				B4D51E952246CF7A009B666E /* SelectorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -252,6 +260,7 @@
 				B429929A222DBF6100D95326 /* LoginViewController.swift */,
 				B4F24AFE2230862E00F1CED1 /* SubjectSearch.swift */,
 				B4D3DEB5223971CB00489F84 /* ProfessorSearch.swift */,
+				B43FFBFC2245510600CE23BD /* SubjectCreator.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -328,6 +337,7 @@
 				B4981BC3222B6C9100D836B9 /* LoginView.xib in Resources */,
 				B4D44A56222A28D50023BA65 /* Main.storyboard in Resources */,
 				B429929D222DD05600D95326 /* HeaderView.xib in Resources */,
+				B4EAD4E5224822A10089F399 /* SelectorCardView.xib in Resources */,
 				B4C6A8E5222ECF2200BB3A15 /* TestCustomCardView.xib in Resources */,
 				B4D3DEB82239912000489F84 /* Subjects.storyboard in Resources */,
 				B4CDEDF12232F107005B9087 /* OpinionView.xib in Resources */,
@@ -458,6 +468,7 @@
 				B4629CD722318138004A71FF /* SubjectSummaryGeneralController.swift in Sources */,
 				B4299293222DB59C00D95326 /* SideMenuController.swift in Sources */,
 				B4214CBE223220B000CB94A7 /* SubjectProfessorListController.swift in Sources */,
+				B4D51E962246CF7A009B666E /* SelectorView.swift in Sources */,
 				B4529CF8222B1F2F00D9856B /* NewsController.swift in Sources */,
 				B4D3DEB6223971CB00489F84 /* ProfessorSearch.swift in Sources */,
 				B4C0A928223F220A00317457 /* ProfessorSummaryMyOpinionController.swift in Sources */,
@@ -477,6 +488,7 @@
 				B4BBA2192243E73100F449C7 /* ReviewProfessor.swift in Sources */,
 				B4D3DEBD223998D200489F84 /* ProfessorSummaryGeneralController.swift in Sources */,
 				B44B9FE5223DB6F000360FC9 /* ProfessorSummaryOpinionsController.swift in Sources */,
+				B43FFBFD2245510600CE23BD /* SubjectCreator.swift in Sources */,
 				B4299299222DBC9200D95326 /* LoadingView.swift in Sources */,
 				B429929F222DD07400D95326 /* HeaderView.swift in Sources */,
 			);
