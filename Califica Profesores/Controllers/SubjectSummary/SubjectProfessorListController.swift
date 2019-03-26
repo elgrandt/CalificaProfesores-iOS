@@ -28,7 +28,8 @@ class SubjectProfessorListController: CardsViewController, ProfessorsNetwork {
         }
         if professors.isEmpty {
             let noProfessorsCard = NotFoundCard()
-            noProfessorsCard.mainView?.configure(description: "No hay información de profesores", buttonText: "AGREGAR PROFESOR", redirectController: UIViewController())
+            let professorCreator = UIStoryboard(name: "Professors", bundle: nil).instantiateViewController(withIdentifier: "ProfessorCreator") as? ProfessorCreator
+            noProfessorsCard.mainView?.configure(description: "No hay información de profesores", buttonText: "AGREGAR PROFESOR", redirectController: professorCreator!)
             cards.append(noProfessorsCard)
         }
         self.reload(cards: cards)

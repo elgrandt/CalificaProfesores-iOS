@@ -233,11 +233,14 @@ class ProfessorReviewSubjectList: CardsViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if professor == nil { return }
+        cards = []
         for mat in professor!.Mat {
             let card = SelectableSubjectCard(data: mat)
             cards.append(card)
         }
-        cards.append(LinkSubjectCard())
+        let linkCard = LinkSubjectCard()
+        linkCard.loadProfessor(prof: professor)
+        cards.append(linkCard)
         self.loadCards(cards: cards)
     }
     
@@ -248,12 +251,22 @@ class ProfessorReviewSubjectList: CardsViewController {
 
 class LinkSubjectCard : CardPartsViewController, RoundedCardTrait {
     var text = CardPartTextView(type: .normal)
+    var professor : ProfessorItem? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         text.text = "¿Faltan materias?"
         text.textAlignment = .center
         setupCardParts([text])
+        self.cardTapped {
+            let controller = UIStoryboard(name: "Professors", bundle: nil).instantiateViewController(withIdentifier: "AddSubjectsToProfessor") as! AddSubjectsToProfessor
+            controller.loadProfessor(prof: self.professor)
+            self.present(controller, animated: true, completion: nil)
+        }
+    }
+    
+    func loadProfessor(prof: ProfessorItem?) {
+        self.professor = prof
     }
     
     func cornerRadius() -> CGFloat {

@@ -82,7 +82,7 @@ class ProfessorCard: CardPartsViewController, RoundedCardTrait {
     init(data : ProfessorItem) {
         super.init(nibName: nil, bundle: nil)
         professor.text = data.Name
-        school.text = data.Facultades?.joined(separator: ", ")
+        school.text = data.Facultades.values.joined(separator: ", ")
         if school.text == nil || school.text == "" {
             school.text = "Sin facultades asignadas"
         }

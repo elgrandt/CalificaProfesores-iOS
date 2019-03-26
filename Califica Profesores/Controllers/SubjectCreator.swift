@@ -220,7 +220,7 @@ class ProfessorSelectorViewController: UIViewController, ProfessorListNetwork, S
                 profCards.append(
                     SelectorCard(
                         title: prof.Name!,
-                        description: (prof.Facultades != nil && prof.Facultades!.count > 0) ? prof.Facultades!.joined(separator: ", ") : "Sin facultades",
+                        description: (prof.Facultades.count > 0) ? prof.Facultades.values.joined(separator: ", ") : "Sin facultades",
                         id: prof.id!,
                         delegate: self
                     )

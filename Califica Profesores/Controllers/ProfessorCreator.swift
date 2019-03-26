@@ -53,13 +53,13 @@ class ProfessorCreator: UIViewController, AddProfessor {
         request.profName = professorName.text
         request.timestamp = Int(Date().timeIntervalSince1970 * 1000.0)
         if subjectSelector?.addLaterSwitch.isOn == false {
-        for card in subjectSelector?.selectedList?.cards as! [SelectorCard] {
-            let subject = subjectSelector?.subjects.first(where: { $0.id! == card.id! })
-            request.materias[card.id!] = [
-                "facultad": subject!.FacultadName!,
-                "nombre": subject!.ShownName!
-            ]
-            request.facultades[subject!.Facultad!] = subject!.FacultadName!
+            for card in subjectSelector?.selectedList?.cards as! [SelectorCard] {
+                let subject = subjectSelector?.subjects.first(where: { $0.id! == card.id! })
+                request.materias[card.id!] = [
+                    "facultad": subject!.FacultadName!,
+                    "nombre": subject!.ShownName!
+                ]
+                request.facultades[subject!.Facultad!] = subject!.FacultadName!
             }
             
         }
@@ -106,8 +106,15 @@ class SubjectSelectorViewController: UIViewController, SubjectsNetwork, Selector
             inputContainerHeight.isActive = true
             searchBar.isHidden = true
             selectedListHeight.constant = 0
-            let parentObj = parent as? ProfessorCreator
-            parentObj?.subjectSelectorHeight.constant = 50
+            var constrait: NSLayoutConstraint?
+            if parent is ProfessorCreator {
+                let parentObj = parent as? ProfessorCreator
+                constrait = parentObj?.subjectSelectorHeight
+            } else {
+                let parentObj = parent as? AddSubjectsToProfessor
+                constrait = parentObj?.subjectSelectorHeight
+            }
+            constrait?.constant = 50
         } else {
             inputContainerHeight.isActive = false
             searchBar.isHidden = false
@@ -116,7 +123,7 @@ class SubjectSelectorViewController: UIViewController, SubjectsNetwork, Selector
     }
     
     func arrivedSubjects(subjects: [SubjectItem]) {
-        self.subjects = subjects
+        self.subjects.append(contentsOf: subjects)
         var profCards : [SelectorCard] = []
         for subj in subjects {
             if !selected(id: subj.id!) {
@@ -138,8 +145,15 @@ class SubjectSelectorViewController: UIViewController, SubjectsNetwork, Selector
     
     func updateHeight() {
         selectedListHeight.constant = selectedList!.collectionView.contentSize.height + 4
-        let parentObj = parent as! ProfessorCreator
-        parentObj.subjectSelectorHeight.constant = selectedListHeight.constant + 52 + searchList!.collectionView.contentSize.height + 4 + 50
+        var constrait : NSLayoutConstraint?
+        if parent is ProfessorCreator {
+            let parentObj = parent as? ProfessorCreator
+            constrait = parentObj?.subjectSelectorHeight
+        } else {
+            let parentObj = parent as? AddSubjectsToProfessor
+            constrait = parentObj?.subjectSelectorHeight
+        }
+        constrait?.constant = selectedListHeight.constant + 52 + searchList!.collectionView.contentSize.height + 4 + 50
     }
     
     func selected(id: String) -> Bool {

@@ -15,7 +15,7 @@ class ProfessorItem {
     var clases : Int?
     var conocimiento : Int?
     var count : Int?
-    var Facultades : [String]?
+    var Facultades : [String:String] = [:]
     var Mat : [SubjectItem] = []
     var id : String?
 }
@@ -34,10 +34,9 @@ func SnapToProfessor(snap: DataSnapshot) -> ProfessorItem {
     professor.clases = dataDict["clases"] as? Int
     professor.conocimiento = dataDict["conocimiento"] as? Int
     professor.count = dataDict["count"] as? Int
-    professor.Facultades = []
     for facultades in snap.childSnapshot(forPath: "Facultades").children {
         let facSnap = facultades as! DataSnapshot
-        professor.Facultades?.append(facSnap.value as! String)
+        professor.Facultades[facSnap.key] = facSnap.value as? String
     }
     for materias in snap.childSnapshot(forPath: "Mat").children {
         let matSnap = materias as! DataSnapshot
@@ -111,10 +110,15 @@ protocol AddProfessor {
 extension AddProfessor {
     func add(subj: ProfessorAddRequest) {
         let ref = Database.database().reference()
-        let profId = ref
-            .child("Prof")
-            .childByAutoId()
-            .key
+        var profId : String?
+        if subj.profId == nil {
+            profId = ref
+                .child("Prof")
+                .childByAutoId()
+                .key
+        } else {
+            profId = subj.profId
+        }
         let dict : [String : Any] = [
             "create" : subj.create as Any,
             "erase" : subj.erase as Any,
