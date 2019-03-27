@@ -9,12 +9,11 @@
 import UIKit
 import Firebase
 import FirebaseUI
-import SideMenu
 
-class SideMenuController: UIViewController {
+class SideMenuLayoutController: UIViewController {
     
     @IBOutlet weak var userLabel: UILabel!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         userLabel.text = currentUser?.displayName
@@ -62,11 +61,10 @@ class SideMenuController: UIViewController {
         }
         
         if nextView != nil {
-            self.dismiss(animated: true) { () -> Void in
-                let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
-                let controller = storyboard.instantiateViewController(withIdentifier: nextView!)
-                UIApplication.shared.keyWindow?.rootViewController = controller
-            }
+            let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: nextView!)
+            sideMenuController?.setContentViewController(to: controller)
+            sideMenuController?.hideMenu()
         }
     }
 }

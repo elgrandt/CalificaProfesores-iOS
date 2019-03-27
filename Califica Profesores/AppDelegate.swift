@@ -9,8 +9,8 @@
 import UIKit
 import Firebase
 import FirebaseUI
-import SideMenu
 import CardParts
+import SideMenuSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,11 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func configureSideMenu() {
-        SideMenuManager.default.menuPresentMode = .menuSlideIn
-        SideMenuManager.default.menuFadeStatusBar = false
-        SideMenuManager.default.menuWidth = max(round(min((UIScreen.main.bounds.width), (UIScreen.main.bounds.height)) * 0.80), 240)
-        let menuLeftNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SideMenu") as! UISideMenuNavigationController
-        SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
+        SideMenuController.preferences.basic.menuWidth = 280
+        SideMenuController.preferences.basic.statusBarBehavior = .fade
+        SideMenuController.preferences.basic.position = .under
+        SideMenuController.preferences.basic.direction = .left
+        SideMenuController.preferences.basic.enablePanGesture = true
+        SideMenuController.preferences.basic.supportedOrientations = .portrait
+        SideMenuController.preferences.basic.shouldRespectLanguageDirection = true
     }
     
     func configureCardParts() {

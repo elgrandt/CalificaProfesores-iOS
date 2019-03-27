@@ -10,7 +10,7 @@ target 'Califica Profesores' do
   pod 'Firebase/Database'
   pod 'FirebaseUI/Auth'
   pod 'FirebaseUI/Google'
-  pod 'SideMenu'
+  pod 'SideMenuSwift'
   pod 'CardParts'
   pod 'Cosmos', '~> 18.0'
   pod 'LinearProgressView', '~> 2.0'

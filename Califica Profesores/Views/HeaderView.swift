@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SideMenu
 
 class HeaderView: UIView {
     
@@ -50,12 +49,22 @@ class HeaderView: UIView {
     }
 
     @IBAction func openMenu(_ sender: Any) {
-        let vc: UIViewController? = SideMenuManager.default.menuLeftNavigationController!
+        /*let vc: UIViewController? = SideMenuManager.default.menuLeftNavigationController!
         let currentController = self.getCurrentViewController()
-        currentController?.present(vc!, animated: true, completion: nil)
+        currentController?.present(vc!, animated: true, completion: nil)*/
     }
     
     @IBAction func goBack(_ sender: UIButton) {
         self.getCurrentViewController()?.dismiss(animated: true, completion: nil)
+    }
+}
+
+class HeaderController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    @IBAction func openMenu(_ sender: UIButton) {
+        self.sideMenuController?.revealMenu()
     }
 }

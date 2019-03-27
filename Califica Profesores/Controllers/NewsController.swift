@@ -9,7 +9,6 @@
 import UIKit
 import Firebase
 import FirebaseUI
-import SideMenu
 import CardParts
 
 class NewsController: UIViewController {

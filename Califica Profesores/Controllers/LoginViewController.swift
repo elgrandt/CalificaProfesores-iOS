@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseUI
+import SideMenuSwift
 
 var currentUser : User?
 
@@ -41,7 +42,8 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
             if user != nil {
                 // check if current app user is the current User
                 currentUser = user
-                self.jumpView(next: "News", animated: false)
+                let news = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "News")
+                self.sideMenuController?.setContentViewController(to: news)
             } else {
                 // user must sign in
                 self.loginSession(authUI: FUIAuth(uiWith: auth)!)
@@ -58,7 +60,9 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
         }
         print("Sign in successful")
         currentUser = authDataResult?.user
-        self.jumpView(next: "News", animated: false)
+        
+        let news = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "News")
+        self.sideMenuController?.setContentViewController(to: news)
     }
     
     func loginSession(authUI: FUIAuth) {
