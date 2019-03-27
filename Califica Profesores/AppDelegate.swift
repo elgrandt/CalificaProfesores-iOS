@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SideMenuController.preferences.basic.menuWidth = 280
         SideMenuController.preferences.basic.statusBarBehavior = .fade
         SideMenuController.preferences.basic.position = .under
-        SideMenuController.preferences.basic.direction = .left
+        SideMenuController.preferences.basic.direction = .right
         SideMenuController.preferences.basic.enablePanGesture = true
         SideMenuController.preferences.basic.supportedOrientations = .portrait
         SideMenuController.preferences.basic.shouldRespectLanguageDirection = true

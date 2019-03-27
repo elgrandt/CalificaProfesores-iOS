@@ -42,7 +42,7 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
             if user != nil {
                 // check if current app user is the current User
                 currentUser = user
-                let news = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "News")
+                let news = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsNC")
                 self.sideMenuController?.setContentViewController(to: news)
             } else {
                 // user must sign in
@@ -61,7 +61,7 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
         print("Sign in successful")
         currentUser = authDataResult?.user
         
-        let news = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "News")
+        let news = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsNC")
         self.sideMenuController?.setContentViewController(to: news)
     }
     

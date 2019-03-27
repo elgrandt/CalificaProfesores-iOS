@@ -56,6 +56,7 @@
 		B4D44A66222A29A50023BA65 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D44A65222A29A50023BA65 /* LoginController.swift */; };
 		B4D44A68222A34290023BA65 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4D44A67222A34290023BA65 /* GoogleService-Info.plist */; };
 		B4D51E962246CF7A009B666E /* SelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D51E952246CF7A009B666E /* SelectorView.swift */; };
+		B4D7CA40224BD9BD00877B79 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D7CA3F224BD9BD00877B79 /* MainNavigationController.swift */; };
 		B4EAD4E5224822A10089F399 /* SelectorCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4EAD4E4224822A10089F399 /* SelectorCardView.xib */; };
 		B4F24AFF2230862E00F1CED1 /* SubjectSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F24AFE2230862E00F1CED1 /* SubjectSearch.swift */; };
 		B4F24B032230A8A100F1CED1 /* Subjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F24B022230A8A100F1CED1 /* Subjects.swift */; };
@@ -115,6 +116,7 @@
 		B4D44A65222A29A50023BA65 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		B4D44A67222A34290023BA65 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B4D51E952246CF7A009B666E /* SelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorView.swift; sourceTree = "<group>"; };
+		B4D7CA3F224BD9BD00877B79 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		B4EAD4E4224822A10089F399 /* SelectorCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectorCardView.xib; sourceTree = "<group>"; };
 		B4F24AFE2230862E00F1CED1 /* SubjectSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectSearch.swift; sourceTree = "<group>"; };
 		B4F24B022230A8A100F1CED1 /* Subjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subjects.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				B4BD686722496D4A000F7969 /* ProfessorCreator.swift */,
 				B42E6869224B0EC700068FD9 /* SchoolCreator.swift */,
 				B4BD68692249AD27000F7969 /* AddSubjectsToProfessor.swift */,
+				B4D7CA3F224BD9BD00877B79 /* MainNavigationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				B4CDEDF32233019B005B9087 /* Opinions.swift in Sources */,
 				B4C0A92A223F2C4E00317457 /* ReviewProfessorController.swift in Sources */,
 				B4D44A51222A28D50023BA65 /* AppDelegate.swift in Sources */,
+				B4D7CA40224BD9BD00877B79 /* MainNavigationController.swift in Sources */,
 				B4BD686822496D4A000F7969 /* ProfessorCreator.swift in Sources */,
 				B4708E7422381D7000142BE0 /* NotFoundView.swift in Sources */,
 				B4BBA2192243E73100F449C7 /* ReviewProfessor.swift in Sources */,

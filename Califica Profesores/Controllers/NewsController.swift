@@ -15,7 +15,9 @@ class NewsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupNavigationBar(title: "Noticias")
     }
+    
 }
 
 class NewsCardsController: CardsViewController, NewsNetwork {
