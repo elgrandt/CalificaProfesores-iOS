@@ -9,17 +9,19 @@
 import UIKit
 import CardParts
 
-class SchoolSearchController: UIViewController {
+class SchoolSearchController: UIViewController, SearchController {
     var searchController : UISearchController?
     @IBOutlet weak var searchBarContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupNavigationBar(title: "Buscar")
         let controller = self.children.first as! SchoolListController
         searchController = UISearchController(searchResultsController: nil)
         searchController?.searchBar.placeholder = "Buscar Facultad"
         searchController?.searchResultsUpdater = controller
         searchController?.obscuresBackgroundDuringPresentation = false
+        searchController?.hidesNavigationBarDuringPresentation = false
         searchBarContainer.addSubview((searchController?.searchBar)!)
     }
 }
@@ -81,8 +83,10 @@ class SchoolCard: CardPartsViewController, RoundedCardTrait {
                 UserDefaults.standard.set(nil, forKey: "SCHOOL_NAME")
                 UserDefaults.standard.set(nil, forKey: "SCHOOL_ID")
             }
-            let controller = UIStoryboard(name: "Subjects", bundle: nil).instantiateViewController(withIdentifier: "BuscarMateria")
-            UIApplication.shared.keyWindow?.rootViewController = controller
+            let controller = UIStoryboard(name: "Subjects", bundle: nil).instantiateViewController(withIdentifier: "SearchSubjectsNC")
+            let searchController = self.parent?.parent as? SearchController
+            searchController?.searchController?.isActive = false
+            self.sideMenuController?.setContentViewController(to: controller)
         }
     }
     

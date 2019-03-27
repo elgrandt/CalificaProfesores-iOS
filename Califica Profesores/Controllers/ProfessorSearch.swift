@@ -9,7 +9,7 @@
 import UIKit
 import CardParts
 
-class ProfessorSearchController: UIViewController {
+class ProfessorSearchController: UIViewController, SearchController {
     var searchController : UISearchController?
     @IBOutlet weak var searchBarContainer: UIView!
     
@@ -20,6 +20,7 @@ class ProfessorSearchController: UIViewController {
         searchController?.searchBar.placeholder = "Buscar Profesor"
         searchController?.searchResultsUpdater = controller
         searchController?.obscuresBackgroundDuringPresentation = false
+        searchController?.hidesNavigationBarDuringPresentation = false
         searchBarContainer.addSubview((searchController?.searchBar)!)
     }
 }

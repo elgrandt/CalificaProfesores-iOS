@@ -9,6 +9,18 @@
 import UIKit
 import CardParts
 
+extension UIView {
+    func findViewController() -> UIViewController? {
+        if let nextResponder = self.next as? UIViewController {
+            return nextResponder
+        } else if let nextResponder = self.next as? UIView {
+            return nextResponder.findViewController()
+        } else {
+            return nil
+        }
+    }
+}
+
 class NotFoundView: UIView, CardPartView {
     public var margins: UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     
@@ -46,9 +58,15 @@ class NotFoundView: UIView, CardPartView {
     }
     
     @IBAction func redirect(_ sender: Any) {
-        let currentController = HeaderView().getCurrentViewController()
+        var controller = self.findViewController()
+        while controller != nil {
+            if let cont = controller as? SearchController {
+                cont.searchController?.isActive = false
+            }
+            controller = controller?.parent
+        }
         if redirectController != nil {
-            currentController?.present(redirectController!, animated: true, completion: nil)
+            self.findViewController()?.navigationController?.pushViewController(redirectController!, animated: true)
         }
     }
 }

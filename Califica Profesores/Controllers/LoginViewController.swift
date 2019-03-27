@@ -14,6 +14,8 @@ import SideMenuSwift
 var currentUser : User?
 
 class LoginViewController: UIViewController, FUIAuthDelegate {
+    
+    let nextController = "SideMenuController"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +44,8 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
             if user != nil {
                 // check if current app user is the current User
                 currentUser = user
-                let news = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsNC")
-                self.sideMenuController?.setContentViewController(to: news)
+                let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: self.nextController)
+                UIApplication.shared.keyWindow?.rootViewController = controller
             } else {
                 // user must sign in
                 self.loginSession(authUI: FUIAuth(uiWith: auth)!)
@@ -61,8 +63,8 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
         print("Sign in successful")
         currentUser = authDataResult?.user
         
-        let news = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsNC")
-        self.sideMenuController?.setContentViewController(to: news)
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: self.nextController)
+        UIApplication.shared.keyWindow?.rootViewController = controller
     }
     
     func loginSession(authUI: FUIAuth) {

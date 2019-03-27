@@ -20,6 +20,7 @@ class SubjectCreator: UIViewController, AddSubject {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupNavigationBar(title: "Agregar Materia")
         // ARREGLO EL BUG DEL TECLADO
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -73,7 +74,7 @@ class SubjectCreator: UIViewController, AddSubject {
     }
     
     func finishedSend(success: Bool) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

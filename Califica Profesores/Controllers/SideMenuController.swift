@@ -42,10 +42,10 @@ class SideMenuLayoutController: UIViewController {
         
         switch sender.currentTitle {
         case "NOVEDADES":
-            nextView = "News"
+            nextView = "NewsNC"
             break
         case "BUSCAR MATERIA":
-            nextView = "BuscarMateria"
+            nextView = "SearchSubjectsNC"
             storyboardName = "Subjects"
             break
         case "BUSCAR PROFESOR":
@@ -53,7 +53,7 @@ class SideMenuLayoutController: UIViewController {
             storyboardName = "Professors"
             break
         case "CAMBIAR FACULTAD":
-            nextView = "BuscarFacultad"
+            nextView = "SearchSchoolsNC"
             storyboardName = "Subjects"
             break
         default:

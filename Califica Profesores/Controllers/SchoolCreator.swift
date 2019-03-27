@@ -16,6 +16,7 @@ class SchoolCreator: UIViewController, AddSchool {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupNavigationBar(title: "Agregar Facultad")
         // ARREGLO EL BUG DEL TECLADO
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -52,6 +53,6 @@ class SchoolCreator: UIViewController, AddSchool {
     }
     
     func finishedSend(success: Bool) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
 }

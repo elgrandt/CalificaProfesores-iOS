@@ -10,7 +10,11 @@ import UIKit
 import CardParts
 import XLPagerTabStrip
 
-class SubjectSearchController: UIViewController {
+protocol SearchController {
+    var searchController : UISearchController? {get set}
+}
+
+class SubjectSearchController: UIViewController, SearchController {
     var searchController : UISearchController?
     @IBOutlet weak var searchBarContainer: UIView!
     @IBOutlet weak var schoolLabel: UILabel!
@@ -18,11 +22,13 @@ class SubjectSearchController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupNavigationBar(title: "Buscar")
         let controller = self.children.first as! SubjectListController
         searchController = UISearchController(searchResultsController: nil)
         searchController?.searchBar.placeholder = "Buscar Materia"
         searchController?.searchResultsUpdater = controller
         searchController?.obscuresBackgroundDuringPresentation = false
+        searchController?.hidesNavigationBarDuringPresentation = false
         searchBarContainer.addSubview((searchController?.searchBar)!)
         let school = UserDefaults.standard.string(forKey: "SCHOOL_NAME")
         if school == nil {
@@ -61,7 +67,8 @@ class SubjectListController: CardsViewController, UISearchResultsUpdating, Subje
     func arrivedSubjects(subjects: [SubjectItem]) {
         cards = []
         for s in subjects {
-            cards.append(SubjectCard(data: s))
+            let card = SubjectCard(data: s)
+            cards.append(card)
         }
         cards.append(notFoundCard)
         self.reload(cards: cards)
@@ -92,7 +99,7 @@ class SubjectCard: CardPartsViewController, RoundedCardTrait {
             controller.loadSubject(subject: self.data!)
             let searchController = self.parent?.parent as? SubjectSearchController
             searchController?.searchController?.isActive = false
-            self.present(controller, animated: false, completion: nil)
+            self.navigationController?.pushViewController(controller, animated: true)
         }
     }
     

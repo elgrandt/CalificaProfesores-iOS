@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VWt-0D-mTH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vCb-7w-Luc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -30,7 +30,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ABW-eH-aA4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-354" y="-344"/>
+            <point key="canvasLocation" x="-2263" y="18"/>
         </scene>
         <!--Header Controller-->
         <scene sceneID="Ung-TB-SVv">
@@ -80,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gty-Wc-b5c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2162" y="19"/>
+            <point key="canvasLocation" x="-2879" y="-909"/>
         </scene>
         <!--News Controller-->
         <scene sceneID="DxV-n0-oNZ">
@@ -110,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="swM-8m-7yg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1417" y="-344"/>
+            <point key="canvasLocation" x="585" y="-333"/>
         </scene>
         <!--Side Menu Controller-->
         <scene sceneID="qh4-69-bYH">
@@ -124,7 +124,7 @@
                     </view>
                     <connections>
                         <segue destination="fg5-so-CuX" kind="custom" identifier="SideMenu.Menu" customClass="SideMenuSegue" customModule="SideMenuSwift" id="Tmp-hm-Pzu"/>
-                        <segue destination="vCb-7w-Luc" kind="custom" identifier="SideMenu.Content" customClass="SideMenuSegue" customModule="SideMenuSwift" id="KfB-n6-OKG"/>
+                        <segue destination="xfl-Dd-khj" kind="custom" identifier="SideMenu.Content" customClass="SideMenuSegue" customModule="SideMenuSwift" id="Fgb-qz-E2q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fto-Oz-cW6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -140,7 +140,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9P-IS-ZQZ">
-                                <rect key="frame" x="95" y="0.0" width="280" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[username]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKi-un-tVE">
                                         <rect key="frame" x="95.5" y="50" width="89" height="21"/>
@@ -272,8 +272,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.86022506480000005" green="0.86022506480000005" blue="0.86022506480000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="KT1-h3-VKi" firstAttribute="trailing" secondItem="X9P-IS-ZQZ" secondAttribute="trailing" id="Kq9-Mh-meH"/>
                             <constraint firstItem="KT1-h3-VKi" firstAttribute="bottom" secondItem="X9P-IS-ZQZ" secondAttribute="bottom" id="WbJ-r1-laf"/>
+                            <constraint firstItem="X9P-IS-ZQZ" firstAttribute="leading" secondItem="KT1-h3-VKi" secondAttribute="leading" id="rGB-ZF-wMj"/>
                             <constraint firstItem="X9P-IS-ZQZ" firstAttribute="top" secondItem="Kid-jT-pWm" secondAttribute="top" id="rGu-gP-O2Z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KT1-h3-VKi"/>
@@ -300,7 +300,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Psg-ES-pDE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2281" y="-344"/>
+            <point key="canvasLocation" x="1449" y="-333"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KP0-AK-MRn">
@@ -318,7 +318,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="39h-Tb-mw8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="478" y="-344"/>
+            <point key="canvasLocation" x="-354" y="-333"/>
         </scene>
     </scenes>
     <resources>

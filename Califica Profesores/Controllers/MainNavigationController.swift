@@ -15,18 +15,26 @@ extension UIViewController {
         menuBtn.setImage(UIImage(named:"Menu"), for: .normal)
         menuBtn.addTarget(self, action: #selector(openMenu), for: UIControl.Event.touchUpInside)
 
-        let rightButton = UIBarButtonItem(customView: menuBtn)
-        rightButton.tintColor = .black
-        let currWidth = rightButton.customView?.widthAnchor.constraint(equalToConstant: 27)
+        let button = UIBarButtonItem(customView: menuBtn)
+        button.tintColor = .black
+        let currWidth = button.customView?.widthAnchor.constraint(equalToConstant: 27)
         currWidth?.isActive = true
-        let currHeight = rightButton.customView?.heightAnchor.constraint(equalToConstant: 27)
+        let currHeight = button.customView?.heightAnchor.constraint(equalToConstant: 27)
         currHeight?.isActive = true
 
-        self.navigationItem.rightBarButtonItem = rightButton
+        if navigationController?.viewControllers.count == 1 {
+            self.navigationItem.leftBarButtonItem = button
+        } else {
+            self.navigationItem.rightBarButtonItem = button
+        }
+        
         self.title = title
     }
     
     @objc func openMenu() {
+        if let cont = self as? SearchController {
+            cont.searchController?.isActive = false
+        }
         self.sideMenuController?.revealMenu()
     }
 }

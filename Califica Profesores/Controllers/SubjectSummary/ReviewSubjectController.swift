@@ -26,6 +26,7 @@ class ReviewSubjectController: UIViewController, UITextViewDelegate, ReviewSubje
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupNavigationBar(title: "Reseña")
         textView.text = "Comentario..."
         textView.textColor = UIColor.lightGray
         textView.delegate = self
@@ -88,7 +89,7 @@ class ReviewSubjectController: UIViewController, UITextViewDelegate, ReviewSubje
     
     func finishedSend(success: Bool) {
         if (success) {
-            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
