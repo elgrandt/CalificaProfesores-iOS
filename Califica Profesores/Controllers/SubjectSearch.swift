@@ -10,9 +10,11 @@ import UIKit
 import CardParts
 import XLPagerTabStrip
 
-class SubjectSearchController: UIViewController, UISearchControllerDelegate {
+class SubjectSearchController: UIViewController {
     var searchController : UISearchController?
     @IBOutlet weak var searchBarContainer: UIView!
+    @IBOutlet weak var schoolLabel: UILabel!
+    @IBOutlet weak var schoolView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,19 @@ class SubjectSearchController: UIViewController, UISearchControllerDelegate {
         searchController?.searchResultsUpdater = controller
         searchController?.obscuresBackgroundDuringPresentation = false
         searchBarContainer.addSubview((searchController?.searchBar)!)
+        let school = UserDefaults.standard.string(forKey: "SCHOOL_NAME")
+        if school == nil {
+            schoolLabel.text = "Todas las facultades"
+        } else {
+            schoolLabel.text = school?.uppercased()
+        }
+        let gesture = UITapGestureRecognizer(target: self, action:  #selector (self.changeSchool (_:)))
+        schoolView.addGestureRecognizer(gesture)
+    }
+    
+    @objc func changeSchool(_ sender:UITapGestureRecognizer) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "BuscarFacultad")
+        UIApplication.shared.keyWindow?.rootViewController = controller
     }
 }
 
@@ -39,7 +54,8 @@ class SubjectListController: CardsViewController, UISearchResultsUpdating, Subje
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        self.searchSubjects(keyword: searchController.searchBar.text ?? "")
+        let school = UserDefaults.standard.string(forKey: "SCHOOL_ID")
+        self.searchSubjects(keyword: searchController.searchBar.text ?? "", school: school)
     }
     
     func arrivedSubjects(subjects: [SubjectItem]) {

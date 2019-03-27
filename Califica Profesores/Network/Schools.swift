@@ -67,3 +67,37 @@ extension SchoolNetwork {
         })
     }
 }
+
+struct SchoolAddRequest {
+    var erase : Bool?
+    var timestamp : Int?
+    var uniCompleteName : String?
+    var uniShortName : String?
+}
+
+protocol AddSchool {
+    func finishedSend(success: Bool)
+}
+
+extension AddSchool {
+    func add(school: SchoolAddRequest) {
+        let ref = Database.database().reference()
+        let dict : [String : Any] = [
+            "erase" : school.erase as Any,
+            "timestamp" : school.timestamp as Any,
+            "uniCompleteName" : school.uniCompleteName as Any,
+            "uniShortName" : school.uniShortName as Any
+        ]
+        ref
+            .child("UniAddRequests")
+            .child(currentUser!.uid)
+            .childByAutoId()
+            .setValue(dict) { (error, database) in
+                var suc = false
+                if (error == nil) {
+                    suc = true
+                }
+                self.finishedSend(success: suc)
+        }
+    }
+}

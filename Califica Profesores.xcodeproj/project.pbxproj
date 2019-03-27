@@ -17,6 +17,8 @@
 		B429929B222DBF6100D95326 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B429929A222DBF6100D95326 /* LoginViewController.swift */; };
 		B429929D222DD05600D95326 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B429929C222DD05600D95326 /* HeaderView.xib */; };
 		B429929F222DD07400D95326 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B429929E222DD07400D95326 /* HeaderView.swift */; };
+		B42E6868224AAEB300068FD9 /* SchoolSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42E6867224AAEB300068FD9 /* SchoolSearch.swift */; };
+		B42E686A224B0EC700068FD9 /* SchoolCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42E6869224B0EC700068FD9 /* SchoolCreator.swift */; };
 		B43FFBFD2245510600CE23BD /* SubjectCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43FFBFC2245510600CE23BD /* SubjectCreator.swift */; };
 		B44B9FE5223DB6F000360FC9 /* ProfessorSummaryOpinionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44B9FE4223DB6F000360FC9 /* ProfessorSummaryOpinionsController.swift */; };
 		B4529CF8222B1F2F00D9856B /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4529CF7222B1F2F00D9856B /* NewsController.swift */; };
@@ -72,6 +74,8 @@
 		B429929A222DBF6100D95326 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B429929C222DD05600D95326 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		B429929E222DD07400D95326 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		B42E6867224AAEB300068FD9 /* SchoolSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolSearch.swift; sourceTree = "<group>"; };
+		B42E6869224B0EC700068FD9 /* SchoolCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolCreator.swift; sourceTree = "<group>"; };
 		B43FFBFC2245510600CE23BD /* SubjectCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCreator.swift; sourceTree = "<group>"; };
 		B44B9FE4223DB6F000360FC9 /* ProfessorSummaryOpinionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorSummaryOpinionsController.swift; sourceTree = "<group>"; };
 		B4529CF7222B1F2F00D9856B /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
@@ -164,10 +168,10 @@
 				B454A5DA222F20B800B99B83 /* News.swift */,
 				B4F24B022230A8A100F1CED1 /* Subjects.swift */,
 				B4214CBF2232226000CB94A7 /* Professors.swift */,
+				B4BD686522493717000F7969 /* Schools.swift */,
 				B4CDEDF22233019B005B9087 /* Opinions.swift */,
 				B4CD3DEB2236B77E00AE3A51 /* ReviewSubject.swift */,
 				B4BBA2182243E73100F449C7 /* ReviewProfessor.swift */,
-				B4BD686522493717000F7969 /* Schools.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -267,8 +271,10 @@
 				B429929A222DBF6100D95326 /* LoginViewController.swift */,
 				B4F24AFE2230862E00F1CED1 /* SubjectSearch.swift */,
 				B4D3DEB5223971CB00489F84 /* ProfessorSearch.swift */,
+				B42E6867224AAEB300068FD9 /* SchoolSearch.swift */,
 				B43FFBFC2245510600CE23BD /* SubjectCreator.swift */,
 				B4BD686722496D4A000F7969 /* ProfessorCreator.swift */,
+				B42E6869224B0EC700068FD9 /* SchoolCreator.swift */,
 				B4BD68692249AD27000F7969 /* AddSubjectsToProfessor.swift */,
 			);
 			path = Controllers;
@@ -479,6 +485,7 @@
 				B4214CBE223220B000CB94A7 /* SubjectProfessorListController.swift in Sources */,
 				B4D51E962246CF7A009B666E /* SelectorView.swift in Sources */,
 				B4529CF8222B1F2F00D9856B /* NewsController.swift in Sources */,
+				B42E686A224B0EC700068FD9 /* SchoolCreator.swift in Sources */,
 				B4D3DEB6223971CB00489F84 /* ProfessorSearch.swift in Sources */,
 				B4C0A928223F220A00317457 /* ProfessorSummaryMyOpinionController.swift in Sources */,
 				B45773E5223DF37E00AE3612 /* OpinionsView.swift in Sources */,
@@ -503,6 +510,7 @@
 				B43FFBFD2245510600CE23BD /* SubjectCreator.swift in Sources */,
 				B4299299222DBC9200D95326 /* LoadingView.swift in Sources */,
 				B429929F222DD07400D95326 /* HeaderView.swift in Sources */,
+				B42E6868224AAEB300068FD9 /* SchoolSearch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

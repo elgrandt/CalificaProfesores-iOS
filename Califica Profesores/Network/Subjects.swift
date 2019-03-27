@@ -41,7 +41,7 @@ func SnapToSubject(snap: DataSnapshot) -> SubjectItem {
 }
 
 extension SubjectsNetwork {
-    func searchSubjects(keyword : String? = nil, hash : String? = nil) {
+    func searchSubjects(keyword : String? = nil, hash : String? = nil, school : String? = nil) {
         var query : DatabaseQuery?
         if keyword != nil {
             let keywordModified = keyword!.lowercased()
@@ -50,11 +50,20 @@ extension SubjectsNetwork {
                 .replacingOccurrences(of: "í", with: "i")
                 .replacingOccurrences(of: "ó", with: "o")
                 .replacingOccurrences(of: "ú", with: "u")
-            query = Database.database().reference()
-                .child("Materias")
-                .queryOrdered(byChild: "Name")
-                .queryStarting(atValue: keywordModified)
-                .queryEnding(atValue: keywordModified + "\u{f8ff}")
+            if school == nil {
+                query = Database.database().reference()
+                    .child("Materias")
+                    .queryOrdered(byChild: "Name")
+                    .queryStarting(atValue: keywordModified)
+                    .queryEnding(atValue: keywordModified + "\u{f8ff}")
+            } else {
+                query = Database.database().reference()
+                    .child("MateriasPorFacultad")
+                    .child(school!)
+                    .queryOrdered(byChild: "Name")
+                    .queryStarting(atValue: keywordModified)
+                    .queryEnding(atValue: keywordModified + "\u{f8ff}")
+            }
         } else {
             query = Database.database().reference()
                 .child("Materias")
@@ -62,7 +71,7 @@ extension SubjectsNetwork {
         }
         
         query!.observeSingleEvent(of: .value, with: { (snapshot) in
-            if keyword != nil {
+            if keyword != nil && school == nil {
                 var children : [SubjectItem] = []
                 for child in snapshot.children {
                     let childSnapshot = child as! DataSnapshot
@@ -72,6 +81,25 @@ extension SubjectsNetwork {
                     children.append(SnapToSubject(snap: childSnapshot))
                 }
                 self.arrivedSubjects(subjects: children)
+            } else if school != nil {
+                var counter : Int = 0
+                var children : [SubjectItem] = []
+                for child in snapshot.children {
+                    counter += 1
+                    let childSnap = child as! DataSnapshot
+                    Database.database().reference()
+                        .child("Materias")
+                        .child(childSnap.key)
+                        .observeSingleEvent(of: .value, with: { (snapshot) in
+                            counter -= 1
+                            if !(snapshot.value is NSNull) {
+                                children.append(SnapToSubject(snap: snapshot))
+                            }
+                            if counter == 0 {
+                                self.arrivedSubjects(subjects: children)
+                            }
+                        })
+                }
             } else {
                 self.arrivedSubjects(subjects: [SnapToSubject(snap: snapshot)])
             }
