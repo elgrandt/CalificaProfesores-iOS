@@ -30,10 +30,8 @@ class SideMenuLayoutController: UIViewController {
 
     @IBAction func logout(_ sender: Any) {
         try! Auth.auth().signOut()
-        self.dismiss(animated: true) { () -> Void in
-            let controller = self.storyboard?.instantiateViewController(withIdentifier: "Login")
-            UIApplication.shared.keyWindow?.rootViewController = controller
-        }
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "Login")
+        UIApplication.shared.keyWindow?.rootViewController = controller
     }
     
     @IBAction func jumpView(_ sender: UIButton) {
@@ -55,6 +53,12 @@ class SideMenuLayoutController: UIViewController {
         case "CAMBIAR FACULTAD":
             nextView = "SearchSchoolsNC"
             storyboardName = "Subjects"
+            break
+        case "Atribuciones":
+            nextView = "AttributionsNC"
+            break
+        case "Politica de Privacidad":
+            nextView = "PrivacyNC"
             break
         default:
             break

@@ -19,6 +19,7 @@ class SubjectProfessorListController: CardsViewController, ProfessorsNetwork {
         super.viewDidLoad()
         cards.append(LoadingCard())
         self.loadCards(cards: cards)
+        self.collectionView.isScrollEnabled = false
     }
     
     func loadProfessors(professors: [String]) {
@@ -33,6 +34,15 @@ class SubjectProfessorListController: CardsViewController, ProfessorsNetwork {
             cards.append(noProfessorsCard)
         }
         self.reload(cards: cards)
+        if let parentObj = parent as? SubjectSummaryGeneralController {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                if self.collectionView.contentSize.height != 0 {
+                    parentObj.professorsViewHeight.constant = self.collectionView.contentSize.height + 24
+                } else {
+                    self.loadProfessors(professors: professors)
+                }
+            })
+        }
     }
     
     func arrivedProfessor(professor: ProfessorItem) {

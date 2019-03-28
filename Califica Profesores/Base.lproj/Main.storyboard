@@ -178,10 +178,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWU-HC-d2M">
                                         <rect key="frame" x="40" y="577" width="200" height="30"/>
                                         <state key="normal" title="Politica de Privacidad"/>
+                                        <connections>
+                                            <action selector="jumpView:" destination="fg5-so-CuX" eventType="touchUpInside" id="N02-r6-hvA"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5WQ-Pl-n8X">
                                         <rect key="frame" x="40" y="537" width="200" height="30"/>
                                         <state key="normal" title="Atribuciones"/>
+                                        <connections>
+                                            <action selector="jumpView:" destination="fg5-so-CuX" eventType="touchUpInside" id="N1D-ck-t5X"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.86022506480000005" green="0.86022506480000005" blue="0.86022506480000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -237,6 +243,22 @@
             </objects>
             <point key="canvasLocation" x="-354" y="361"/>
         </scene>
+        <!--Attributions-->
+        <scene sceneID="842-QM-PBD">
+            <objects>
+                <viewController id="JoF-MQ-jWd" customClass="Attributions" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qCT-aM-eFp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="d5f-TH-y7S"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jcg-Gt-wjM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XBY-q1-xZj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1449" y="360"/>
+        </scene>
         <!--News Cards Controller-->
         <scene sceneID="Me1-wa-SpM">
             <objects>
@@ -262,6 +284,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kgy-SG-Sfe">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="Dzo-A0-dyd" kind="relationship" relationship="rootViewController" id="nMy-3W-eD8"/>
                     </connections>
@@ -269,6 +294,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="39h-Tb-mw8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-354" y="-333"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="klW-Tk-7GM">
+            <objects>
+                <navigationController storyboardIdentifier="AttributionsNC" automaticallyAdjustsScrollViewInsets="NO" id="lHA-r0-sE9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ao5-yx-u66">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JoF-MQ-jWd" kind="relationship" relationship="rootViewController" id="oq9-Sk-L9P"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iH0-1G-EMz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="584.79999999999995" y="359.37031484257875"/>
+        </scene>
+        <!--Privacy Policies-->
+        <scene sceneID="PzC-e8-Obg">
+            <objects>
+                <viewController id="bGw-VX-uhu" customClass="PrivacyPolicies" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fMO-aV-QXJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="UD2-p1-sI2"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pGl-S8-sg9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4g6-ya-MZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1449" y="1084"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uku-vk-0dm">
+            <objects>
+                <navigationController storyboardIdentifier="PrivacyNC" automaticallyAdjustsScrollViewInsets="NO" id="6aP-UV-jGq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rG9-PK-HEn">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bGw-VX-uhu" kind="relationship" relationship="rootViewController" id="odg-U0-0CY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s8e-dY-p5R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="584.79999999999995" y="1084.4077961019491"/>
         </scene>
     </scenes>
 </document>

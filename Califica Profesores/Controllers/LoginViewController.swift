@@ -19,7 +19,6 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureAuth()
     }
     

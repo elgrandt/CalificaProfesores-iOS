@@ -21,6 +21,7 @@ class SubjectSummaryGeneralController: UIViewController, IndicatorInfoProvider {
     var subject : SubjectItem?
     @IBOutlet weak var noOpinionViewHeight: NSLayoutConstraint!
     @IBOutlet weak var rankHeight: NSLayoutConstraint!
+    @IBOutlet weak var professorsViewHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
