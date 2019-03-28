@@ -14,6 +14,7 @@ class SubjectCreator: UIViewController, AddSubject {
     @IBOutlet weak var professorSelectorHeight: NSLayoutConstraint!
     @IBOutlet weak var schoolSelectorHeight: NSLayoutConstraint!
     @IBOutlet weak var subjectName: UITextField!
+    @IBOutlet weak var sendButton: UIButton!
     
     var schoolSelector : SchoolSelectorViewController?
     var professorSelector : ProfessorSelectorViewController?
@@ -31,6 +32,8 @@ class SubjectCreator: UIViewController, AddSubject {
         // OBTENGO LOS HIJOS
         schoolSelector = self.children[0] as? SchoolSelectorViewController
         professorSelector = self.children[1] as? ProfessorSelectorViewController
+        self.updateButtonStatus()
+        subjectName.addTarget(self, action: #selector(nameInputChanged(_:)), for: .editingChanged)
     }
     
     @objc func dismissKeyboard(sender:UITapGestureRecognizer) {
@@ -48,6 +51,27 @@ class SubjectCreator: UIViewController, AddSubject {
         let new_inset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         scrollView.contentInset = new_inset
         scrollView.scrollIndicatorInsets = new_inset
+    }
+    
+    @objc func nameInputChanged(_ sender: UITextField) {
+        self.updateButtonStatus()
+    }
+    
+    func updateButtonStatus() {
+        var enabled = true
+        if subjectName.text == nil || subjectName.text == "" {
+            enabled = false
+        }
+        if schoolSelector != nil && schoolSelector?.selectedList != nil && schoolSelector!.selectedList!.cards.count == 0 {
+            enabled = false
+        }
+        if enabled {
+            sendButton.isEnabled = true
+            sendButton.alpha = 1
+        } else {
+            sendButton.isEnabled = false
+            sendButton.alpha = 0.6
+        }
     }
 
     @IBAction func send(_ sender: UIButton) {
@@ -167,6 +191,9 @@ class SchoolSelectorViewController: UIViewController, SchoolNetwork, SelectorCar
         } else {
             inputContainerHeight.isActive = false
             searchBar?.isHidden = false
+        }
+        if let subjectCreator = self.parent as? SubjectCreator {
+            subjectCreator.updateButtonStatus()
         }
     }
     

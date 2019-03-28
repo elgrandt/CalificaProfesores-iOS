@@ -317,6 +317,7 @@
                         <outlet property="professorSelectorHeight" destination="HHp-UD-C4f" id="Yz9-vg-fiR"/>
                         <outlet property="schoolSelectorHeight" destination="Zfm-Zw-L9y" id="rGw-7q-lGS"/>
                         <outlet property="scrollView" destination="7SF-vc-XfH" id="ehg-4q-gf6"/>
+                        <outlet property="sendButton" destination="zID-E5-aRH" id="rcA-zf-ykv"/>
                         <outlet property="subjectName" destination="j8A-KQ-VhV" id="7AA-ph-l3T"/>
                     </connections>
                 </viewController>
@@ -539,7 +540,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmr-Ir-Q65">
                                         <rect key="frame" x="0.0" y="65" width="375" height="70"/>
                                         <subviews>
-                                            <view verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4wH-tI-MxX" customClass="CosmosView" customModule="Cosmos">
+                                            <view verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4wH-tI-MxX" customClass="CosmosView" customModule="Cosmos">
                                                 <rect key="frame" x="40" y="7.5" width="295" height="55"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="55" id="sXb-FN-KQh"/>
@@ -1071,7 +1072,6 @@
         <!--School Search Controller-->
         <scene sceneID="jkV-Hi-TuR">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3BF-bv-JFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="BuscarFacultad" id="Nss-az-4IT" customClass="SchoolSearchController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lAR-rs-yl3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -1108,6 +1108,7 @@
                         <outlet property="searchBarContainer" destination="FBp-6E-9dk" id="X6D-1n-34j"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3BF-bv-JFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="480.80000000000001" y="-763.26836581709154"/>
         </scene>
@@ -1272,6 +1273,7 @@
                         <outlet property="fullNameInput" destination="VM2-YQ-JEe" id="6Ov-g9-R3g"/>
                         <outlet property="reducedNameInput" destination="miD-8J-ROX" id="0Zr-Cl-73E"/>
                         <outlet property="scrollView" destination="dFG-PI-eUq" id="yzD-9A-Apk"/>
+                        <outlet property="sendButton" destination="d95-cd-DeZ" id="VH7-gI-0mC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JVU-CR-mnG" userLabel="First Responder" sceneMemberID="firstResponder"/>

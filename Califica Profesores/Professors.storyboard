@@ -443,9 +443,6 @@
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
                                                                         <real key="value" value="25"/>
                                                                     </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="backtrackLineWidth">
-                                                                        <real key="value" value="25"/>
-                                                                    </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="endThumbTintColor">
                                                                         <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </userDefinedRuntimeAttribute>
@@ -469,6 +466,9 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="thumbLineWidth">
                                                                         <real key="value" value="2"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="backtrackLineWidth">
+                                                                        <real key="value" value="25"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
@@ -617,7 +617,7 @@
                                                             <constraint firstItem="xPt-OX-Ux4" firstAttribute="centerX" secondItem="Xc8-Zs-Pqu" secondAttribute="centerX" id="sg9-1D-MJ4"/>
                                                         </constraints>
                                                     </view>
-                                                    <view verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Go-gS-VyN" customClass="CosmosView" customModule="Cosmos">
+                                                    <view verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Go-gS-VyN" customClass="CosmosView" customModule="Cosmos">
                                                         <rect key="frame" x="40" y="20" width="295" height="55"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="55" id="L67-o7-XRA"/>
@@ -968,6 +968,7 @@
                     <connections>
                         <outlet property="professorName" destination="hIS-HX-sG4" id="oUf-Yp-zbD"/>
                         <outlet property="scrollView" destination="Zms-5b-3Fb" id="ar4-fa-ZA2"/>
+                        <outlet property="sendButton" destination="Bc2-jR-pyV" id="k62-wd-tNR"/>
                         <outlet property="subjectSelectorHeight" destination="a0u-6I-DFq" id="CFr-f0-ebG"/>
                     </connections>
                 </viewController>
@@ -1098,6 +1099,7 @@
                     <connections>
                         <outlet property="professorName" destination="GB1-ST-DNO" id="R7a-qB-H6g"/>
                         <outlet property="scrollView" destination="S5J-VD-bVD" id="oe8-mI-Fy7"/>
+                        <outlet property="sendButton" destination="zxy-YC-umL" id="NS1-Ay-YpJ"/>
                         <outlet property="subjectSelectorHeight" destination="4tl-XN-xLa" id="F3H-tz-k1B"/>
                     </connections>
                 </viewController>
@@ -1263,6 +1265,6 @@
         <image name="Facebook Logo" width="35" height="35"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uNv-VE-emi"/>
+        <segue reference="1wJ-fz-ku1"/>
     </inferredMetricsTieBreakers>
 </document>

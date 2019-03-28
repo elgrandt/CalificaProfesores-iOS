@@ -13,6 +13,7 @@ class SchoolCreator: UIViewController, AddSchool {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var fullNameInput: UITextField!
     @IBOutlet weak var reducedNameInput: UITextField!
+    @IBOutlet weak var sendButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,9 @@ class SchoolCreator: UIViewController, AddSchool {
         // AGREGO PARA QUE SE CIERRE EL TECLADO TOCANDO AFUERA
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ReviewSubjectController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        self.updateButtonStatus()
+        fullNameInput.addTarget(self, action: #selector(nameInputChanged(_:)), for: .editingChanged)
+        reducedNameInput.addTarget(self, action: #selector(nameInputChanged(_:)), for: .editingChanged)
     }
     
     @objc func dismissKeyboard(sender:UITapGestureRecognizer) {
@@ -41,6 +45,27 @@ class SchoolCreator: UIViewController, AddSchool {
         let new_inset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         scrollView.contentInset = new_inset
         scrollView.scrollIndicatorInsets = new_inset
+    }
+    
+    @objc func nameInputChanged(_ sender: UITextField) {
+        self.updateButtonStatus()
+    }
+    
+    func updateButtonStatus() {
+        var enabled = true
+        if fullNameInput.text == nil || fullNameInput.text == "" {
+            enabled = false
+        }
+        if reducedNameInput.text == nil || reducedNameInput.text == "" {
+            enabled = false
+        }
+        if enabled {
+            sendButton.isEnabled = true
+            sendButton.alpha = 1
+        } else {
+            sendButton.isEnabled = false
+            sendButton.alpha = 0.6
+        }
     }
     
     @IBAction func send(_ sender: UIButton) {

@@ -13,6 +13,7 @@ class ProfessorCreator: UIViewController, AddProfessor {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var subjectSelectorHeight: NSLayoutConstraint!
     @IBOutlet weak var professorName: UITextField!
+    @IBOutlet weak var sendButton: UIButton!
     
     var subjectSelector : SubjectSelectorViewController?
     
@@ -28,6 +29,8 @@ class ProfessorCreator: UIViewController, AddProfessor {
         view.addGestureRecognizer(tap)
         // OBTENGO LOS HIJOS
         subjectSelector = children.first as? SubjectSelectorViewController
+        self.updateButtonStatus()
+        professorName.addTarget(self, action: #selector(nameInputChanged(_:)), for: .editingChanged)
     }
     
     @objc func dismissKeyboard(sender:UITapGestureRecognizer) {
@@ -45,6 +48,24 @@ class ProfessorCreator: UIViewController, AddProfessor {
         let new_inset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         scrollView.contentInset = new_inset
         scrollView.scrollIndicatorInsets = new_inset
+    }
+    
+    @objc func nameInputChanged(_ sender: UITextField) {
+        self.updateButtonStatus()
+    }
+    
+    func updateButtonStatus() {
+        var enabled = true
+        if professorName.text == nil || professorName.text == "" {
+            enabled = false
+        }
+        if enabled {
+            sendButton.isEnabled = true
+            sendButton.alpha = 1
+        } else {
+            sendButton.isEnabled = false
+            sendButton.alpha = 0.6
+        }
     }
     
     @IBAction func send(_ sender: UIButton) {
@@ -183,6 +204,9 @@ class SubjectSelectorViewController: UIViewController, SubjectsNetwork, Selector
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
                 self.updateHeight()
             })
+        }
+        if let parent = self.parent as? AddSubjectsToProfessor {
+            parent.updateButtonStatus()
         }
     }
     

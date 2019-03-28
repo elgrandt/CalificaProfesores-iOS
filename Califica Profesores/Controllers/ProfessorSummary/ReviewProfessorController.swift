@@ -326,7 +326,7 @@ protocol RealTimeCircularSliderDelegate {
     func updateTracking(element: RealTimeCircularSlider, number: UILabel?)
 }
 
-class RealTimeCircularSlider : CircularSlider {
+@IBDesignable class RealTimeCircularSlider : CircularSlider {
     var delegate : RealTimeCircularSliderDelegate?
     var number : UILabel?
     
@@ -335,5 +335,17 @@ class RealTimeCircularSlider : CircularSlider {
             delegate!.updateTracking(element: self, number: number)
         }
         return super.continueTracking(touch, with: event)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
     }
 }

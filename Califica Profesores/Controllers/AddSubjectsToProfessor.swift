@@ -13,6 +13,7 @@ class AddSubjectsToProfessor: UIViewController, AddProfessor {
     @IBOutlet weak var professorName: UILabel!
     @IBOutlet weak var subjectSelectorHeight: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var sendButton: UIButton!
     
     var subjectSelector : SubjectSelectorViewController?
     var professor : ProfessorItem?
@@ -31,7 +32,9 @@ class AddSubjectsToProfessor: UIViewController, AddProfessor {
         subjectSelector = children.first as? SubjectSelectorViewController
         subjectSelector?.addLaterSwitch.isOn = false
         subjectSelector?.addLaterChanged(subjectSelector!.addLaterSwitch)
+        subjectSelector?.addLaterSwitch.isEnabled = false
         professorName.text = professor?.Name
+        updateButtonStatus()
     }
     
     @objc func dismissKeyboard(sender:UITapGestureRecognizer) {
@@ -49,6 +52,20 @@ class AddSubjectsToProfessor: UIViewController, AddProfessor {
         let new_inset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         scrollView.contentInset = new_inset
         scrollView.scrollIndicatorInsets = new_inset
+    }
+    
+    func updateButtonStatus() {
+        var enabled = true
+        if subjectSelector != nil && subjectSelector?.selectedList != nil && subjectSelector!.selectedList!.cards.count == 0 {
+            enabled = false
+        }
+        if enabled {
+            sendButton.isEnabled = true
+            sendButton.alpha = 1
+        } else {
+            sendButton.isEnabled = false
+            sendButton.alpha = 0.6
+        }
     }
     
     func loadProfessor(prof: ProfessorItem?) {
