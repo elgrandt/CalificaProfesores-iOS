@@ -37,6 +37,7 @@ class ReviewProfessorController: UIViewController, UITextViewDelegate, RealTimeC
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupNavigationBar(title: "Reseña")
         // CONFIGURO LA INPUT DEL COMENTARIO
         textView.text = "Comentario..."
         textView.textColor = UIColor.lightGray
@@ -82,9 +83,9 @@ class ReviewProfessorController: UIViewController, UITextViewDelegate, RealTimeC
     }
     
     func configure() {
-        amabilidadSlider.endPointValue = CGFloat(opinion!.amabilidad!)
-        clasesSlider.endPointValue = CGFloat(opinion!.clases!)
-        conocimientoSlider.endPointValue = CGFloat(opinion!.conocimiento!)
+        amabilidadSlider.endPointValue = max(CGFloat(opinion!.amabilidad!)-0.5, 0)
+        clasesSlider.endPointValue = max(CGFloat(opinion!.clases!)-0.5, 0)
+        conocimientoSlider.endPointValue = max(CGFloat(opinion!.conocimiento!)-0.5, 0)
         updateRank()
         textViewDidBeginEditing(textView)
         textView.text = opinion!.content!
@@ -147,7 +148,7 @@ class ReviewProfessorController: UIViewController, UITextViewDelegate, RealTimeC
     
     func finishedSend(success: Bool) {
         if (success) {
-            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
@@ -261,7 +262,7 @@ class LinkSubjectCard : CardPartsViewController, RoundedCardTrait {
         self.cardTapped {
             let controller = UIStoryboard(name: "Professors", bundle: nil).instantiateViewController(withIdentifier: "AddSubjectsToProfessor") as! AddSubjectsToProfessor
             controller.loadProfessor(prof: self.professor)
-            self.present(controller, animated: true, completion: nil)
+            self.navigationController?.pushViewController(controller, animated: true)
         }
     }
     

@@ -10,6 +10,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Po2-V1-mxC">
+            <objects>
+                <navigationController storyboardIdentifier="SearchProfessorsNC" id="mV3-jl-511" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NIv-52-dT5">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="W2t-k4-eBf" kind="relationship" relationship="rootViewController" id="GEX-eH-EXL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KPo-wO-WIR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-702" y="149"/>
+        </scene>
         <!--Professor Search Controller-->
         <scene sceneID="jHq-wL-Izk">
             <objects>
@@ -18,22 +34,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPF-0g-92X" customClass="HeaderView" customModule="Califica_Profesores" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="pa7-dC-323"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ot-0O-6zq">
-                                <rect key="frame" x="0.0" y="70" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="2Xy-1G-MuS"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x55-uo-2Px">
-                                <rect key="frame" x="0.0" y="126" width="375" height="541"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <connections>
                                     <segue destination="O7W-bj-esT" kind="embed" id="XMt-vr-Clc"/>
                                 </connections>
@@ -41,19 +50,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="DPF-0g-92X" firstAttribute="leading" secondItem="6su-0b-5c6" secondAttribute="leading" id="7ba-nI-cdd"/>
                             <constraint firstItem="6su-0b-5c6" firstAttribute="bottom" secondItem="x55-uo-2Px" secondAttribute="bottom" id="FFz-Yr-OjN"/>
                             <constraint firstItem="0ot-0O-6zq" firstAttribute="leading" secondItem="6su-0b-5c6" secondAttribute="leading" id="TS3-GR-XIH"/>
-                            <constraint firstItem="0ot-0O-6zq" firstAttribute="top" secondItem="DPF-0g-92X" secondAttribute="bottom" id="UdV-5h-MXB"/>
                             <constraint firstItem="6su-0b-5c6" firstAttribute="trailing" secondItem="x55-uo-2Px" secondAttribute="trailing" id="Z4N-Wy-xdF"/>
-                            <constraint firstItem="DPF-0g-92X" firstAttribute="trailing" secondItem="6su-0b-5c6" secondAttribute="trailing" id="gH9-AO-ojz"/>
                             <constraint firstItem="6su-0b-5c6" firstAttribute="trailing" secondItem="0ot-0O-6zq" secondAttribute="trailing" id="jBj-hQ-aCX"/>
                             <constraint firstItem="x55-uo-2Px" firstAttribute="top" secondItem="0ot-0O-6zq" secondAttribute="bottom" id="la2-1M-hpF"/>
                             <constraint firstItem="x55-uo-2Px" firstAttribute="leading" secondItem="6su-0b-5c6" secondAttribute="leading" id="mg2-CG-6YH"/>
-                            <constraint firstItem="DPF-0g-92X" firstAttribute="top" secondItem="6su-0b-5c6" secondAttribute="top" id="sCX-8y-g1u"/>
+                            <constraint firstItem="0ot-0O-6zq" firstAttribute="top" secondItem="6su-0b-5c6" secondAttribute="top" id="mrH-9j-VbW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6su-0b-5c6"/>
                     </view>
+                    <navigationItem key="navigationItem" id="tkA-CI-kqK"/>
                     <connections>
                         <outlet property="searchBarContainer" destination="0ot-0O-6zq" id="Dqi-N1-fr7"/>
                     </connections>
@@ -67,7 +74,7 @@
             <objects>
                 <viewController id="O7W-bj-esT" customClass="ProfessorListController" customModule="Califica_Profesores" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BYP-ev-h45">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="541"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="547"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="p9p-j6-duf"/>
@@ -86,10 +93,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uw9-fd-wMe">
-                                <rect key="frame" x="0.0" y="115" width="375" height="552"/>
+                                <rect key="frame" x="0.0" y="65" width="375" height="602"/>
                             </scrollView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qC4-aU-dWU" customClass="ButtonBarView" customModule="XLPagerTabStrip">
-                                <rect key="frame" x="0.0" y="70" width="375" height="45"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="dWd-4a-9zp"/>
@@ -102,28 +109,18 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mzO-eF-Qyi" customClass="HeaderView" customModule="Califica_Profesores" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Nv4-w9-GP8"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qC4-aU-dWU" firstAttribute="leading" secondItem="GTo-z4-nly" secondAttribute="leading" id="4Sj-s7-oEA"/>
                             <constraint firstItem="GTo-z4-nly" firstAttribute="bottom" secondItem="Uw9-fd-wMe" secondAttribute="bottom" id="8gX-kr-vYA"/>
                             <constraint firstItem="Uw9-fd-wMe" firstAttribute="top" secondItem="qC4-aU-dWU" secondAttribute="bottom" id="AhI-xd-XqW"/>
-                            <constraint firstItem="mzO-eF-Qyi" firstAttribute="top" secondItem="GTo-z4-nly" secondAttribute="top" id="Hg8-OH-axU"/>
-                            <constraint firstItem="mzO-eF-Qyi" firstAttribute="trailing" secondItem="GTo-z4-nly" secondAttribute="trailing" id="IBI-D2-HyT"/>
                             <constraint firstItem="GTo-z4-nly" firstAttribute="trailing" secondItem="Uw9-fd-wMe" secondAttribute="trailing" id="IZD-q9-Khe"/>
                             <constraint firstItem="qC4-aU-dWU" firstAttribute="leading" secondItem="GTo-z4-nly" secondAttribute="leading" id="Nvs-LW-Ksh"/>
                             <constraint firstItem="qC4-aU-dWU" firstAttribute="trailing" secondItem="GTo-z4-nly" secondAttribute="trailing" id="WdS-g5-qrd"/>
                             <constraint firstItem="Uw9-fd-wMe" firstAttribute="leading" secondItem="GTo-z4-nly" secondAttribute="leading" id="cau-r5-nSJ"/>
                             <constraint firstItem="GTo-z4-nly" firstAttribute="trailing" secondItem="qC4-aU-dWU" secondAttribute="trailing" id="eAH-xB-4bO"/>
-                            <constraint firstItem="mzO-eF-Qyi" firstAttribute="leading" secondItem="GTo-z4-nly" secondAttribute="leading" id="iXE-4L-32s"/>
-                            <constraint firstItem="qC4-aU-dWU" firstAttribute="top" secondItem="mzO-eF-Qyi" secondAttribute="bottom" id="xmG-EP-sFW"/>
+                            <constraint firstItem="qC4-aU-dWU" firstAttribute="top" secondItem="GTo-z4-nly" secondAttribute="top" id="uZL-cc-nB1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GTo-z4-nly"/>
                     </view>
@@ -363,15 +360,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="heX-M7-UPW" customClass="HeaderView" customModule="Califica_Profesores" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="vUZ-uf-zDE"/>
-                                </constraints>
-                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3z-v0-RPy">
-                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VAj-YS-2oW">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="600.5"/>
@@ -627,7 +617,7 @@
                                                             <constraint firstItem="xPt-OX-Ux4" firstAttribute="centerX" secondItem="Xc8-Zs-Pqu" secondAttribute="centerX" id="sg9-1D-MJ4"/>
                                                         </constraints>
                                                     </view>
-                                                    <view verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Go-gS-VyN" customClass="CosmosView" customModule="Cosmos">
+                                                    <view verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Go-gS-VyN" customClass="CosmosView" customModule="Cosmos">
                                                         <rect key="frame" x="40" y="20" width="295" height="55"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="55" id="L67-o7-XRA"/>
@@ -838,11 +828,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="heX-M7-UPW" firstAttribute="leading" secondItem="V5X-T0-pjC" secondAttribute="leading" id="MJy-4G-SNF"/>
-                            <constraint firstItem="b3z-v0-RPy" firstAttribute="top" secondItem="heX-M7-UPW" secondAttribute="bottom" id="PYx-mq-DZH"/>
-                            <constraint firstItem="heX-M7-UPW" firstAttribute="top" secondItem="V5X-T0-pjC" secondAttribute="top" id="YxY-KP-W5k"/>
+                            <constraint firstItem="b3z-v0-RPy" firstAttribute="top" secondItem="V5X-T0-pjC" secondAttribute="top" id="fnY-gI-ayx"/>
                             <constraint firstItem="b3z-v0-RPy" firstAttribute="leading" secondItem="V5X-T0-pjC" secondAttribute="leading" id="iIO-Eh-ffn"/>
-                            <constraint firstItem="heX-M7-UPW" firstAttribute="trailing" secondItem="V5X-T0-pjC" secondAttribute="trailing" id="iuv-53-Fov"/>
                             <constraint firstItem="V5X-T0-pjC" firstAttribute="bottom" secondItem="b3z-v0-RPy" secondAttribute="bottom" id="kYk-Dn-M4u"/>
                             <constraint firstItem="V5X-T0-pjC" firstAttribute="trailing" secondItem="b3z-v0-RPy" secondAttribute="trailing" id="riu-VP-q6i"/>
                         </constraints>
@@ -893,15 +880,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xqb-KQ-TCh" customClass="HeaderView" customModule="Califica_Profesores" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="NIG-gx-gdK"/>
-                                </constraints>
-                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zms-5b-3Fb">
-                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WgG-ai-5bU">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="230"/>
@@ -979,11 +959,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cb6-We-zfH" firstAttribute="trailing" secondItem="Zms-5b-3Fb" secondAttribute="trailing" id="Dtu-sZ-dKT"/>
-                            <constraint firstItem="xqb-KQ-TCh" firstAttribute="leading" secondItem="cb6-We-zfH" secondAttribute="leading" id="KmR-bI-mhv"/>
-                            <constraint firstItem="Zms-5b-3Fb" firstAttribute="top" secondItem="xqb-KQ-TCh" secondAttribute="bottom" id="ZfE-n4-Eqa"/>
+                            <constraint firstItem="Zms-5b-3Fb" firstAttribute="top" secondItem="cb6-We-zfH" secondAttribute="top" id="awh-l4-TNC"/>
                             <constraint firstItem="cb6-We-zfH" firstAttribute="bottom" secondItem="Zms-5b-3Fb" secondAttribute="bottom" id="f2T-21-2fy"/>
-                            <constraint firstItem="xqb-KQ-TCh" firstAttribute="top" secondItem="cb6-We-zfH" secondAttribute="top" id="k9J-2U-2QI"/>
-                            <constraint firstItem="xqb-KQ-TCh" firstAttribute="trailing" secondItem="cb6-We-zfH" secondAttribute="trailing" id="u1j-e6-2m4"/>
                             <constraint firstItem="Zms-5b-3Fb" firstAttribute="leading" secondItem="cb6-We-zfH" secondAttribute="leading" id="vcg-ai-rXJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cb6-We-zfH"/>
@@ -1006,15 +983,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldi-lo-SZa" customClass="HeaderView" customModule="Califica_Profesores" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Bml-DN-rA8"/>
-                                </constraints>
-                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S5J-VD-bVD">
-                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ETH-HO-Mw3">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="310"/>
@@ -1118,13 +1088,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="S5J-VD-bVD" firstAttribute="top" secondItem="ldi-lo-SZa" secondAttribute="bottom" id="3l1-dS-q56"/>
-                            <constraint firstItem="ldi-lo-SZa" firstAttribute="top" secondItem="PPZ-ox-q9A" secondAttribute="top" id="Cwt-eG-2HD"/>
                             <constraint firstItem="PPZ-ox-q9A" firstAttribute="trailing" secondItem="S5J-VD-bVD" secondAttribute="trailing" id="ewd-Hl-yxd"/>
                             <constraint firstItem="PPZ-ox-q9A" firstAttribute="bottom" secondItem="S5J-VD-bVD" secondAttribute="bottom" id="gXh-1R-xHi"/>
-                            <constraint firstItem="ldi-lo-SZa" firstAttribute="leading" secondItem="PPZ-ox-q9A" secondAttribute="leading" id="jqK-rJ-Crn"/>
-                            <constraint firstItem="ldi-lo-SZa" firstAttribute="trailing" secondItem="PPZ-ox-q9A" secondAttribute="trailing" id="otn-O3-G4x"/>
                             <constraint firstItem="S5J-VD-bVD" firstAttribute="leading" secondItem="PPZ-ox-q9A" secondAttribute="leading" id="si4-o8-isF"/>
+                            <constraint firstItem="S5J-VD-bVD" firstAttribute="top" secondItem="PPZ-ox-q9A" secondAttribute="top" id="wV7-iI-eRO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PPZ-ox-q9A"/>
                     </view>
@@ -1296,6 +1263,6 @@
         <image name="Facebook Logo" width="35" height="35"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1wJ-fz-ku1"/>
+        <segue reference="uNv-VE-emi"/>
     </inferredMetricsTieBreakers>
 </document>

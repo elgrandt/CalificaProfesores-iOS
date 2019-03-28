@@ -26,6 +26,7 @@ class ProfessorSummaryPager: ButtonBarPagerTabStripViewController {
         self.settings.style.selectedBarHeight = 3
         self.settings.style.buttonBarItemsShouldFillAvailableWidth = true
         super.viewDidLoad()
+        self.setupNavigationBar(title: "Resúmen")
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {

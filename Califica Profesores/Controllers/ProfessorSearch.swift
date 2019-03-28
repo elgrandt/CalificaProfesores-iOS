@@ -15,6 +15,7 @@ class ProfessorSearchController: UIViewController, SearchController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupNavigationBar(title: "Buscar")
         let controller = self.children.first as! ProfessorListController
         searchController = UISearchController(searchResultsController: nil)
         searchController?.searchBar.placeholder = "Buscar Profesor"
@@ -76,7 +77,7 @@ class ProfessorCard: CardPartsViewController, RoundedCardTrait {
             controller.loadProfessor(professor: self.data!)
             let searchController = self.parent?.parent as? ProfessorSearchController
             searchController?.searchController?.isActive = false
-            self.present(controller, animated: false, completion: nil)
+            self.navigationController?.pushViewController(controller, animated: true)
         }
     }
     

@@ -18,6 +18,7 @@ class ProfessorCreator: UIViewController, AddProfessor {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupNavigationBar(title: "Agregar Profesor")
         // ARREGLO EL BUG DEL TECLADO
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)

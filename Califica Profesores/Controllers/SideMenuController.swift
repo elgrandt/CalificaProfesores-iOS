@@ -49,7 +49,7 @@ class SideMenuLayoutController: UIViewController {
             storyboardName = "Subjects"
             break
         case "BUSCAR PROFESOR":
-            nextView = "BuscarProfesor"
+            nextView = "SearchProfessorsNC"
             storyboardName = "Professors"
             break
         case "CAMBIAR FACULTAD":

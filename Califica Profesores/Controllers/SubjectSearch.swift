@@ -41,8 +41,9 @@ class SubjectSearchController: UIViewController, SearchController {
     }
     
     @objc func changeSchool(_ sender:UITapGestureRecognizer) {
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "BuscarFacultad")
-        UIApplication.shared.keyWindow?.rootViewController = controller
+        self.searchController?.isActive = false
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "SearchSchoolsNC")
+        self.sideMenuController?.setContentViewController(to: controller!)
     }
 }
 

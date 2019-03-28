@@ -59,6 +59,6 @@ class ProfessorSummaryMyOpinionController: UIViewController, IndicatorInfoProvid
         if opinion != nil {
             controller.loadOpinion(op: opinion!)
         }
-        self.present(controller, animated: false, completion: nil)
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }

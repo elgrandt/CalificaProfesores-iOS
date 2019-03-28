@@ -20,7 +20,7 @@ class ProfessorSummaryInfoController: CardsViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if professor == nil || professor!.count! == 0 { return }
+        if professor == nil || professor!.count == nil || professor!.count! == 0 { return }
         cards = []
         cards.append(ProfessorDataCard(title: "Clases", value: Float(professor!.clases!) / Float(professor!.count!), color: .orange))
         cards.append(ProfessorDataCard(title: "Conocimiento", value: Float(professor!.conocimiento!) / Float(professor!.count!), color: .green))

@@ -19,6 +19,7 @@ class AddSubjectsToProfessor: UIViewController, AddProfessor {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupNavigationBar(title: "Agregar Materias")
         // ARREGLO EL BUG DEL TECLADO
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -28,6 +29,8 @@ class AddSubjectsToProfessor: UIViewController, AddProfessor {
         view.addGestureRecognizer(tap)
         // OBTENGO LOS HIJOS
         subjectSelector = children.first as? SubjectSelectorViewController
+        subjectSelector?.addLaterSwitch.isOn = false
+        subjectSelector?.addLaterChanged(subjectSelector!.addLaterSwitch)
         professorName.text = professor?.Name
     }
     
@@ -81,6 +84,6 @@ class AddSubjectsToProfessor: UIViewController, AddProfessor {
     }
 
     func finishedSend(success: Bool) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
 }

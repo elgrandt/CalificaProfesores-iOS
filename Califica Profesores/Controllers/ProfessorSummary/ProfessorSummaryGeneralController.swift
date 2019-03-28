@@ -26,7 +26,7 @@ class ProfessorSummaryGeneralController: UIViewController, IndicatorInfoProvider
         if (professor == nil) { return }
         let info = children.first as! ProfessorSummaryInfoController
         info.loadProfessor(prof: professor!)
-        if (professor!.count! != 0) {
+        if (professor != nil && professor!.count != nil && professor!.count! != 0) {
             generalRank.isHidden = false
             generalRank.rating = Double(professor!.amabilidad! + professor!.clases! + professor!.conocimiento!) / Double(3*professor!.count!)
         } else {
