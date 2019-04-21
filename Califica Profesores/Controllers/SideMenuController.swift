@@ -18,11 +18,15 @@ class SideMenuLayoutController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userLabel.text = currentUser?.displayName
     }
     
     override func viewWillAppear(_ animated: Bool) {
         userLabel.text = currentUser?.displayName
+        if userLabel.text == nil && currentUser?.email != nil {
+            userLabel.text = String(currentUser!.email!.prefix(while: {c in
+                return c != "@"
+            })).capitalized
+        }
     }
     
     func jumpView(next : String, animated : Bool = true) {
