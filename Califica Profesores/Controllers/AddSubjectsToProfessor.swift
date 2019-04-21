@@ -26,7 +26,7 @@ class AddSubjectsToProfessor: UIViewController, AddProfessor {
         notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         // AGREGO PARA QUE SE CIERRE EL TECLADO TOCANDO AFUERA
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ReviewSubjectController.dismissKeyboard))
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
         // OBTENGO LOS HIJOS
         subjectSelector = children.first as? SubjectSelectorViewController

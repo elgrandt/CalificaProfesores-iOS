@@ -8,18 +8,37 @@
 
 import UIKit
 import Firebase
-import FirebaseUI
 import SideMenuSwift
+import FBSDKCoreKit
+import FBSDKLoginKit
+import GoogleSignIn
 
 var currentUser : User?
 
-class LoginViewController: UIViewController, FUIAuthDelegate {
+class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
     
     let nextController = "SideMenuController"
-
+    @IBOutlet weak var loading: LoadingView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureAuth()
+        title = "Iniciar Sesión"
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
+        
+        loading.isHidden = false
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if (FBSDKAccessToken.current() != nil) {
+            firebaseFacebookLogin()
+        } else if (GIDSignIn.sharedInstance().hasAuthInKeychain()) {
+            GIDSignIn.sharedInstance()?.signIn()
+        } else {
+            loading.isHidden = true
+        }
     }
     
     func jumpView(next : String, animated : Bool = true) {
@@ -27,48 +46,108 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
         self.present(controller!, animated: animated, completion: nil)
     }
     
-    func configureAuth() {
-        // TODO: configure firebase authentication
-    
-        let provider: [FUIAuthProvider] = [
-            FUIGoogleAuth()
-        ]
-        FUIAuth.defaultAuthUI()?.delegate = self
-        FUIAuth.defaultAuthUI()?.providers = provider
-        
-        // listen for changes in the authorization state
-        Auth.auth().addStateDidChangeListener { (auth: Auth, user: User?) in
-            
-            // check if there is a current user
-            if user != nil {
-                // check if current app user is the current User
-                currentUser = user
-                let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: self.nextController)
-                UIApplication.shared.keyWindow?.rootViewController = controller
-            } else {
-                // user must sign in
-                self.loginSession(authUI: FUIAuth(uiWith: auth)!)
+    @IBAction func facebookLogin(sender: UIButton) {
+        let fbLoginManager = FBSDKLoginManager()
+        fbLoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
+            if let error = error {
+                print("Facebook login error: \(error.localizedDescription)")
+                return
             }
+            self.firebaseFacebookLogin()
         }
     }
     
-    func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, url: URL?, error: Error?) {
-        if error != nil {
-            //Error loging in
-            print("Error logging in")
-            self.loginSession(authUI: authUI)
+    @IBAction func googleLogin(_ sender: UIButton) {
+        GIDSignIn.sharedInstance()?.signIn()
+    }
+    
+    // Facebook
+    func firebaseFacebookLogin() {
+        guard let accessToken = FBSDKAccessToken.current() else {
+            print("Failed to get access token")
             return
         }
-        print("Sign in successful")
-        currentUser = authDataResult?.user
         
+        let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
+        firebaseLogin(credential: credential)
+    }
+    
+    // Google
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        if let error = error {
+            print("Google login error: \(error.localizedDescription)")
+            return
+        }
+        
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                       accessToken: authentication.accessToken)
+        firebaseLogin(credential: credential)
+    }
+    
+    func firebaseLogin(credential: AuthCredential) {
+        // Perform login by calling Firebase APIs
+        loading.isHidden = false
+        Auth.auth().signInAndRetrieveData(with: credential, completion: { (user, error) in
+            self.loading.isHidden = true
+            if let error = error {
+                print("Firebase login error: \(error.localizedDescription)")
+                let alertController = UIAlertController(title: "Login Error", message: error.localizedDescription, preferredStyle: .alert)
+                let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alertController.addAction(okayAction)
+                self.present(alertController, animated: true, completion: nil)
+                self.loading.isHidden = true
+                return
+            }
+            currentUser = user?.user
+            self.loggedSuccessfully()
+        })
+    }
+    
+    func loggedSuccessfully() {
         let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: self.nextController)
         UIApplication.shared.keyWindow?.rootViewController = controller
     }
-    
-    func loginSession(authUI: FUIAuth) {
-        let authViewController = LoginController(nibName: "LoginView", bundle: Bundle.main, authUI: authUI)
-        self.present(authViewController, animated: false, completion: nil)
-    }
 
+}
+
+class LoginWithEmailController : UIViewController {
+    
+    @IBOutlet weak var emailInput: UITextField!
+    @IBOutlet weak var passwordInput: UITextField!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        // AGREGO PARA QUE SE CIERRE EL TECLADO TOCANDO AFUERA
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard(sender:UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
+    @objc func keyboardWillShow(notification: Notification) {
+        let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        let new_inset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardRect!.height, right: 0)
+        scrollView.contentInset = new_inset
+        scrollView.scrollIndicatorInsets = new_inset
+    }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        let new_inset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        scrollView.contentInset = new_inset
+        scrollView.scrollIndicatorInsets = new_inset
+    }
+    
+    @IBAction func login(_ sender: Any) {
+    }
+    
+    @IBAction func test(_ sender: Any) {
+        login(sender)
+    }
 }

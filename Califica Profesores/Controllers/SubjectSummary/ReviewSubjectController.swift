@@ -34,7 +34,7 @@ class ReviewSubjectController: UIViewController, UITextViewDelegate, ReviewSubje
         anonymousLabel.addGestureRecognizer(tap)
         let tap2 = UITapGestureRecognizer(target: self, action: #selector(ReviewSubjectController.switchNorate))
         norateLabel.addGestureRecognizer(tap2)
-        let tap3: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ReviewSubjectController.dismissKeyboard))
+        let tap3: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap3)
         sendButton.isEnabled = false
         sendButton.alpha = 0.6

@@ -8,9 +8,10 @@
 
 import UIKit
 import Firebase
-import FirebaseUI
 import CardParts
 import SideMenuSwift
+import FBSDKCoreKit
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,12 +34,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         theme.apply()
     }
     
+    func configureLogin(_ application: UIApplication, _ launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+        // Facebook
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        // Google
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         configureSideMenu()
         configureCardParts()
+        configureLogin(application, launchOptions)
         return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        var handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+        if !handled {
+            handled = GIDSignIn.sharedInstance().handle(url,
+                                                        sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+                                                        annotation: [:])
+        }
+        return handled
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

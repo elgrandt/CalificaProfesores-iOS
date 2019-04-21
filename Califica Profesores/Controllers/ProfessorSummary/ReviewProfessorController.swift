@@ -52,7 +52,7 @@ class ReviewProfessorController: UIViewController, UITextViewDelegate, RealTimeC
         notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         // AGREGO PARA QUE SE CIERRE EL TECLADO TOCANDO AFUERA
-        let tap3: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ReviewSubjectController.dismissKeyboard))
+        let tap3: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap3)
         // CONFIGURO EL BOTON DE ENVIAR
         sendButton.isEnabled = false

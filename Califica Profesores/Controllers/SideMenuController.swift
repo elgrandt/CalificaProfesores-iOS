@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 import FirebaseUI
+import FBSDKLoginKit
+import GoogleSignIn
 
 class SideMenuLayoutController: UIViewController {
     
@@ -29,7 +31,14 @@ class SideMenuLayoutController: UIViewController {
     }
 
     @IBAction func logout(_ sender: Any) {
+        // Facebook
+        let LoginManager = FBSDKLoginManager()
+        LoginManager.logOut()
+        // Google
+        GIDSignIn.sharedInstance()?.signOut()
+        // Firebase
         try! Auth.auth().signOut()
+        // Redirect
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "Login")
         UIApplication.shared.keyWindow?.rootViewController = controller
     }
