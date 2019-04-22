@@ -33,7 +33,6 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Iniciar Sesión"
         
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
