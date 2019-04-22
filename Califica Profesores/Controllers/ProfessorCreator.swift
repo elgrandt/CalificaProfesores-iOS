@@ -89,8 +89,7 @@ class ProfessorCreator: UIViewController, AddProfessor {
     }
     
     func finishedSend(success: Bool) {
-        print(success)
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
