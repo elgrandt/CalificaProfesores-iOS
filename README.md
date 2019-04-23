@@ -8,8 +8,8 @@ App diseñada para ayudar a los estudiantes a elegir mejor que materias y con qu
 Se puede agregar cualquier facultad, materia o profesor.
 
 <h1>Soporte</h1>
-Para reportar un bug o proponer una nueva funcionalidad puede hacer una pull request en el siguiente link:
-https://github.com/elgrandt/CalificaProfesores-iOS/issues/new
-Tambien puede mandarnos un mail a cualquiera de nosotros:
-dylantasat11@gmail.com
+Para reportar un bug o proponer una nueva funcionalidad puede hacer una pull request en el siguiente link: <br>
+https://github.com/elgrandt/CalificaProfesores-iOS/issues/new <br>
+Tambien puede mandarnos un mail a cualquiera de nosotros: <br>
+dylantasat11@gmail.com <br>
 ariel.nowik@gmail.com
