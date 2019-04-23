@@ -11,5 +11,5 @@ Se puede agregar cualquier facultad, materia o profesor.
 Para reportar un bug o proponer una nueva funcionalidad puede hacer una pull request en el siguiente link: <br>
 https://github.com/elgrandt/CalificaProfesores-iOS/issues/new <br>
 Tambien puede mandarnos un mail a cualquiera de nosotros: <br>
-<dylantasat11@gmail.com> <br>
-<ariel.nowik@gmail.com>
+dylantasat11@gmail.com <br>
+ariel.nowik@gmail.com
